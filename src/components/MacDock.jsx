@@ -14,14 +14,14 @@ import {
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function MacDock({ onOpenWindow, onOpenSearch, activeWindow }) {
+export default function MacDock({ openWindows = [], onToggleWindow, onOpenSearch }) {
   const dockItems = [
-    { id: 'projects', label: 'Projects', icon: Briefcase, action: () => onOpenWindow('projects') },
-    { id: 'experience', label: 'Code & Roles', icon: Code2, action: () => onOpenWindow('experience') },
-    { id: 'stack', label: 'Tech Arsenal', icon: Cpu, action: () => onOpenWindow('stack') },
-    { id: 'article', label: 'Writing', icon: BookOpen, action: () => onOpenWindow('article') },
+    { id: 'projects', label: 'Projects', icon: Briefcase, action: () => onToggleWindow('projects') },
+    { id: 'experience', label: 'Experience', icon: Code2, action: () => onToggleWindow('experience') },
+    { id: 'stack', label: 'Tech Stack', icon: Cpu, action: () => onToggleWindow('stack') },
+    { id: 'article', label: 'Writing', icon: BookOpen, action: () => onToggleWindow('article') },
     { id: 'resume', label: 'Resume', icon: FileText, action: () => window.open(portfolioData.personal.resumeUrl, '_blank') },
-    { id: 'contact', label: 'Contact', icon: Mail, action: () => onOpenWindow('contact') },
+    { id: 'contact', label: 'Contact', icon: Mail, action: () => onToggleWindow('contact') },
   ];
 
   const socialItems = [
@@ -31,19 +31,25 @@ export default function MacDock({ onOpenWindow, onOpenSearch, activeWindow }) {
   ];
 
   return (
-    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 max-w-[95vw]">
+    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 max-w-[95vw]">
       <div className="px-4 py-2.5 rounded-2xl bg-[#080b11]/90 backdrop-blur-2xl border border-white/[0.1] shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_20px_rgba(255,255,255,0.03)] flex items-center gap-2 sm:gap-3">
         
         {/* Navigation Dock Apps */}
         {dockItems.map((item) => {
           const IconComponent = item.icon;
-          const isActive = activeWindow === item.id;
+          const isOpen = openWindows.includes(item.id);
+          const isFront = openWindows[openWindows.length - 1] === item.id;
+
           return (
             <button
               key={item.id}
               onClick={item.action}
               className={`group relative p-2.5 rounded-xl transition-all duration-200 hover:-translate-y-2 hover:scale-125 cursor-pointer flex flex-col items-center justify-center ${
-                isActive ? 'bg-white/[0.12] text-white' : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
+                isFront
+                  ? 'bg-white/[0.16] text-white shadow-md'
+                  : isOpen
+                  ? 'bg-white/[0.08] text-white/90'
+                  : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
               <IconComponent size={19} strokeWidth={1.8} />
@@ -53,9 +59,9 @@ export default function MacDock({ onOpenWindow, onOpenSearch, activeWindow }) {
                 {item.label}
               </span>
 
-              {/* Active Dot */}
-              {isActive && (
-                <span className="w-1 h-1 rounded-full bg-white absolute -bottom-1"></span>
+              {/* Active Dot for Open Windows */}
+              {isOpen && (
+                <span className={`w-1 h-1 rounded-full absolute -bottom-1 ${isFront ? 'bg-white shadow-[0_0_6px_#fff]' : 'bg-white/40'}`}></span>
               )}
             </button>
           );

@@ -1,0 +1,477 @@
+import React, { useState } from 'react';
+import { portfolioData } from '../data/portfolioData';
+
+export default function MacWindowManager({ openWindows, onBringToFront, onCloseWindow, onSwitchWindow }) {
+  if (!openWindows || openWindows.length === 0) return null;
+
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  // Interactive Live Simulator for Dispatch OS
+  const [simTitle, setSimTitle] = useState('VPN tunnel failing on prod servers');
+  const [simDesc, setSimDesc] = useState('Production node cluster lost SSL handshake');
+  const [simResult, setSimResult] = useState(null);
+  const [simLoading, setSimLoading] = useState(false);
+
+  const runSimulator = () => {
+    setSimLoading(true);
+    setTimeout(() => {
+      setSimResult({
+        category: 'IT Infrastructure',
+        priority: 'High',
+        confidence: '98.6%',
+        department: 'IT Department',
+        summary: 'Critical SSL/VPN tunnel degradation detected affecting production cluster.',
+        suggestedResolution: 'Regenerate SSL certs and reset Wireguard/VPN network gateway.'
+      });
+      setSimLoading(false);
+    }, 600);
+  };
+
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    setContactSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: '', email: '', message: '' });
+      setContactSubmitted(false);
+    }, 4000);
+  };
+
+  const techArsenal = [
+    {
+      name: 'TYPESCRIPT',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#3178c6] flex items-center justify-center font-extrabold text-white text-base shadow-[0_0_15px_rgba(49,120,198,0.4)]">
+          TS
+        </div>
+      )
+    },
+    {
+      name: 'REACT',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#00d8ff]/10 border border-[#00d8ff]/30 flex items-center justify-center text-[#00d8ff] text-2xl shadow-[0_0_15px_rgba(0,216,255,0.3)]">
+          ⚛
+        </div>
+      )
+    },
+    {
+      name: 'NODE.JS',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#5fa04e]/10 border border-[#5fa04e]/30 flex items-center justify-center text-[#5fa04e] text-xl font-bold shadow-[0_0_15px_rgba(95,160,78,0.3)]">
+          ⬢
+        </div>
+      )
+    },
+    {
+      name: 'TAILWIND',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/30 flex items-center justify-center text-[#38bdf8] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+          ≈
+        </div>
+      )
+    },
+    {
+      name: 'EXPRESS',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center font-bold text-white text-sm">
+          ex
+        </div>
+      )
+    },
+    {
+      name: 'MONGODB',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#00ed64]/10 border border-[#00ed64]/30 flex items-center justify-center text-[#00ed64] text-xl font-bold shadow-[0_0_15px_rgba(0,237,100,0.3)]">
+          🍃
+        </div>
+      )
+    },
+    {
+      name: 'SOCKET.IO',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-lg">
+          ⚡
+        </div>
+      )
+    },
+    {
+      name: 'GEMINI AI',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#1a73e8] via-[#8ab4f8] to-[#ea4335] flex items-center justify-center text-white text-lg shadow-[0_0_15px_rgba(138,180,248,0.4)]">
+          ✦
+        </div>
+      )
+    },
+    {
+      name: 'PYTHON',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#3776ab]/15 border border-[#ffd438]/30 flex items-center justify-center text-[#ffd438] text-xl">
+          🐍
+        </div>
+      )
+    },
+    {
+      name: 'C / C++',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-bold text-[#38bdf8] text-xs">
+          C++
+        </div>
+      )
+    },
+  ];
+
+  const windowTitles = {
+    stack: 'TECH STACK',
+    projects: 'PROJECTS',
+    experience: 'EXPERIENCE',
+    contact: 'CONTACT',
+    article: 'WRITING'
+  };
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-30 flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+      
+      {/* Cascading Window Stack */}
+      <div className="relative w-full max-w-4xl h-[78vh] pointer-events-none">
+        
+        {openWindows.map((winId, index) => {
+          const isFront = index === openWindows.length - 1;
+          const stackOffset = (openWindows.length - 1 - index) * 26; // 26px cascading upward offset
+          const zIndex = 30 + index * 5;
+          const title = windowTitles[winId] || 'WINDOW';
+
+          return (
+            <div
+              key={winId}
+              onClick={() => onBringToFront(winId)}
+              style={{
+                top: `${Math.max(0, 10 - stackOffset * 0.4)}%`,
+                transform: `translateY(-${stackOffset}px) scale(${1 - (openWindows.length - 1 - index) * 0.025})`,
+                zIndex: zIndex,
+              }}
+              className={`absolute left-0 right-0 max-h-[75vh] rounded-2xl border transition-all duration-300 pointer-events-auto flex flex-col overflow-hidden ${
+                isFront
+                  ? 'bg-[#0c1017] border-white/[0.16] shadow-[0_30px_70px_rgba(0,0,0,0.95),0_0_30px_rgba(14,165,233,0.15)] opacity-100'
+                  : 'bg-[#090d14] border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.7)] opacity-70 hover:opacity-95 cursor-pointer'
+              }`}
+            >
+              
+              {/* Window Header Titlebar */}
+              <div className="px-5 py-3.5 bg-[#090d14] border-b border-white/[0.08] flex items-center justify-between flex-shrink-0 select-none">
+                {/* Traffic lights */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onCloseWindow(winId);
+                    }}
+                    title="Close Window"
+                    className="w-3 h-3 rounded-full bg-[#ff5f56] hover:opacity-80 transition-opacity cursor-pointer flex items-center justify-center text-[7px] text-black font-bold"
+                  >
+                    ✕
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onBringToFront(winId);
+                    }}
+                    title="Zoom"
+                    className="w-3 h-3 rounded-full bg-[#27c93f] hover:opacity-80 transition-opacity cursor-pointer"
+                  ></button>
+                </div>
+
+                {/* Window Name */}
+                <div className="text-xs font-mono-code text-white/70 font-bold tracking-[0.2em] uppercase">
+                  {title}
+                </div>
+
+                {/* Window Controls / Tab Indicators */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] font-mono-code text-white/30">
+                    {isFront ? 'ACTIVE' : 'CLICK TO FOCUS'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Window Content (Scrollable only when in front) */}
+              <div className={`p-6 md:p-10 overflow-y-auto flex-1 scrollbar-subtle space-y-6 relative ${isFront ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+                
+                {/* 1. TECH STACK (Exact ARSENAL layout) */}
+                {winId === 'stack' && (
+                  <div className="space-y-8 relative">
+                    <div className="absolute right-4 bottom-0 text-white/[0.02] text-8xl font-black font-mono-code select-none pointer-events-none">
+                      ARSENAL
+                    </div>
+
+                    <div className="border-b border-white/[0.08] pb-4">
+                      <div className="flex items-center gap-3">
+                        <h2 className="text-3xl font-black tracking-tight text-white uppercase">
+                          ARSENAL
+                        </h2>
+                        <span className="text-white/20 text-lg">|</span>
+                        <span className="text-xs font-mono-code text-white/50 tracking-widest uppercase">
+                          TECH STACK // 01
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 2x5 Grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5">
+                      {techArsenal.map((tech, idx) => (
+                        <div
+                          key={idx}
+                          className="p-5 rounded-2xl bg-[#111622]/80 border border-white/[0.08] hover:border-white/25 hover:bg-[#151c2b] transition-all duration-200 flex flex-col items-center justify-center gap-3 cursor-pointer group shadow-lg hover:shadow-xl hover:-translate-y-1"
+                        >
+                          <div className="group-hover:scale-110 transition-transform duration-200">
+                            {tech.icon}
+                          </div>
+                          <span className="text-[11px] font-mono-code font-bold tracking-wider text-white/70 group-hover:text-white transition-colors text-center">
+                            {tech.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* 2. PROJECTS WINDOW */}
+                {winId === 'projects' && (
+                  <div className="space-y-8">
+                    <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#0ea5e9]/30 relative overflow-hidden shadow-xl">
+                      <div className="absolute top-0 right-0 px-3 py-1 bg-[#0ea5e9] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
+                        FLAGSHIP PRODUCTION
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <h3 className="text-2xl font-extrabold text-white tracking-tight">
+                          ⚡ Dispatch OS
+                        </h3>
+                        <span className="text-white/40 text-xs font-mono-code">— Autonomous Incident Triage Engine</span>
+                      </div>
+
+                      <p className="text-white/80 text-sm leading-relaxed mb-4">
+                        Full-stack incident management platform leveraging <strong>Google Gemini 1.5 Flash</strong> for autonomous classification, priority badging, and bilingual diagnostic briefs (EN/HI) with 98%+ precision. Features real-time WebSockets, 7-day predictive surge forecasting, and native PWA deployment.
+                      </p>
+
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
+                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                          <div className="text-[#38bdf8] font-bold text-lg">&lt; 2s</div>
+                          <div className="text-[10px] text-white/50 font-mono-code uppercase">AI Triage Speed</div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                          <div className="text-emerald-400 font-bold text-lg">98.4%</div>
+                          <div className="text-[10px] text-white/50 font-mono-code uppercase">Reasoning Precision</div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                          <div className="text-amber-400 font-bold text-lg">50ms</div>
+                          <div className="text-[10px] text-white/50 font-mono-code uppercase">WebSocket Sync</div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                          <div className="text-purple-400 font-bold text-lg">PWA</div>
+                          <div className="text-[10px] text-white/50 font-mono-code uppercase">Play Store Ready</div>
+                        </div>
+                      </div>
+
+                      {/* Interactive Simulator */}
+                      <div className="mt-5 p-4 rounded-xl bg-black/40 border border-white/10 space-y-3">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="font-bold text-[#38bdf8] font-mono-code">⚡ TRY LIVE TRIAGE SIMULATOR</span>
+                          <span className="text-white/40 text-[10px]">Powered by Gemini 1.5 Flash</span>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            value={simTitle}
+                            onChange={(e) => setSimTitle(e.target.value)}
+                            placeholder="Issue Title..."
+                            className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#0ea5e9]"
+                          />
+                          <input
+                            type="text"
+                            value={simDesc}
+                            onChange={(e) => setSimDesc(e.target.value)}
+                            placeholder="Issue Description..."
+                            className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#0ea5e9]"
+                          />
+                        </div>
+
+                        <button
+                          onClick={runSimulator}
+                          disabled={simLoading}
+                          className="w-full py-2 rounded-lg bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] text-white font-bold text-xs hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center gap-2"
+                        >
+                          {simLoading ? '⚡ Analyzing with Gemini 1.5 Flash...' : '🔮 Run Instant AI Incident Triage'}
+                        </button>
+
+                        {simResult && (
+                          <div className="p-3 rounded-lg bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 text-xs space-y-1 animate-fadeIn">
+                            <div className="flex items-center justify-between font-bold">
+                              <span className="text-[#38bdf8]">Category: {simResult.category}</span>
+                              <span className="text-amber-400">Priority: {simResult.priority} ({simResult.confidence})</span>
+                            </div>
+                            <p className="text-white/80">{simResult.summary}</p>
+                            <p className="text-emerald-400 font-mono-code text-[11px]">💡 Action: {simResult.suggestedResolution}</p>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-3 mt-5 pt-3 border-t border-white/[0.08]">
+                        <a
+                          href="https://ai-smart-issue-routing-jbb8.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#38bdf8] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                        >
+                          <span>LAUNCH LIVE APP</span>
+                          <span>↗</span>
+                        </a>
+                        <a
+                          href="https://github.com/ayush-3945/ai-smart-issue-routing"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                        >
+                          <span>GITHUB REPO</span>
+                          <span>↗</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* AI Interview Agent */}
+                    <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-between">
+                      <div>
+                        <h4 className="text-base font-bold text-white mb-1">🎙️ AI Interview Agent</h4>
+                        <p className="text-white/60 text-xs">Real-time voice mock interview simulator with dynamic Gemini AI prompts.</p>
+                      </div>
+                      <a
+                        href="https://github.com/ayush-3945/AI-Interview-Agent"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-3 py-1.5 rounded-lg bg-white/10 text-white font-mono-code text-xs hover:bg-[#38bdf8] hover:text-black transition-colors"
+                      >
+                        View Code ↗
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* 3. EXPERIENCE WINDOW */}
+                {winId === 'experience' && (
+                  <div className="space-y-6">
+                    <div className="border-l-2 border-[#0ea5e9] pl-4 ml-2 space-y-6">
+                      {portfolioData.experience.map((exp, idx) => (
+                        <div key={idx} className="relative group">
+                          <div className="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-[#0ea5e9] border-2 border-[#0c1017]"></div>
+                          <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                            <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
+                              <h4 className="text-white font-bold text-base">{exp.role}</h4>
+                              <span className="text-[11px] font-mono-code text-[#38bdf8] px-2 py-0.5 rounded bg-[#0ea5e9]/10">
+                                {exp.period}
+                              </span>
+                            </div>
+                            <div className="text-white/60 text-xs font-semibold mb-2">
+                              {exp.org} • <span className="text-white/40 font-normal">{exp.location}</span>
+                            </div>
+                            <p className="text-white/70 text-xs leading-relaxed">
+                              {exp.details}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* 4. CONTACT WINDOW */}
+                {winId === 'contact' && (
+                  <div className="space-y-6">
+                    <div className="text-center max-w-md mx-auto mb-4">
+                      <h3 className="text-2xl font-black text-white tracking-tight">Get In Touch</h3>
+                      <p className="text-white/60 text-xs mt-1">
+                        LET'S BUILD SOMETHING GREAT
+                      </p>
+                    </div>
+
+                    {contactSubmitted ? (
+                      <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center animate-fadeIn">
+                        <span className="text-3xl mb-2 inline-block">🚀</span>
+                        <h4 className="text-emerald-400 font-bold text-base">Message Sent Successfully!</h4>
+                        <p className="text-white/70 text-xs mt-1">
+                          I'll get back to you shortly at {formData.email || 'your email'}.
+                        </p>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleContactSubmit} className="space-y-4 max-w-lg mx-auto">
+                        <div>
+                          <label className="block text-[10px] font-mono-code text-white/50 uppercase mb-1">YOUR NAME</label>
+                          <input
+                            required
+                            type="text"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            placeholder="John Doe"
+                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#0ea5e9]"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[10px] font-mono-code text-white/50 uppercase mb-1">EMAIL ADDRESS</label>
+                          <input
+                            required
+                            type="email"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            placeholder="john@example.com"
+                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#0ea5e9]"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[10px] font-mono-code text-white/50 uppercase mb-1">YOUR MESSAGE</label>
+                          <textarea
+                            required
+                            rows={4}
+                            value={formData.message}
+                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            placeholder="Tell me about your project..."
+                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#0ea5e9] resize-none"
+                          ></textarea>
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#38bdf8] hover:text-white transition-all shadow-lg cursor-pointer"
+                        >
+                          SEND MESSAGE
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                )}
+
+                {/* 5. ARTICLE WINDOW */}
+                {winId === 'article' && (
+                  <div className="space-y-4 max-w-2xl mx-auto">
+                    <div className="text-[11px] font-mono-code text-[#38bdf8]">SYSTEM ESSAY • AUG 2026</div>
+                    <h2 className="text-2xl font-bold text-white">
+                      Why Autonomous Triage is the Future of Enterprise IT Operations
+                    </h2>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      Traditional IT support models rely on manual ticket ingestion, where complaints sit in unassigned queues for 24 to 48 hours before human triage even begins.
+                    </p>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      With <strong>Dispatch OS</strong>, we engineered an autonomous incident lifecycle engine that executes multi-step reasoning in under 2 seconds using Google Gemini 1.5 Flash structured schemas.
+                    </p>
+                  </div>
+                )}
+
+              </div>
+            </div>
+          );
+        })}
+
+      </div>
+    </div>
+  );
+}
