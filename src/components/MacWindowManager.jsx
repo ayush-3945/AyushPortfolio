@@ -16,6 +16,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
     }, 4000);
   };
 
+  // 10 Core Tech Badges including C/C++ and JAVA
   const techArsenal = [
     {
       name: 'TYPESCRIPT',
@@ -42,10 +43,18 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
       )
     },
     {
-      name: 'TAILWIND',
+      name: 'JAVA',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/30 flex items-center justify-center text-[#38bdf8] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-          ≈
+        <div className="w-10 h-10 rounded-lg bg-[#f89820]/15 border border-[#f89820]/35 flex items-center justify-center text-[#f89820] text-xl font-black shadow-[0_0_15px_rgba(248,152,32,0.3)]">
+          ☕
+        </div>
+      )
+    },
+    {
+      name: 'C / C++',
+      icon: (
+        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-black text-[#38bdf8] text-xs shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+          C++
         </div>
       )
     },
@@ -82,18 +91,10 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
       )
     },
     {
-      name: 'PYTHON',
+      name: 'TAILWIND',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#3776ab]/15 border border-[#ffd438]/30 flex items-center justify-center text-[#ffd438] text-xl">
-          🐍
-        </div>
-      )
-    },
-    {
-      name: 'C / C++',
-      icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-bold text-[#38bdf8] text-xs">
-          C++
+        <div className="w-10 h-10 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/30 flex items-center justify-center text-[#38bdf8] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+          ≈
         </div>
       )
     },
@@ -176,26 +177,29 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
               <div className={`p-6 md:p-8 overflow-y-auto flex-1 scrollbar-subtle space-y-6 relative ${isFront ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                 
                 {/* ========================================================= */}
-                {/* 1. TECH STACK (ARSENAL)                                    */}
+                {/* 1. TECH STACK (REAL MADRID // SIUUU)                       */}
                 {/* ========================================================= */}
                 {winId === 'stack' && (
                   <div className="space-y-6 relative">
-                    <div className="absolute right-4 bottom-0 text-white/[0.02] text-8xl font-black font-mono-code select-none pointer-events-none">
-                      ARSENAL
+                    {/* Faint Background Watermark */}
+                    <div className="absolute right-4 bottom-0 text-white/[0.02] text-7xl font-black font-mono-code select-none pointer-events-none">
+                      HALA MADRID
                     </div>
 
                     <div className="border-b border-white/[0.08] pb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-                          ARSENAL
+                        <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase flex items-center gap-2">
+                          <span>REAL MADRID</span>
+                          <span className="text-[#38bdf8] text-xl">⚡</span>
                         </h2>
                         <span className="text-white/20 text-lg">|</span>
-                        <span className="text-xs font-mono-code text-white/50 tracking-widest uppercase">
-                          TECH STACK // 01
+                        <span className="text-xs font-mono-code text-amber-400 tracking-widest uppercase font-bold">
+                          SIUUU // TECH STACK 01
                         </span>
                       </div>
                     </div>
 
+                    {/* 2x5 Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 sm:gap-4">
                       {techArsenal.map((tech, idx) => (
                         <div
@@ -211,11 +215,18 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                         </div>
                       ))}
                     </div>
+
+                    <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs font-mono-code text-white/60 flex items-center justify-between">
+                      <span className="text-amber-300 font-bold">👑 Elite Engineering & Real-Time Distributed Architecture</span>
+                      <button onClick={() => onSwitchWindow('projects')} className="text-[#38bdf8] hover:underline font-bold">
+                        Explore Builds ➔
+                      </button>
+                    </div>
                   </div>
                 )}
 
                 {/* ========================================================= */}
-                {/* 2. CLEAN NORMAL PROJECTS (Clean Cards in same theme)       */}
+                {/* 2. PROJECTS WINDOW                                        */}
                 {/* ========================================================= */}
                 {winId === 'projects' && (
                   <div className="space-y-5 relative">

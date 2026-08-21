@@ -26,9 +26,10 @@ export default function TopMenuBar({ onOpenWindow }) {
       <div className="flex items-center gap-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#38bdf8] transition-colors cursor-pointer"
+          className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#38bdf8] transition-colors cursor-pointer flex items-center gap-2"
         >
-          AYUSH
+          <span className="text-[#38bdf8]">⚡</span>
+          <span>AYUSH</span>
         </button>
         <button
           onClick={() => onOpenWindow('contact')}
@@ -43,10 +44,10 @@ export default function TopMenuBar({ onOpenWindow }) {
         <span>{timeStr || 'FRIDAY, AUGUST 21, 2026'}</span>
       </div>
 
-      {/* Right */}
+      {/* Right Custom Protocol */}
       <div className="flex items-center gap-4">
-        <span className="text-white/40 text-[10px] font-mono-code tracking-[0.15em] uppercase">
-          LATE NIGHT PROTOCOL
+        <span className="text-[#38bdf8] text-[10px] font-mono-code tracking-[0.15em] uppercase px-2.5 py-0.5 rounded-full bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 font-bold">
+          BERNABÉU PROTOCOL // SIUUU ⚡
         </span>
       </div>
     </header>

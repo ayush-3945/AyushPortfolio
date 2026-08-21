@@ -8,7 +8,7 @@ export default function HeroBento({ onOpenWindow }) {
   const { personal } = portfolioData;
 
   return (
-    <div className="w-full max-w-[1580px] mx-auto px-4 sm:px-8 md:px-12 py-6 md:py-10 space-y-8 pb-32">
+    <div className="w-full max-w-[1580px] mx-auto px-4 sm:px-8 md:px-12 py-6 md:py-10 space-y-8 pb-28">
       
       {/* 1. TOP ROW: [Title & Intro (Left)] + [Anime Manga Avatar (Center)] + [Status & Quote (Right)] */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
@@ -74,93 +74,22 @@ export default function HeroBento({ onOpenWindow }) {
 
       </div>
 
-      {/* 2. BOTTOM ROW: [Latest Writing (4 cols)] + [Spotify Player (3 cols)] + [GitHub Heatmap (5 cols)] */}
+      {/* 2. BOTTOM ROW: [Latest Writing (4 cols)] + [Spotify Player (4 cols)] + [GitHub Heatmap (4 cols)] */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch pt-2">
         
-        {/* Latest Writing (3.5 cols) */}
-        <div className="md:col-span-4 lg:col-span-3">
+        {/* Latest Writing (4 cols) */}
+        <div className="md:col-span-4 lg:col-span-4">
           <LatestWritingCard onArticleClick={() => onOpenWindow('article')} />
         </div>
 
-        {/* Spotify Compact Player (3.5 cols) */}
+        {/* Spotify Compact Player (4 cols) */}
         <div className="md:col-span-4 lg:col-span-4 flex flex-col justify-end">
           <SpotifyWidget />
         </div>
 
-        {/* GitHub Heatmap Grid (5 cols) */}
-        <div className="md:col-span-4 lg:col-span-5">
+        {/* GitHub Heatmap Grid (4 cols) */}
+        <div className="md:col-span-4 lg:col-span-4">
           <GithubHeatmap onClick={() => onOpenWindow('projects')} />
-        </div>
-
-      </div>
-
-      {/* 3. FEATURED HIGHLIGHTS (Dispatch OS & Systems) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-        
-        {/* Dispatch OS Card */}
-        <div
-          onClick={() => onOpenWindow('projects')}
-          className="glass-bento rounded-2xl p-6 cursor-pointer group relative overflow-hidden border border-[#0ea5e9]/20 hover:border-[#0ea5e9]/60 transition-all"
-        >
-          <div className="flex items-center justify-between mb-3 text-xs">
-            <span className="px-2.5 py-0.5 rounded-full bg-[#0ea5e9]/10 text-[#38bdf8] border border-[#0ea5e9]/30 font-mono-code font-bold text-[10px]">
-              FLAGSHIP PRODUCTION SAAS
-            </span>
-            <span className="text-white/40 group-hover:translate-x-1 transition-transform">↗</span>
-          </div>
-          <h3 className="text-lg font-bold text-white mb-1.5 group-hover:text-[#38bdf8] transition-colors">
-            ⚡ Dispatch OS
-          </h3>
-          <p className="text-white/60 text-xs leading-relaxed line-clamp-2 mb-3">
-            Autonomous incident triage engine with Gemini 1.5 Flash, real-time WebSockets, and 7-day predictive surge forecasting.
-          </p>
-          <div className="text-[11px] font-mono-code text-[#38bdf8] font-bold">
-            Launch Live App & Simulator ➔
-          </div>
-        </div>
-
-        {/* AI Interview Agent Card */}
-        <div
-          onClick={() => onOpenWindow('projects')}
-          className="glass-bento rounded-2xl p-6 cursor-pointer group relative overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition-all"
-        >
-          <div className="flex items-center justify-between mb-3 text-xs">
-            <span className="px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30 font-mono-code font-bold text-[10px]">
-              VOICE + NLP SIMULATOR
-            </span>
-            <span className="text-white/40 group-hover:translate-x-1 transition-transform">↗</span>
-          </div>
-          <h3 className="text-lg font-bold text-white mb-1.5 group-hover:text-purple-400 transition-colors">
-            🎙️ AI Interview Agent
-          </h3>
-          <p className="text-white/60 text-xs leading-relaxed line-clamp-2 mb-3">
-            Real-time voice mock interview simulator with dynamic technical questioning and automated evaluation scoring.
-          </p>
-          <div className="text-[11px] font-mono-code text-purple-400 font-bold">
-            Explore Architecture ➔
-          </div>
-        </div>
-
-        {/* Systems Arsenal */}
-        <div
-          onClick={() => onOpenWindow('stack')}
-          className="glass-bento rounded-2xl p-6 cursor-pointer group relative overflow-hidden border border-emerald-500/20 hover:border-emerald-500/50 transition-all"
-        >
-          <div className="flex items-center justify-between mb-3 text-xs">
-            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-mono-code font-bold text-[10px]">
-              TECH ARSENAL
-            </span>
-            <span className="text-white/40 group-hover:translate-x-1 transition-transform">↗</span>
-          </div>
-          <h3 className="text-lg font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors">
-            🧠 Systems & Infrastructure
-          </h3>
-          <p className="text-white/60 text-xs leading-relaxed line-clamp-2 mb-3">
-            React 19, Node.js, Express, MongoDB Atlas, Redis, Tailwind, WebSockets, and Edge Cloud Deployments.
-          </p>
-          <div className="text-[11px] font-mono-code text-emerald-400 font-bold">
-            View Full Matrix ➔
-          </div>
         </div>
 
       </div>
