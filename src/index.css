@@ -2,15 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #07090e;
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+.font-serif-title {
+  font-family: 'Instrument Serif', Georgia, serif;
 }
 
-body {
-  background: #0f0f1a;
-  color: #e0e0e0;
+.font-display {
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
 }
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Dot Matrix Canvas Grid Overlay */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* Glass Bento Card Aura */
+.glass-bento {
+  background: rgba(13, 17, 26, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(14, 165, 233, 0.06);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-bento:hover {
+  border-color: rgba(14, 165, 233, 0.25);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(14, 165, 233, 0.15);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
+
+/* Audio Equalizer Animation */
+@keyframes bar1 { 0%, 100% { height: 4px; } 50% { height: 18px; } }
+@keyframes bar2 { 0%, 100% { height: 16px; } 50% { height: 6px; } }
+@keyframes bar3 { 0%, 100% { height: 8px; } 50% { height: 20px; } }
+@keyframes bar4 { 0%, 100% { height: 14px; } 50% { height: 4px; } }
+
+.eq-bar-1 { animation: bar1 0.8s ease-in-out infinite; }
+.eq-bar-2 { animation: bar2 0.7s ease-in-out infinite; }
+.eq-bar-3 { animation: bar3 0.9s ease-in-out infinite; }
+.eq-bar-4 { animation: bar4 0.6s ease-in-out infinite; }

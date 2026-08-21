@@ -26,7 +26,7 @@ const LoadingScreen = ({ onComplete }) => {
       transition={{ duration: 0.8 }}
     >
       <h1 className="text-5xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        CodeZenith
+        My Portfolio
       </h1>
       <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mb-4">
         <motion.div

@@ -20,6 +20,8 @@ const skills = [
   { name: "Express", icon: <Server />, progress: 65, color: "from-gray-400 to-gray-600" },
   { name: "MongoDB", icon: <Database />, progress: 60, color: "from-green-600 to-green-800" },
   { name: "Git/GitHub", icon: <GitBranch />, progress: 85, color: "from-orange-600 to-red-600" },
+  { name: "Next.js", icon: <GitBranch />, progress: 85, color: "from-orange-600 to-red-600" },
+  
 ];
 
 const Skills = () => {
@@ -29,7 +31,6 @@ const Skills = () => {
       className="py-18 bg-gradient-to-b from-[#050816] via-[#0b0f2a] to-[#050816]"
     >
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Heading */}
         <div className="text-center mb-12">
           <p className="text-primary uppercase tracking-widest text-sm mb-6">

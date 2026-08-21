@@ -1,54 +1,72 @@
-import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import LoadingScreen from "./components/LoadingScreen";
-import Navbar from "./components/Navbar";
-import ScrollProgress from "./components/ScrollProgress";
-import SectionWrapper from "./components/SectionWrapper";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
-import FloatingAI from "./components/FloatingAI";
+import React, { useState, useEffect } from 'react';
+import TopMenuBar from './components/TopMenuBar';
+import HeroBento from './components/HeroBento';
+import MacWindowModal from './components/MacWindowModal';
+import MacDock from './components/MacDock';
+import CommandPalette from './components/CommandPalette';
 
-function App() {
-  const [loading, setLoading] = useState(true);
+export default function App() {
+  const [activeWindow, setActiveWindow] = useState(null); // 'projects' | 'experience' | 'stack' | 'contact' | 'article' | null
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Close modal with Escape
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && activeWindow) {
+        setActiveWindow(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeWindow]);
+
+  const handleOpenWindow = (windowId) => {
+    setActiveWindow(windowId);
+  };
+
+  const handleCloseWindow = () => {
+    setActiveWindow(null);
+  };
+
+  const handleSelectPaletteAction = (windowId) => {
+    setActiveWindow(windowId);
+  };
 
   return (
-    <>
-      <AnimatePresence>
-        {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
-      </AnimatePresence>
+    <div className="min-h-screen bg-[#07090e] text-[#f8fafc] relative overflow-x-hidden dot-grid selection:bg-[#0ea5e9]/30 selection:text-white">
+      
+      {/* Background Ambient Glow Lighting */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#0ea5e9]/10 via-purple-600/5 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
 
-      {!loading && (
-        <>
-          <ScrollProgress />
-          <Navbar />
-          <main className="pt-16"> {/* offset for fixed navbar */}
-            <SectionWrapper id="home">
-              <Hero />
-            </SectionWrapper>
-            <SectionWrapper id="about">
-              <About />
-            </SectionWrapper>
-            <SectionWrapper id="skills">
-              <Skills />
-            </SectionWrapper>
-            <SectionWrapper id="projects">
-              <Projects />
-            </SectionWrapper>
-            <SectionWrapper id="contact">
-              <Contact />
-            </SectionWrapper>
-          </main>
-          <Footer />
-          <FloatingAI />
-          
-        </>
-      )}
-    </>
+      {/* 1. macOS Top Menu Bar */}
+      <TopMenuBar onOpenWindow={handleOpenWindow} />
+
+      {/* 2. Central Bento Canvas Grid */}
+      <main className="relative z-10">
+        <HeroBento onOpenWindow={handleOpenWindow} />
+      </main>
+
+      {/* 3. Interactive Stackable macOS Window Modal */}
+      <MacWindowModal
+        activeWindow={activeWindow}
+        onClose={handleCloseWindow}
+        onSwitchWindow={handleOpenWindow}
+      />
+
+      {/* 4. Bottom Floating macOS Dock */}
+      <MacDock
+        activeWindow={activeWindow}
+        onOpenWindow={handleOpenWindow}
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
+
+      {/* 5. Spotlight Search Command Palette (Ctrl + K) */}
+      <CommandPalette
+        isOpen={isSearchOpen}
+        onClose={setIsSearchOpen}
+        onSelectAction={handleSelectPaletteAction}
+      />
+
+    </div>
   );
 }
-
-export default App;
