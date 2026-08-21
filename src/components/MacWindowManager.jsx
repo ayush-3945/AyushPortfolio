@@ -7,27 +7,6 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  // Interactive Live Simulator for Dispatch OS
-  const [simTitle, setSimTitle] = useState('VPN tunnel failing on prod servers');
-  const [simDesc, setSimDesc] = useState('Production node cluster lost SSL handshake');
-  const [simResult, setSimResult] = useState(null);
-  const [simLoading, setSimLoading] = useState(false);
-
-  const runSimulator = () => {
-    setSimLoading(true);
-    setTimeout(() => {
-      setSimResult({
-        category: 'IT Infrastructure',
-        priority: 'High',
-        confidence: '98.6%',
-        department: 'IT Department',
-        summary: 'Critical SSL/VPN tunnel degradation detected affecting production cluster.',
-        suggestedResolution: 'Regenerate SSL certs and reset Wireguard/VPN network gateway.'
-      });
-      setSimLoading(false);
-    }, 600);
-  };
-
   const handleContactSubmit = (e) => {
     e.preventDefault();
     setContactSubmitted(true);
@@ -136,7 +115,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
         
         {openWindows.map((winId, index) => {
           const isFront = index === openWindows.length - 1;
-          const stackOffset = (openWindows.length - 1 - index) * 26; // 26px cascading upward offset
+          const stackOffset = (openWindows.length - 1 - index) * 26;
           const zIndex = 30 + index * 5;
           const title = windowTitles[winId] || 'WINDOW';
 
@@ -185,7 +164,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                   {title}
                 </div>
 
-                {/* Window Controls / Tab Indicators */}
+                {/* Active indicator */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] font-mono-code text-white/30">
                     {isFront ? 'ACTIVE' : 'CLICK TO FOCUS'}
@@ -193,19 +172,21 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                 </div>
               </div>
 
-              {/* Window Content (Scrollable only when in front) */}
-              <div className={`p-6 md:p-10 overflow-y-auto flex-1 scrollbar-subtle space-y-6 relative ${isFront ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+              {/* Window Content */}
+              <div className={`p-6 md:p-8 overflow-y-auto flex-1 scrollbar-subtle space-y-6 relative ${isFront ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                 
-                {/* 1. TECH STACK (Exact ARSENAL layout) */}
+                {/* ========================================================= */}
+                {/* 1. TECH STACK (ARSENAL)                                    */}
+                {/* ========================================================= */}
                 {winId === 'stack' && (
-                  <div className="space-y-8 relative">
+                  <div className="space-y-6 relative">
                     <div className="absolute right-4 bottom-0 text-white/[0.02] text-8xl font-black font-mono-code select-none pointer-events-none">
                       ARSENAL
                     </div>
 
-                    <div className="border-b border-white/[0.08] pb-4">
+                    <div className="border-b border-white/[0.08] pb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-3xl font-black tracking-tight text-white uppercase">
+                        <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
                           ARSENAL
                         </h2>
                         <span className="text-white/20 text-lg">|</span>
@@ -215,12 +196,11 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                       </div>
                     </div>
 
-                    {/* 2x5 Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 sm:gap-4">
                       {techArsenal.map((tech, idx) => (
                         <div
                           key={idx}
-                          className="p-5 rounded-2xl bg-[#111622]/80 border border-white/[0.08] hover:border-white/25 hover:bg-[#151c2b] transition-all duration-200 flex flex-col items-center justify-center gap-3 cursor-pointer group shadow-lg hover:shadow-xl hover:-translate-y-1"
+                          className="p-4 sm:p-5 rounded-2xl bg-[#111622]/80 border border-white/[0.08] hover:border-white/25 hover:bg-[#151c2b] transition-all duration-200 flex flex-col items-center justify-center gap-3 cursor-pointer group shadow-lg hover:shadow-xl hover:-translate-y-1"
                         >
                           <div className="group-hover:scale-110 transition-transform duration-200">
                             {tech.icon}
@@ -234,136 +214,188 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                   </div>
                 )}
 
-                {/* 2. PROJECTS WINDOW */}
+                {/* ========================================================= */}
+                {/* 2. CLEAN NORMAL PROJECTS (Clean Cards in same theme)       */}
+                {/* ========================================================= */}
                 {winId === 'projects' && (
-                  <div className="space-y-8">
-                    <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#0ea5e9]/30 relative overflow-hidden shadow-xl">
-                      <div className="absolute top-0 right-0 px-3 py-1 bg-[#0ea5e9] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
-                        FLAGSHIP PRODUCTION
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h3 className="text-2xl font-extrabold text-white tracking-tight">
-                          ⚡ Dispatch OS
-                        </h3>
-                        <span className="text-white/40 text-xs font-mono-code">— Autonomous Incident Triage Engine</span>
-                      </div>
-
-                      <p className="text-white/80 text-sm leading-relaxed mb-4">
-                        Full-stack incident management platform leveraging <strong>Google Gemini 1.5 Flash</strong> for autonomous classification, priority badging, and bilingual diagnostic briefs (EN/HI) with 98%+ precision. Features real-time WebSockets, 7-day predictive surge forecasting, and native PWA deployment.
-                      </p>
-
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
-                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                          <div className="text-[#38bdf8] font-bold text-lg">&lt; 2s</div>
-                          <div className="text-[10px] text-white/50 font-mono-code uppercase">AI Triage Speed</div>
-                        </div>
-                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                          <div className="text-emerald-400 font-bold text-lg">98.4%</div>
-                          <div className="text-[10px] text-white/50 font-mono-code uppercase">Reasoning Precision</div>
-                        </div>
-                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                          <div className="text-amber-400 font-bold text-lg">50ms</div>
-                          <div className="text-[10px] text-white/50 font-mono-code uppercase">WebSocket Sync</div>
-                        </div>
-                        <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                          <div className="text-purple-400 font-bold text-lg">PWA</div>
-                          <div className="text-[10px] text-white/50 font-mono-code uppercase">Play Store Ready</div>
-                        </div>
-                      </div>
-
-                      {/* Interactive Simulator */}
-                      <div className="mt-5 p-4 rounded-xl bg-black/40 border border-white/10 space-y-3">
-                        <div className="flex items-center justify-between text-xs">
-                          <span className="font-bold text-[#38bdf8] font-mono-code">⚡ TRY LIVE TRIAGE SIMULATOR</span>
-                          <span className="text-white/40 text-[10px]">Powered by Gemini 1.5 Flash</span>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          <input
-                            type="text"
-                            value={simTitle}
-                            onChange={(e) => setSimTitle(e.target.value)}
-                            placeholder="Issue Title..."
-                            className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#0ea5e9]"
-                          />
-                          <input
-                            type="text"
-                            value={simDesc}
-                            onChange={(e) => setSimDesc(e.target.value)}
-                            placeholder="Issue Description..."
-                            className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#0ea5e9]"
-                          />
-                        </div>
-
-                        <button
-                          onClick={runSimulator}
-                          disabled={simLoading}
-                          className="w-full py-2 rounded-lg bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] text-white font-bold text-xs hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center gap-2"
-                        >
-                          {simLoading ? '⚡ Analyzing with Gemini 1.5 Flash...' : '🔮 Run Instant AI Incident Triage'}
-                        </button>
-
-                        {simResult && (
-                          <div className="p-3 rounded-lg bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 text-xs space-y-1 animate-fadeIn">
-                            <div className="flex items-center justify-between font-bold">
-                              <span className="text-[#38bdf8]">Category: {simResult.category}</span>
-                              <span className="text-amber-400">Priority: {simResult.priority} ({simResult.confidence})</span>
-                            </div>
-                            <p className="text-white/80">{simResult.summary}</p>
-                            <p className="text-emerald-400 font-mono-code text-[11px]">💡 Action: {simResult.suggestedResolution}</p>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-3 mt-5 pt-3 border-t border-white/[0.08]">
-                        <a
-                          href="https://ai-smart-issue-routing-jbb8.vercel.app"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#38bdf8] hover:text-white transition-all shadow-md flex items-center gap-1.5"
-                        >
-                          <span>LAUNCH LIVE APP</span>
-                          <span>↗</span>
-                        </a>
-                        <a
-                          href="https://github.com/ayush-3945/ai-smart-issue-routing"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
-                        >
-                          <span>GITHUB REPO</span>
-                          <span>↗</span>
-                        </a>
-                      </div>
+                  <div className="space-y-5 relative">
+                    <div className="absolute right-4 bottom-0 text-white/[0.02] text-8xl font-black font-mono-code select-none pointer-events-none">
+                      BUILDS
                     </div>
 
-                    {/* AI Interview Agent */}
-                    <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-between">
-                      <div>
-                        <h4 className="text-base font-bold text-white mb-1">🎙️ AI Interview Agent</h4>
-                        <p className="text-white/60 text-xs">Real-time voice mock interview simulator with dynamic Gemini AI prompts.</p>
+                    <div className="border-b border-white/[0.08] pb-3 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
+                          BUILDS
+                        </h2>
+                        <span className="text-white/20 text-lg">|</span>
+                        <span className="text-xs font-mono-code text-white/50 tracking-widest uppercase">
+                          FEATURED WORKS // 02
+                        </span>
                       </div>
-                      <a
-                        href="https://github.com/ayush-3945/AI-Interview-Agent"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-3 py-1.5 rounded-lg bg-white/10 text-white font-mono-code text-xs hover:bg-[#38bdf8] hover:text-black transition-colors"
-                      >
-                        View Code ↗
-                      </a>
+                      <span className="text-[11px] font-mono-code text-emerald-400">3 Production Projects</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      {/* Project 1: Dispatch OS */}
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#0ea5e9]/30 hover:border-[#0ea5e9]/60 transition-all flex flex-col justify-between group shadow-lg">
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">⚡</span>
+                              <h3 className="text-lg font-bold text-white group-hover:text-[#38bdf8] transition-colors">
+                                Dispatch OS
+                              </h3>
+                              <span className="px-2 py-0.5 rounded-md bg-[#0ea5e9]/10 text-[#38bdf8] border border-[#0ea5e9]/30 text-[10px] font-mono-code font-bold">
+                                PRODUCTION SAAS
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-mono-code text-white/40">2026</span>
+                          </div>
+
+                          <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
+                            Enterprise autonomous incident management platform leveraging Google Gemini 1.5 Flash for multi-step reasoning, dynamic priority badging, and bilingual diagnostic briefs (EN/HI) with 98%+ precision. Features real-time WebSockets and 7-day predictive surge forecasting.
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {['React 19', 'Node.js', 'Express', 'MongoDB Atlas', 'Gemini 1.5 Flash', 'Socket.io', 'PWA'].map((t, i) => (
+                              <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <a
+                            href="https://ai-smart-issue-routing-jbb8.vercel.app"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#38bdf8] hover:text-white transition-all flex items-center gap-1.5"
+                          >
+                            <span>Live App</span>
+                            <span>↗</span>
+                          </a>
+                          <a
+                            href="https://github.com/ayush-3945/ai-smart-issue-routing"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                          >
+                            <span>GitHub</span>
+                            <span>↗</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Project 2: AI Interview Agent */}
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-white/[0.08] hover:border-purple-500/40 transition-all flex flex-col justify-between group shadow-lg">
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">🎙️</span>
+                              <h3 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
+                                AI Interview Agent
+                              </h3>
+                              <span className="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/30 text-[10px] font-mono-code font-bold">
+                                MULTIMODAL AI
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-mono-code text-white/40">2026</span>
+                          </div>
+
+                          <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
+                            Real-time voice mock interview simulator conducting interactive technical rounds with dynamic role-based question chains and automated rubric scoring via Gemini AI.
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {['React.js', 'Node.js', 'Web Speech API', 'Gemini AI', 'Tailwind CSS'].map((t, i) => (
+                              <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <a
+                            href="https://github.com/ayush-3945/AI-Interview-Agent"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                          >
+                            <span>GitHub Repo</span>
+                            <span>↗</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Project 3: Flashmon CLI */}
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-white/[0.08] hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-lg">
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">🛠️</span>
+                              <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                Flashmon CLI
+                              </h3>
+                              <span className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono-code font-bold">
+                                SYSTEMS TOOLING
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-mono-code text-white/40">2026</span>
+                          </div>
+
+                          <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
+                            High-performance developer CLI alternative to nodemon featuring AST-aware file watching, debounced process restarts, and sub-40ms cold start latency.
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {['TypeScript', 'Node.js', 'Chokidar', 'Child Process'].map((t, i) => (
+                              <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <a
+                            href="https://github.com/ayush-3945"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                          >
+                            <span>GitHub Repo</span>
+                            <span>↗</span>
+                          </a>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 )}
 
-                {/* 3. EXPERIENCE WINDOW */}
+                {/* ========================================================= */}
+                {/* 3. EXPERIENCE WINDOW                                      */}
+                {/* ========================================================= */}
                 {winId === 'experience' && (
-                  <div className="space-y-6">
-                    <div className="border-l-2 border-[#0ea5e9] pl-4 ml-2 space-y-6">
+                  <div className="space-y-6 relative">
+                    <div className="border-b border-white/[0.08] pb-3 flex items-center gap-3">
+                      <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
+                        JOURNEY
+                      </h2>
+                      <span className="text-white/20 text-lg">|</span>
+                      <span className="text-xs font-mono-code text-white/50 tracking-widest uppercase">
+                        EXPERIENCE & EDUCATION // 03
+                      </span>
+                    </div>
+
+                    <div className="border-l-2 border-[#0ea5e9] pl-4 ml-2 space-y-5">
                       {portfolioData.experience.map((exp, idx) => (
                         <div key={idx} className="relative group">
                           <div className="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-[#0ea5e9] border-2 border-[#0c1017]"></div>
-                          <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 transition-all">
+                          <div className="p-4 rounded-xl bg-[#111622]/80 border border-white/[0.06] hover:border-white/20 transition-all">
                             <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
                               <h4 className="text-white font-bold text-base">{exp.role}</h4>
                               <span className="text-[11px] font-mono-code text-[#38bdf8] px-2 py-0.5 rounded bg-[#0ea5e9]/10">
@@ -383,14 +415,19 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                   </div>
                 )}
 
-                {/* 4. CONTACT WINDOW */}
+                {/* ========================================================= */}
+                {/* 4. CONTACT WINDOW                                         */}
+                {/* ========================================================= */}
                 {winId === 'contact' && (
-                  <div className="space-y-6">
-                    <div className="text-center max-w-md mx-auto mb-4">
-                      <h3 className="text-2xl font-black text-white tracking-tight">Get In Touch</h3>
-                      <p className="text-white/60 text-xs mt-1">
-                        LET'S BUILD SOMETHING GREAT
-                      </p>
+                  <div className="space-y-5 relative">
+                    <div className="border-b border-white/[0.08] pb-3 flex items-center gap-3">
+                      <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
+                        CONTACT
+                      </h2>
+                      <span className="text-white/20 text-lg">|</span>
+                      <span className="text-xs font-mono-code text-white/50 tracking-widest uppercase">
+                        GET IN TOUCH // 04
+                      </span>
                     </div>
 
                     {contactSubmitted ? (
@@ -450,7 +487,8 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                   </div>
                 )}
 
-                {/* 5. ARTICLE WINDOW */}
+                {/* ========================================================= */}
+                {/* 5. ARTICLE WINDOW                                         */}
                 {winId === 'article' && (
                   <div className="space-y-4 max-w-2xl mx-auto">
                     <div className="text-[11px] font-mono-code text-[#38bdf8]">SYSTEM ESSAY • AUG 2026</div>
