@@ -8,14 +8,11 @@ export default function TopMenuBar({ onOpenWindow }) {
       const now = new Date();
       const options = {
         weekday: 'long',
-        month: 'short',
+        month: 'long',
         day: 'numeric',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        year: 'numeric'
       };
-      setTimeStr(now.toLocaleDateString('en-US', options));
+      setTimeStr(now.toLocaleDateString('en-US', options).toUpperCase());
     };
 
     updateTime();
@@ -24,37 +21,31 @@ export default function TopMenuBar({ onOpenWindow }) {
   }, []);
 
   return (
-    <header className="w-full border-b border-white/[0.08] bg-[#07090e]/80 backdrop-blur-xl px-4 md:px-8 py-2.5 flex items-center justify-between text-xs tracking-wider z-50 sticky top-0">
-      {/* Left Branding */}
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 cursor-pointer font-bold" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="text-sm text-[#0ea5e9]">⚡</span>
-          <span className="font-extrabold tracking-tight text-white uppercase text-[13px]">AYUSH</span>
-        </div>
-        <span className="text-white/20 hidden sm:inline">/</span>
-        <span className="text-white/50 text-[11px] hidden sm:inline font-mono-code">OS v2.6.4</span>
-      </div>
-
-      {/* Center Live Clock */}
-      <div className="hidden md:flex items-center gap-2 text-white/70 font-mono-code text-[11px] font-medium tracking-normal">
-        <span>{timeStr || 'Loading System Clock...'}</span>
-      </div>
-
-      {/* Right Controls */}
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-[11px]">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="hidden sm:inline">AVAILABLE FOR WORK</span>
-        </div>
-
+    <header className="w-full border-b border-white/[0.08] bg-[#07090e]/90 backdrop-blur-xl px-6 md:px-12 py-3.5 flex items-center justify-between text-xs tracking-wider z-50 sticky top-0">
+      {/* Left */}
+      <div className="flex items-center gap-6">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#38bdf8] transition-colors cursor-pointer"
+        >
+          AYUSH
+        </button>
         <button
           onClick={() => onOpenWindow('contact')}
-          className="text-white/70 hover:text-[#38bdf8] transition-colors font-medium text-[11px] hidden sm:inline-block cursor-pointer uppercase tracking-wider"
+          className="text-white/60 hover:text-white transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
         >
           CONTACT
         </button>
+      </div>
 
-        <span className="text-white/40 text-[10px] font-mono-code border border-white/10 px-2 py-0.5 rounded bg-white/[0.04] hidden lg:inline">
+      {/* Center Live Date */}
+      <div className="hidden md:flex items-center gap-2 text-white/60 font-mono-code text-[11px] tracking-[0.2em] font-medium select-none">
+        <span>{timeStr || 'FRIDAY, AUGUST 21, 2026'}</span>
+      </div>
+
+      {/* Right */}
+      <div className="flex items-center gap-4">
+        <span className="text-white/40 text-[10px] font-mono-code tracking-[0.15em] uppercase">
           LATE NIGHT PROTOCOL
         </span>
       </div>
