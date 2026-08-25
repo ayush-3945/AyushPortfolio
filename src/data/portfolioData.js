@@ -65,18 +65,6 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "dispatch-os",
-      title: "Dispatch OS",
-      subtitle: "Autonomous Incident Triage & Operations Platform",
-      badge: "Flagship Production SaaS",
-      year: "2026",
-      featured: true,
-      description: "Enterprise incident triage platform leveraging Google Gemini 1.5 Flash for autonomous semantic routing, dynamic priority badging, and bilingual diagnostic briefs (EN/HI) with 98%+ precision, cutting triage turnaround from days to <2 minutes. Features real-time bi-directional WebSockets, 7-day predictive surge forecasting with in-memory TTL caching, and native PWA installation.",
-      techStack: ["React 19", "Node.js", "Express", "MongoDB Atlas", "Gemini 1.5 Flash", "Socket.io", "Recharts", "Cloudinary", "PWA"],
-      liveUrl: "https://ai-smart-issue-routing-jbb8.vercel.app",
-      githubUrl: "https://github.com/ayush-3945/ai-smart-issue-routing"
-    },
-    {
       id: "interview-agent",
       title: "AI Interview Agent",
       subtitle: "Real-Time Voice Mock Interview Simulator",
