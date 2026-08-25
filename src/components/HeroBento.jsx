@@ -5,11 +5,15 @@ import SpotifyWidget from './SpotifyWidget';
 import GithubHeatmap from './GithubHeatmap';
 import { QuoteCarousel, StatusCard, LatestWritingCard } from './Cards';
 
-export default function HeroBento({ onOpenWindow }) {
+export default function HeroBento({ onOpenWindow, onScrollTo }) {
   const { personal } = portfolioData;
+  const navigate = (id) => {
+    if (onScrollTo) onScrollTo(id);
+    else if (onOpenWindow) onOpenWindow(id);
+  };
 
   return (
-    <div className="w-full max-w-[1580px] mx-auto px-4 sm:px-8 md:px-12 py-6 md:py-10 space-y-8 pb-28">
+    <div id="hero" className="w-full max-w-[1580px] mx-auto px-4 sm:px-8 md:px-12 py-6 md:py-10 space-y-8">
       
       {/* 1. TOP ROW: [Title & Intro (Left)] + [Anime Manga Avatar (Center)] + [Status & Quote (Right)] */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
@@ -35,7 +39,7 @@ export default function HeroBento({ onOpenWindow }) {
           {/* Action Buttons */}
           <div className="flex items-center gap-4 pt-2">
             <button
-              onClick={() => onOpenWindow('contact')}
+              onClick={() => navigate('contact')}
               className="px-7 py-3.5 rounded-xl bg-white text-black font-extrabold text-xs tracking-widest uppercase hover:bg-[#a855f7] hover:text-white transition-all shadow-[0_10px_25px_rgba(255,255,255,0.1)] hover:shadow-[#a855f7]/40 cursor-pointer flex items-center gap-2 group"
             >
               <span>START PROJECT</span>
@@ -75,7 +79,7 @@ export default function HeroBento({ onOpenWindow }) {
 
         {/* Right Column: Status & Quote Widget Stack (3 cols on lg) */}
         <div className="lg:col-span-3 flex flex-col gap-4">
-          <StatusCard onContactClick={() => onOpenWindow('contact')} />
+          <StatusCard onContactClick={() => navigate('contact')} />
           <QuoteCarousel />
         </div>
 
@@ -86,7 +90,7 @@ export default function HeroBento({ onOpenWindow }) {
         
         {/* Latest Writing (4 cols) */}
         <div className="md:col-span-4 lg:col-span-4">
-          <LatestWritingCard onArticleClick={() => onOpenWindow('article')} />
+          <LatestWritingCard onArticleClick={() => navigate('article')} />
         </div>
 
         {/* Spotify Compact Player (4 cols) */}
@@ -96,7 +100,7 @@ export default function HeroBento({ onOpenWindow }) {
 
         {/* GitHub Heatmap Grid (4 cols) */}
         <div className="md:col-span-4 lg:col-span-4">
-          <GithubHeatmap onClick={() => onOpenWindow('projects')} />
+          <GithubHeatmap onClick={() => navigate('projects')} />
         </div>
 
       </div>

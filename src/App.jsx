@@ -1,53 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import TopMenuBar from './components/TopMenuBar';
 import HeroBento from './components/HeroBento';
-import MacWindowManager from './components/MacWindowManager';
+import ProjectsSection from './sections/ProjectsSection';
+import StackSection from './sections/StackSection';
+import ExperienceSection from './sections/ExperienceSection';
+import ArticleSection from './sections/ArticleSection';
+import ContactSection from './sections/ContactSection';
 import MacDock from './components/MacDock';
 import CommandPalette from './components/CommandPalette';
 import GlowCursor from './components/GlowCursor';
 
 export default function App() {
-  // Array of open window IDs in z-index stack order
-  const [openWindows, setOpenWindows] = useState([]); // e.g. ['experience', 'projects', 'stack']
+  const [activeSection, setActiveSection] = useState('hero');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  // Close front window on Escape key
+  // Smooth Teleport Navigation to any section
+  const scrollToSection = (sectionId) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // ScrollSpy: Automatically highlight current section in dock on scroll
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && openWindows.length > 0) {
-        setOpenWindows((prev) => prev.slice(0, -1)); // pop front window
+    const sectionIds = ['hero', 'projects', 'stack', 'experience', 'article', 'contact'];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 250;
+      
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [openWindows]);
 
-  // Click on dock / button: toggle or bring to front
-  const handleToggleWindow = (windowId) => {
-    setOpenWindows((prev) => {
-      const isAlreadyOpen = prev.includes(windowId);
-      const isFront = prev[prev.length - 1] === windowId;
-
-      if (isAlreadyOpen && isFront) {
-        // Clicking active front window minimizes/closes it
-        return prev.filter((w) => w !== windowId);
-      } else if (isAlreadyOpen) {
-        // Bring existing window to front
-        return [...prev.filter((w) => w !== windowId), windowId];
-      } else {
-        // Open new window on top of stack
-        return [...prev, windowId];
-      }
-    });
-  };
-
-  const handleBringToFront = (windowId) => {
-    setOpenWindows((prev) => [...prev.filter((w) => w !== windowId), windowId]);
-  };
-
-  const handleCloseWindow = (windowId) => {
-    setOpenWindows((prev) => prev.filter((w) => w !== windowId));
-  };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#07090e] text-[#f8fafc] relative overflow-x-hidden dot-grid selection:bg-[#a855f7]/30 selection:text-white">
@@ -59,33 +52,41 @@ export default function App() {
       <GlowCursor />
 
       {/* 1. macOS Top Menu Bar */}
-      <TopMenuBar onOpenWindow={handleToggleWindow} />
+      <TopMenuBar onScrollTo={scrollToSection} />
 
-      {/* 2. Central Bento Canvas Grid */}
-      <main className="relative z-10">
-        <HeroBento onOpenWindow={handleToggleWindow} />
+      {/* 2. Main Scrollable Narrative Flow */}
+      <main className="relative z-10 space-y-12 pb-32">
+        {/* Hero Section */}
+        <HeroBento onScrollTo={scrollToSection} />
+
+        {/* Featured Projects */}
+        <ProjectsSection />
+
+        {/* Tech Stack Matrix */}
+        <StackSection />
+
+        {/* Experience & Journey */}
+        <ExperienceSection />
+
+        {/* Technical Writing & Case Studies */}
+        <ArticleSection />
+
+        {/* Direct Contact Form & Info */}
+        <ContactSection />
       </main>
 
-      {/* 3. True Non-Blocking Simultaneous Multi-Window Desktop Manager */}
-      <MacWindowManager
-        openWindows={openWindows}
-        onBringToFront={handleBringToFront}
-        onCloseWindow={handleCloseWindow}
-        onSwitchWindow={handleBringToFront}
-      />
-
-      {/* 4. Bottom Floating macOS Dock */}
+      {/* 3. Bottom Floating macOS Dock with Smooth Navigation */}
       <MacDock
-        openWindows={openWindows}
-        onToggleWindow={handleToggleWindow}
+        activeSection={activeSection}
+        onScrollTo={scrollToSection}
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      {/* 5. Spotlight Search Command Palette (Ctrl + K) */}
+      {/* 4. Spotlight Search Command Palette (Ctrl + K) */}
       <CommandPalette
         isOpen={isSearchOpen}
         onClose={setIsSearchOpen}
-        onSelectAction={handleToggleWindow}
+        onSelectAction={scrollToSection}
       />
 
     </div>

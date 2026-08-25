@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-export default function TopMenuBar({ onOpenWindow }) {
+export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
   const [timeStr, setTimeStr] = useState('');
+  const navigate = (id) => {
+    if (onScrollTo) onScrollTo(id);
+    else if (onOpenWindow) onOpenWindow(id);
+  };
 
   useEffect(() => {
     const updateTime = () => {
@@ -32,7 +36,7 @@ export default function TopMenuBar({ onOpenWindow }) {
           <span>AYUSH</span>
         </button>
         <button
-          onClick={() => onOpenWindow('contact')}
+          onClick={() => navigate('contact')}
           className="text-white/60 hover:text-purple-300 transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
         >
           CONTACT
