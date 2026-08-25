@@ -5,10 +5,10 @@ export default function GithubHeatmap({ onClick }) {
     const weeks = [];
     const intensityLevels = [
       'bg-white/[0.04]',
-      'bg-emerald-950/60 border border-emerald-800/40',
-      'bg-emerald-700/80',
-      'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]',
-      'bg-[#38bdf8] shadow-[0_0_10px_rgba(56,189,248,0.7)]'
+      'bg-purple-950/60 border border-purple-800/40',
+      'bg-purple-700/80',
+      'bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]',
+      'bg-[#c084fc] shadow-[0_0_10px_rgba(192,132,252,0.8)]'
     ];
 
     for (let w = 0; w < 32; w++) {
@@ -42,10 +42,10 @@ export default function GithubHeatmap({ onClick }) {
       <div className="w-8 h-1 rounded-full bg-white/20 mx-auto mb-2"></div>
 
       <div className="flex items-center justify-between mb-3 text-xs">
-        <span className="font-mono-code font-bold text-white/70 tracking-wider uppercase text-[11px] group-hover:text-[#38bdf8] transition-colors">
+        <span className="font-mono-code font-bold text-white/70 tracking-wider uppercase text-[11px] group-hover:text-purple-400 transition-colors">
           GITHUB CONTRIBUTIONS
         </span>
-        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
       </div>
 
       {/* Heatmap Grid */}
@@ -77,10 +77,10 @@ export default function GithubHeatmap({ onClick }) {
           <span>Less</span>
           <div className="flex gap-1">
             <span className="w-2 h-2 rounded-[2px] bg-white/[0.04]"></span>
-            <span className="w-2 h-2 rounded-[2px] bg-emerald-950"></span>
-            <span className="w-2 h-2 rounded-[2px] bg-emerald-700"></span>
-            <span className="w-2 h-2 rounded-[2px] bg-emerald-500"></span>
-            <span className="w-2 h-2 rounded-[2px] bg-[#38bdf8]"></span>
+            <span className="w-2 h-2 rounded-[2px] bg-purple-950"></span>
+            <span className="w-2 h-2 rounded-[2px] bg-purple-700"></span>
+            <span className="w-2 h-2 rounded-[2px] bg-purple-500"></span>
+            <span className="w-2 h-2 rounded-[2px] bg-[#c084fc]"></span>
           </div>
           <span>More</span>
         </div>

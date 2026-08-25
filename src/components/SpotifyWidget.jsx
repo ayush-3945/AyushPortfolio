@@ -43,7 +43,7 @@ export default function SpotifyWidget() {
     <div
       onClick={handleClick}
       title={liveData?.songUrl ? 'Click to open on Spotify' : 'Click to skip track'}
-      className="glass-bento rounded-2xl p-5 cursor-pointer group flex flex-col justify-between min-h-[140px] relative overflow-hidden select-none hover:border-emerald-500/40 transition-all shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
+      className="glass-bento rounded-2xl p-5 cursor-pointer group flex flex-col justify-between min-h-[140px] relative overflow-hidden select-none hover:border-purple-500/40 transition-all shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
     >
       {/* Top Handle Indicator */}
       <div className="w-8 h-1 rounded-full bg-white/20 mx-auto mb-2"></div>
@@ -62,10 +62,10 @@ export default function SpotifyWidget() {
         {/* Middle Track Info */}
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5 text-[10px] font-mono-code text-white/40 uppercase tracking-widest mb-0.5">
-            {liveData?.isLive && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>}
+            {liveData?.isLive && <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse shadow-[0_0_6px_#c084fc]"></span>}
             <span>{statusLabel}</span>
           </div>
-          <h4 className="text-white font-extrabold text-sm tracking-tight truncate group-hover:text-emerald-400 transition-colors">
+          <h4 className="text-white font-extrabold text-sm tracking-tight truncate group-hover:text-purple-300 transition-colors">
             {song.title}
           </h4>
           <p className="text-white/60 text-xs truncate mt-0.5">
@@ -86,7 +86,7 @@ export default function SpotifyWidget() {
       {/* Footer Info */}
       <div className="flex items-center justify-between text-[9px] font-mono-code text-white/30 pt-2 border-t border-white/[0.04]">
         <span>{liveData ? '🟢 Real-time Spotify Connected' : `Playlist Mode (${currentIdx + 1}/${fallbackSongs.length})`}</span>
-        <span className="text-emerald-400 font-semibold">{liveData ? 'Open on Spotify ↗' : 'DHH / Synthpop'}</span>
+        <span className="text-purple-400 font-semibold">{liveData ? 'Open on Spotify ↗' : 'DHH / Synthpop'}</span>
       </div>
     </div>
   );

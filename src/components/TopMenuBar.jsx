@@ -26,14 +26,14 @@ export default function TopMenuBar({ onOpenWindow }) {
       <div className="flex items-center gap-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#38bdf8] transition-colors cursor-pointer flex items-center gap-2"
+          className="font-bold tracking-widest text-white uppercase text-xs hover:text-purple-400 transition-colors cursor-pointer flex items-center gap-2"
         >
-          <span className="text-[#38bdf8]">⚡</span>
+          <span className="text-purple-400">⚡</span>
           <span>AYUSH</span>
         </button>
         <button
           onClick={() => onOpenWindow('contact')}
-          className="text-white/60 hover:text-white transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
+          className="text-white/60 hover:text-purple-300 transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
         >
           CONTACT
         </button>
@@ -41,13 +41,13 @@ export default function TopMenuBar({ onOpenWindow }) {
 
       {/* Center Live Date */}
       <div className="hidden md:flex items-center gap-2 text-white/60 font-mono-code text-[11px] tracking-[0.2em] font-medium select-none">
-        <span>{timeStr || 'FRIDAY, AUGUST 21, 2026'}</span>
+        <span>{timeStr || 'TUESDAY, AUGUST 25, 2026'}</span>
       </div>
 
       {/* Right Custom Protocol */}
       <div className="flex items-center gap-4">
-        <span className="text-[#38bdf8] text-[10px] font-mono-code tracking-[0.15em] uppercase px-2.5 py-0.5 rounded-full bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 font-bold">
-          BERNABÉU PROTOCOL // SIUUU ⚡
+        <span className="text-purple-300 text-[10px] font-mono-code tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 font-bold shadow-[0_0_12px_rgba(168,85,247,0.2)]">
+          SIUUU PROTOCOL // 2026 ⚡
         </span>
       </div>
     </header>

@@ -49,10 +49,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-[#f8fafc] relative overflow-x-hidden dot-grid selection:bg-[#0ea5e9]/30 selection:text-white">
+    <div className="min-h-screen bg-[#07090e] text-[#f8fafc] relative overflow-x-hidden dot-grid selection:bg-[#a855f7]/30 selection:text-white">
       
       {/* Background Ambient Glow Lighting */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-gradient-to-b from-[#0ea5e9]/10 via-purple-600/5 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-gradient-to-b from-[#a855f7]/10 via-purple-600/5 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
 
       {/* 1. macOS Top Menu Bar */}
       <TopMenuBar onOpenWindow={handleToggleWindow} />

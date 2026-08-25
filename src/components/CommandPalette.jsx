@@ -65,23 +65,28 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
               No matching commands found.
             </div>
           ) : (
-            filtered.map((item, idx) => (
+            filtered.map((action, idx) => (
               <button
                 key={idx}
                 onClick={() => {
-                  item.action();
+                  action.action();
                   onClose(false);
                 }}
-                className="w-full px-3 py-2.5 rounded-xl hover:bg-[#0ea5e9]/15 hover:border hover:border-[#0ea5e9]/30 transition-all flex items-center justify-between text-left group cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl hover:bg-purple-500/15 hover:border hover:border-purple-500/30 transition-all flex items-center justify-between text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-base">{item.icon}</span>
-                  <span className="text-xs text-white/90 group-hover:text-white font-medium">
-                    {item.label}
-                  </span>
+                  <span className="text-base">{action.icon}</span>
+                  <div>
+                    <div className="text-xs font-semibold text-white group-hover:text-purple-300 transition-colors">
+                      {action.label}
+                    </div>
+                    <div className="text-[10px] text-white/40 font-mono-code">
+                      {action.category}
+                    </div>
+                  </div>
                 </div>
-                <span className="text-[10px] font-mono-code text-white/40 group-hover:text-[#38bdf8]">
-                  {item.category}
+                <span className="text-[10px] font-mono-code text-white/40 group-hover:text-purple-300">
+                  ENTER ↵
                 </span>
               </button>
             ))
