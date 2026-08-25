@@ -14,10 +14,9 @@ import {
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function MacDock({ openWindows = [], activeSection = 'hero', onToggleWindow, onScrollTo, onOpenSearch }) {
+export default function MacDock({ openWindows = [], activeSection = 'hero', onToggleWindow, onOpenSearch }) {
   const handleItemClick = (id) => {
     if (onToggleWindow) onToggleWindow(id);
-    if (onScrollTo) onScrollTo(id);
   };
 
   const dockItems = [

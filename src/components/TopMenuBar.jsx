@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
   const [timeStr, setTimeStr] = useState('');
   const navigate = (id) => {
-    if (onScrollTo) onScrollTo(id);
-    else if (onOpenWindow) onOpenWindow(id);
+    if (onOpenWindow) onOpenWindow(id);
+    else if (onScrollTo) onScrollTo(id);
   };
 
   useEffect(() => {

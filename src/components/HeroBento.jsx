@@ -8,8 +8,8 @@ import { QuoteCarousel, StatusCard, LatestWritingCard } from './Cards';
 export default function HeroBento({ onOpenWindow, onScrollTo }) {
   const { personal } = portfolioData;
   const navigate = (id) => {
-    if (onScrollTo) onScrollTo(id);
-    else if (onOpenWindow) onOpenWindow(id);
+    if (onOpenWindow) onOpenWindow(id);
+    else if (onScrollTo) onScrollTo(id);
   };
 
   return (
