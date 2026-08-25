@@ -77,18 +77,6 @@ export const portfolioData = {
       githubUrl: "https://github.com/ayush-3945/AI-Interview-Agent"
     },
     {
-      id: "flashmon",
-      title: "Flashmon CLI",
-      subtitle: "High-Performance AST File Watcher & Dev Tool",
-      badge: "Systems Tooling",
-      year: "2026",
-      featured: false,
-      description: "Ultra-lightweight developer CLI alternative to nodemon built with TypeScript and Node.js child processes. Features debounced filesystem event watching, AST-aware dependency invalidation, and sub-40ms process hot-restarting.",
-      techStack: ["TypeScript", "Node.js", "Chokidar", "Child Process", "CLI"],
-      liveUrl: "https://github.com/ayush-3945",
-      githubUrl: "https://github.com/ayush-3945"
-    },
-    {
       id: "coal-darpan",
       title: "CoalDarpan",
       subtitle: "Smart Issue Routing PWA",
