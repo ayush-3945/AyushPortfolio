@@ -6,7 +6,7 @@ export const portfolioData = {
     location: "Ghaziabad / Delhi NCR, India",
     status: "Available for new opportunities",
     email: "ayushpandey23042006@gmail.com",
-    web3FormsKey: "d2d7c18a-bbca-4df3-9efc-7e61882b7b51", // Web3Forms public token
+    web3FormsKey: "731fe9d4-4680-4740-98c3-132ccd3d28ed",
     github: "https://github.com/ayush-3945",
     linkedin: "https://linkedin.com/in/ayush-kumar-pandey-a6880532b",
     twitter: "https://twitter.com/PandeyAyush2304",
