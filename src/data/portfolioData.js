@@ -56,11 +56,11 @@ export const portfolioData = {
   ],
 
   quotes: [
-    { text: "Your love makes me strong. Your hate makes me unstoppable.", author: "CRISTIANO RONALDO (CR7)" },
-    { text: "Talent without working hard is nothing.", author: "CRISTIANO RONALDO" },
-    { text: "Build in silence, let the production velocity make the noise.", author: "AYUSH PANDEY" },
-    { text: "Tu chaahe jo bol, apna rap aur code game hamesha high hai.", author: "KR$NA // MENTALITY" },
-    { text: "Zero excuses. Pure obsession and disciplined systems engineering.", author: "SIUUU PROTOCOL" }
+    { text: "I don't have to show anything to anyone. There is nothing to prove.", author: "CRISTIANO RONALDO" },
+    { text: "Your love makes me strong. Your hate makes me unstoppable.", author: "CRISTIANO RONALDO" },
+    { text: "Self-belief and hard work will always earn you success.", author: "VIRAT KOHLI" },
+    { text: "Stay hungry, stay foolish.", author: "STEVE JOBS" },
+    { text: "The impediment to action advances action. What stands in the way becomes the way.", author: "MARCUS AURELIUS" }
   ],
 
   projects: [
@@ -98,6 +98,18 @@ export const portfolioData = {
       description: "Ultra-lightweight developer CLI alternative to nodemon built with TypeScript and Node.js child processes. Features debounced filesystem event watching, AST-aware dependency invalidation, and sub-40ms process hot-restarting.",
       techStack: ["TypeScript", "Node.js", "Chokidar", "Child Process", "CLI"],
       liveUrl: "https://github.com/ayush-3945",
+      githubUrl: "https://github.com/ayush-3945"
+    },
+    {
+      id: "coal-darpan",
+      title: "CoalDarpan",
+      subtitle: "Smart Issue Routing PWA",
+      badge: "National Hackathon",
+      year: "2026",
+      featured: true,
+      description: "A digital governance and issue routing Progressive Web App built during a national hackathon to digitize offline processes. Features role-based dashboards, real-time notifications via WebSockets, JWT-based authentication, and AI-powered categorization using Google Gemini for image analysis. Supports offline capabilities with PWA architecture.",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS", "Google Gemini", "JWT", "PWA"],
+      liveUrl: "https://coaldarpan.vercel.app",
       githubUrl: "https://github.com/ayush-3945"
     }
   ],

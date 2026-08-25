@@ -1,4 +1,5 @@
 import React from 'react';
+import ayushPhoto from '../assets/ayush.jpeg';
 import { portfolioData } from '../data/portfolioData';
 import SpotifyWidget from './SpotifyWidget';
 import GithubHeatmap from './GithubHeatmap';
@@ -57,9 +58,10 @@ export default function HeroBento({ onOpenWindow }) {
           <div className="relative w-full max-w-[360px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-[#090d14] group">
             {/* Stylized Gojo / Anime Manga Persona */}
             <img
-              src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=700&auto=format&fit=crop&q=80"
-              alt="Ayush Anime Tech Persona"
+              src={ayushPhoto}
+              alt="Ayush Pandey"
               className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-all duration-700 brightness-95"
+              style={{ objectPosition: 'center 15%' }}
             />
             {/* Subtle Vignette */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-black/20 opacity-70"></div>
