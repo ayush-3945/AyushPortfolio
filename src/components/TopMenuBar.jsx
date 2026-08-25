@@ -44,12 +44,11 @@ export default function TopMenuBar({ onOpenWindow }) {
         <span>{timeStr || 'TUESDAY, AUGUST 25, 2026'}</span>
       </div>
 
-      {/* Right Custom Status Badge */}
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 text-[10px] font-mono-code tracking-wider uppercase px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 font-bold shadow-[0_0_15px_rgba(168,85,247,0.25)] backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]"></span>
-          <span>OPEN FOR WORK // B.TECH '28</span>
-        </div>
+      {/* Right Custom Protocol */}
+      <div className="flex items-center gap-4">
+        <span className="text-purple-300 text-[10px] font-mono-code tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 font-bold shadow-[0_0_12px_rgba(168,85,247,0.2)]">
+          SIUUU PROTOCOL // 2026 ⚡
+        </span>
       </div>
     </header>
   );
