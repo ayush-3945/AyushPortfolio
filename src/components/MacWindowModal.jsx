@@ -362,7 +362,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       <span>↗</span>
                     </a>
                     <a
-                      href="https://github.com/ayush-3945"
+                      href="https://github.com/ayush-3945/ai-smart-issue-routing"
                       target="_blank"
                       rel="noreferrer"
                       className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"

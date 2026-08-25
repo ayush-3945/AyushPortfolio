@@ -98,7 +98,7 @@ export const portfolioData = {
       description: "A digital governance and issue routing Progressive Web App built during a national hackathon to digitize offline processes. Features role-based dashboards, real-time notifications via WebSockets, JWT-based authentication, and AI-powered categorization using Google Gemini for image analysis. Supports offline capabilities with PWA architecture.",
       techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS", "Google Gemini", "JWT", "PWA"],
       liveUrl: "https://coaldarpan.vercel.app",
-      githubUrl: "https://github.com/ayush-3945"
+      githubUrl: "https://github.com/ayush-3945/ai-smart-issue-routing"
     }
   ],
 
