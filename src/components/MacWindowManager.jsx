@@ -5,15 +5,42 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
   if (!openWindows || openWindows.length === 0) return null;
 
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactLoading, setContactLoading] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
-    setContactSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' });
-      setContactSubmitted(false);
-    }, 4000);
+    setContactLoading(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: portfolioData.personal.web3FormsKey || 'd2d7c18a-bbca-4df3-9efc-7e61882b7b51',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          from_name: 'Ayush Portfolio Contact Form',
+          subject: `🚀 Portfolio Message from ${formData.name}`
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setContactSubmitted(true);
+      } else {
+        window.open(`mailto:${portfolioData.personal.email}?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`);
+        setContactSubmitted(true);
+      }
+    } catch (err) {
+      window.open(`mailto:${portfolioData.personal.email}?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`);
+      setContactSubmitted(true);
+    } finally {
+      setContactLoading(false);
+      setTimeout(() => {
+        setFormData({ name: '', email: '', message: '' });
+        setContactSubmitted(false);
+      }, 5000);
+    }
   };
 
   // 10 Core Tech Badges including C/C++ and JAVA
@@ -447,9 +474,17 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
 
                         <button
                           type="submit"
-                          className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#c084fc] hover:text-white transition-all shadow-lg cursor-pointer"
+                          disabled={contactLoading}
+                          className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#a855f7] hover:text-white transition-all shadow-lg cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
                         >
-                          SEND MESSAGE
+                          {contactLoading ? (
+                            <>
+                              <span className="w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+                              <span>SENDING MESSAGE...</span>
+                            </>
+                          ) : (
+                            <span>SEND MESSAGE</span>
+                          )}
                         </button>
                       </form>
                     )}
