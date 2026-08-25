@@ -377,33 +377,56 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                 {/* ========================================================= */}
                 {winId === 'experience' && (
                   <div className="space-y-6 relative">
-                    <div className="border-b border-white/[0.08] pb-3 flex items-center gap-3">
-                      <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-                        JOURNEY
+                    <div className="border-b border-white/[0.08] pb-3 flex items-center justify-between">
+                      <h2 className="text-2xl font-bold tracking-tight text-white">
+                        Experience
                       </h2>
-                      <span className="text-white/20 text-lg">|</span>
-                      <span className="text-xs font-mono-code text-white/50 tracking-widest uppercase">
-                        EXPERIENCE & EDUCATION // 03
+                      <span className="text-xs font-mono-code text-white/40 tracking-widest uppercase">
+                        VOL. 02
                       </span>
                     </div>
 
-                    <div className="border-l-2 border-[#a855f7] pl-4 ml-2 space-y-5">
+                    <div className="space-y-7 pt-1">
                       {portfolioData.experience.map((exp, idx) => (
-                        <div key={idx} className="relative group">
-                          <div className="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-[#a855f7] border-2 border-[#0c1017]"></div>
-                          <div className="p-4 rounded-xl bg-[#111622]/80 border border-white/[0.06] hover:border-white/20 transition-all">
-                            <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
-                              <h4 className="text-white font-bold text-base">{exp.role}</h4>
-                              <span className="text-[11px] font-mono-code text-[#c084fc] px-2 py-0.5 rounded bg-[#a855f7]/10">
+                        <div key={idx} className="pb-6 border-b border-white/[0.05] last:border-b-0 space-y-2 group">
+                          {/* Header: Company & Live dot + Date & Location */}
+                          <div className="flex flex-wrap items-baseline justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors tracking-tight">
+                                {exp.company}
+                              </h3>
+                              {exp.isLive && (
+                                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] inline-block"></span>
+                              )}
+                            </div>
+                            <div className="text-right">
+                              <div className="text-xs font-mono-code text-white/60 tracking-wider font-semibold">
                                 {exp.period}
-                              </span>
+                              </div>
+                              <div className="text-[10px] font-mono-code text-white/30 tracking-widest uppercase">
+                                {exp.location}
+                              </div>
                             </div>
-                            <div className="text-white/60 text-xs font-semibold mb-2">
-                              {exp.org} • <span className="text-white/40 font-normal">{exp.location}</span>
-                            </div>
-                            <p className="text-white/70 text-xs leading-relaxed">
-                              {exp.details}
-                            </p>
+                          </div>
+
+                          {/* Role in italics */}
+                          <div className="text-sm italic text-white/70 font-serif">
+                            {exp.role}
+                          </div>
+
+                          {/* 2-line clean impact description */}
+                          <p className="text-white/65 text-xs sm:text-[13px] leading-relaxed pt-1">
+                            {exp.description}
+                          </p>
+
+                          {/* Monospace tech tag list */}
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] font-mono-code text-white/40 pt-2 tracking-widest uppercase">
+                            {exp.skills.map((skill, sIdx) => (
+                              <React.Fragment key={sIdx}>
+                                <span className="hover:text-purple-300 transition-colors">{skill}</span>
+                                {sIdx < exp.skills.length - 1 && <span className="text-white/20">•</span>}
+                              </React.Fragment>
+                            ))}
                           </div>
                         </div>
                       ))}

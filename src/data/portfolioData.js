@@ -93,25 +93,40 @@ export const portfolioData = {
 
   experience: [
     {
-      role: "Bachelor of Technology — Computer Science (CSE)",
-      org: "ABES Engineering College",
-      location: "Ghaziabad, U.P",
-      period: "Sep 2024 – June 2028",
-      details: "Relevant Coursework: Data Structures & Algorithms, OOP Concepts, Operating Systems, Database Management (DBMS), Computer Networks, System Architecture."
+      company: "Freelance & Open Source",
+      role: "Full Stack & AI Systems Engineer",
+      period: "CURRENT",
+      location: "REMOTE",
+      isLive: true,
+      description: "Delivering end-to-end production web applications and autonomous AI systems. Architecting real-time WebSocket pipelines, Gemini AI prompt workflows, and resilient cloud backend architectures.",
+      skills: ["REACT 19", "NODE.JS", "EXPRESS", "MONGODB", "GEMINI AI", "SOCKET.IO", "PWA"]
     },
     {
+      company: "CodeChef ABESEC Chapter",
       role: "Public Relations (PR) Head",
-      org: "CodeChef ABESEC Chapter",
-      location: "ABES Engineering College",
-      period: "Sep 2025 – Present",
-      details: "Organized coding events, workshops, and competitive programming sessions for 800+ students. Led outreach and developer community initiatives."
+      period: "'25 — PRESENT",
+      location: "GHAZIABAD, IN",
+      isLive: true,
+      description: "Leading technical community outreach and competitive programming initiatives for 800+ student developers. Spearheading workshop logistics, mentorship tracks, and campus hackathons.",
+      skills: ["COMMUNITY LEADERSHIP", "EVENT MANAGEMENT", "DEVELOPER OUTREACH", "MENTORSHIP"]
     },
     {
-      role: "Web & Mobile Development Virtual Intern",
-      org: "IBM PBEL Virtual Internship",
-      location: "Remote",
-      period: "Aug 2025",
-      details: "Completed IBM's PBEL Equivalent Internship program with distinction. Gained hands-on experience in full-stack web architecture and scalable API design."
+      company: "IBM PBEL",
+      role: "Web & Mobile Development Intern",
+      period: "'25",
+      location: "REMOTE",
+      isLive: false,
+      description: "Completed comprehensive enterprise web architecture training with distinction. Gained hands-on proficiency in scalable RESTful API design, database schemas, and microservice patterns.",
+      skills: ["JAVASCRIPT", "FULL STACK ARCHITECTURE", "REST APIS", "SYSTEM DESIGN"]
+    },
+    {
+      company: "ABES Engineering College",
+      role: "B.Tech in Computer Science & Engineering",
+      period: "'24 — '28",
+      location: "GHAZIABAD, IN",
+      isLive: false,
+      description: "Core academic focus: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Database Management Systems (DBMS), and Computer Networks.",
+      skills: ["C/C++", "JAVA", "DSA", "DBMS", "OS", "NETWORKING"]
     }
   ],
 
