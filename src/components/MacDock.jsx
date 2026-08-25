@@ -14,14 +14,19 @@ import {
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function MacDock({ activeSection = 'hero', onScrollTo, onOpenSearch }) {
+export default function MacDock({ openWindows = [], activeSection = 'hero', onToggleWindow, onScrollTo, onOpenSearch }) {
+  const handleItemClick = (id) => {
+    if (onToggleWindow) onToggleWindow(id);
+    if (onScrollTo) onScrollTo(id);
+  };
+
   const dockItems = [
-    { id: 'projects', label: 'Projects', icon: Briefcase, action: () => onScrollTo('projects') },
-    { id: 'stack', label: 'Tech Stack', icon: Cpu, action: () => onScrollTo('stack') },
-    { id: 'experience', label: 'Experience', icon: Code2, action: () => onScrollTo('experience') },
-    { id: 'article', label: 'Writing', icon: BookOpen, action: () => onScrollTo('article') },
+    { id: 'projects', label: 'Projects', icon: Briefcase, action: () => handleItemClick('projects') },
+    { id: 'stack', label: 'Tech Stack', icon: Cpu, action: () => handleItemClick('stack') },
+    { id: 'experience', label: 'Experience', icon: Code2, action: () => handleItemClick('experience') },
+    { id: 'article', label: 'Writing', icon: BookOpen, action: () => handleItemClick('article') },
     { id: 'resume', label: 'Resume', icon: FileText, action: () => window.open(portfolioData.personal.resumeUrl, '_blank') },
-    { id: 'contact', label: 'Contact', icon: Mail, action: () => onScrollTo('contact') },
+    { id: 'contact', label: 'Contact', icon: Mail, action: () => handleItemClick('contact') },
   ];
 
   const socialItems = [
@@ -37,15 +42,21 @@ export default function MacDock({ activeSection = 'hero', onScrollTo, onOpenSear
         {/* Navigation Dock Apps */}
         {dockItems.map((item) => {
           const IconComponent = item.icon;
-          const isActive = activeSection === item.id;
+          const isOpen = openWindows.includes(item.id);
+          const isFront = openWindows[openWindows.length - 1] === item.id;
+          const isActive = activeSection === item.id || isFront;
 
           return (
             <button
               key={item.id}
               onClick={item.action}
               className={`group relative p-2.5 rounded-xl transition-all duration-200 hover:-translate-y-2 hover:scale-125 cursor-pointer flex flex-col items-center justify-center ${
-                isActive
-                  ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.3)]'
+                isFront
+                  ? 'bg-purple-500/25 text-purple-300 border border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] scale-105'
+                  : isOpen
+                  ? 'bg-white/[0.12] text-white'
+                  : isActive
+                  ? 'bg-purple-500/15 text-purple-300'
                   : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
@@ -56,9 +67,9 @@ export default function MacDock({ activeSection = 'hero', onScrollTo, onOpenSear
                 {item.label}
               </span>
 
-              {/* Active Dot */}
-              {isActive && (
-                <span className="w-1.5 h-1.5 rounded-full absolute -bottom-1 bg-purple-400 shadow-[0_0_8px_#c084fc] animate-pulse"></span>
+              {/* Active Dot for Open Window or Active Section */}
+              {(isOpen || isActive) && (
+                <span className={`w-1.5 h-1.5 rounded-full absolute -bottom-1 ${isOpen ? 'bg-purple-400 shadow-[0_0_8px_#c084fc] animate-pulse' : 'bg-white/40'}`}></span>
               )}
             </button>
           );

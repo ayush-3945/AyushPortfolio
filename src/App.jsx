@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TopMenuBar from './components/TopMenuBar';
 import HeroBento from './components/HeroBento';
+import MacWindowManager from './components/MacWindowManager';
 import ProjectsSection from './sections/ProjectsSection';
 import StackSection from './sections/StackSection';
 import ExperienceSection from './sections/ExperienceSection';
@@ -11,8 +12,47 @@ import CommandPalette from './components/CommandPalette';
 import GlowCursor from './components/GlowCursor';
 
 export default function App() {
+  const [openWindows, setOpenWindows] = useState([]); // Array of active desktop windows
   const [activeSection, setActiveSection] = useState('hero');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Close front window on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && openWindows.length > 0) {
+        setOpenWindows((prev) => prev.slice(0, -1)); // pop front window
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [openWindows]);
+
+  // Toggle or bring window to front
+  const handleToggleWindow = (windowId) => {
+    setOpenWindows((prev) => {
+      const isAlreadyOpen = prev.includes(windowId);
+      const isFront = prev[prev.length - 1] === windowId;
+
+      if (isAlreadyOpen && isFront) {
+        // Clicking active front window minimizes/closes it
+        return prev.filter((w) => w !== windowId);
+      } else if (isAlreadyOpen) {
+        // Bring existing window to front
+        return [...prev.filter((w) => w !== windowId), windowId];
+      } else {
+        // Open new window on top of stack
+        return [...prev, windowId];
+      }
+    });
+  };
+
+  const handleBringToFront = (windowId) => {
+    setOpenWindows((prev) => [...prev.filter((w) => w !== windowId), windowId]);
+  };
+
+  const handleCloseWindow = (windowId) => {
+    setOpenWindows((prev) => prev.filter((w) => w !== windowId));
+  };
 
   // Smooth Teleport Navigation to any section
   const scrollToSection = (sectionId) => {
@@ -52,12 +92,18 @@ export default function App() {
       <GlowCursor />
 
       {/* 1. macOS Top Menu Bar */}
-      <TopMenuBar onScrollTo={scrollToSection} />
+      <TopMenuBar
+        onOpenWindow={handleToggleWindow}
+        onScrollTo={scrollToSection}
+      />
 
       {/* 2. Main Scrollable Narrative Flow */}
       <main className="relative z-10 space-y-12 pb-32">
         {/* Hero Section */}
-        <HeroBento onScrollTo={scrollToSection} />
+        <HeroBento
+          onOpenWindow={handleToggleWindow}
+          onScrollTo={scrollToSection}
+        />
 
         {/* Featured Projects */}
         <ProjectsSection />
@@ -75,18 +121,31 @@ export default function App() {
         <ContactSection />
       </main>
 
-      {/* 3. Bottom Floating macOS Dock with Smooth Navigation */}
+      {/* 3. True Non-Blocking Multi-Window Desktop Manager (Opens on Click) */}
+      <MacWindowManager
+        openWindows={openWindows}
+        onBringToFront={handleBringToFront}
+        onCloseWindow={handleCloseWindow}
+        onSwitchWindow={handleBringToFront}
+      />
+
+      {/* 4. Bottom Floating macOS Dock with Dual Action (Window Open + Scroll) */}
       <MacDock
+        openWindows={openWindows}
         activeSection={activeSection}
+        onToggleWindow={handleToggleWindow}
         onScrollTo={scrollToSection}
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      {/* 4. Spotlight Search Command Palette (Ctrl + K) */}
+      {/* 5. Spotlight Search Command Palette (Ctrl + K) */}
       <CommandPalette
         isOpen={isSearchOpen}
         onClose={setIsSearchOpen}
-        onSelectAction={scrollToSection}
+        onSelectAction={(id) => {
+          handleToggleWindow(id);
+          scrollToSection(id);
+        }}
       />
 
     </div>
