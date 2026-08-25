@@ -4,6 +4,7 @@ import HeroBento from './components/HeroBento';
 import MacWindowManager from './components/MacWindowManager';
 import MacDock from './components/MacDock';
 import CommandPalette from './components/CommandPalette';
+import GlowCursor from './components/GlowCursor';
 
 export default function App() {
   // Array of open window IDs in z-index stack order
@@ -53,6 +54,9 @@ export default function App() {
       
       {/* Background Ambient Glow Lighting */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-gradient-to-b from-[#a855f7]/10 via-purple-600/5 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+
+      {/* Interactive Trailing Purple Glow Spotlight Cursor */}
+      <GlowCursor />
 
       {/* 1. macOS Top Menu Bar */}
       <TopMenuBar onOpenWindow={handleToggleWindow} />
