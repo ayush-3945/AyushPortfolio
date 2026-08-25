@@ -248,28 +248,28 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                     </div>
 
                     <div className="space-y-4">
-                      {/* Project 1: Dispatch OS */}
+                      {/* Project 1: CoalDarpan */}
                       <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#0ea5e9]/30 hover:border-[#0ea5e9]/60 transition-all flex flex-col justify-between group shadow-lg">
                         <div>
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
                             <div className="flex items-center gap-2">
-                              <span className="text-base">⚡</span>
+                              <span className="text-base">🏛️</span>
                               <h3 className="text-lg font-bold text-white group-hover:text-[#38bdf8] transition-colors">
-                                Dispatch OS
+                                CoalDarpan
                               </h3>
                               <span className="px-2 py-0.5 rounded-md bg-[#0ea5e9]/10 text-[#38bdf8] border border-[#0ea5e9]/30 text-[10px] font-mono-code font-bold">
-                                PRODUCTION SAAS
+                                NATIONAL HACKATHON
                               </span>
                             </div>
                             <span className="text-[11px] font-mono-code text-white/40">2026</span>
                           </div>
 
                           <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
-                            Enterprise autonomous incident management platform leveraging Google Gemini 1.5 Flash for multi-step reasoning, dynamic priority badging, and bilingual diagnostic briefs (EN/HI) with 98%+ precision. Features real-time WebSockets and 7-day predictive surge forecasting.
+                            Digital governance and smart issue routing PWA built during a national hackathon. Features role-based dashboards, real-time WebSocket notifications, JWT authentication, and AI-powered categorization using Google Gemini.
                           </p>
 
                           <div className="flex flex-wrap gap-1.5 mb-3">
-                            {['React 19', 'Node.js', 'Express', 'MongoDB Atlas', 'Gemini 1.5 Flash', 'Socket.io', 'PWA'].map((t, i) => (
+                            {['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Tailwind CSS', 'Gemini', 'JWT', 'PWA'].map((t, i) => (
                               <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
                                 {t}
                               </span>
@@ -279,7 +279,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
 
                         <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
                           <a
-                            href="https://ai-smart-issue-routing-jbb8.vercel.app"
+                            href="https://coaldarpan.vercel.app"
                             target="_blank"
                             rel="noreferrer"
                             className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#38bdf8] hover:text-white transition-all flex items-center gap-1.5"
@@ -288,7 +288,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             <span>↗</span>
                           </a>
                           <a
-                            href="https://github.com/ayush-3945/ai-smart-issue-routing"
+                            href="https://github.com/ayush-3945"
                             target="_blank"
                             rel="noreferrer"
                             className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
@@ -504,13 +504,13 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                   <div className="space-y-4 max-w-2xl mx-auto">
                     <div className="text-[11px] font-mono-code text-[#38bdf8]">SYSTEM ESSAY • AUG 2026</div>
                     <h2 className="text-2xl font-bold text-white">
-                      Why Autonomous Triage is the Future of Enterprise IT Operations
+                      How AI-Powered Smart Governance Can Digitize Offline Processes
                     </h2>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      Traditional IT support models rely on manual ticket ingestion, where complaints sit in unassigned queues for 24 to 48 hours before human triage even begins.
+                      Traditional governance workflows rely on manual paper-based reporting, where complaints sit unprocessed for days before reaching the right authority.
                     </p>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      With <strong>Dispatch OS</strong>, we engineered an autonomous incident lifecycle engine that executes multi-step reasoning in under 2 seconds using Google Gemini 1.5 Flash structured schemas.
+                      With <strong>CoalDarpan</strong>, we built an AI-powered smart issue routing PWA that uses Google Gemini for image analysis and automated categorization, delivering real-time updates via WebSockets to role-based dashboards.
                     </p>
                   </div>
                 )}

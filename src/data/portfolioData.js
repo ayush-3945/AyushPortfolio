@@ -128,11 +128,11 @@ export const portfolioData = {
 
   articles: [
     {
-      title: "Why Autonomous Triage is the Future of Enterprise IT Operations",
-      excerpt: "A reflection on eliminating manual ticket triage through Gemini 1.5 Flash structured reasoning, real-time WebSockets, and 7-day predictive surge forecasting.",
+      title: "How AI-Powered Smart Governance Can Digitize Offline Processes",
+      excerpt: "A reflection on building CoalDarpan — a national hackathon PWA using Google Gemini for image analysis, real-time WebSockets, and role-based dashboards to digitize governance workflows.",
       date: "Aug 2026",
       readTime: "4 min read",
-      link: "https://github.com/ayush-3945/ai-smart-issue-routing"
+      link: "https://coaldarpan.vercel.app"
     }
   ]
 };

@@ -269,40 +269,40 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
             {/* ========================================================= */}
             {activeWindow === 'projects' && (
               <div className="space-y-8">
-                {/* Flagship: Dispatch OS */}
+                {/* Flagship: CoalDarpan */}
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#0ea5e9]/30 relative overflow-hidden shadow-xl">
                   <div className="absolute top-0 right-0 px-3 py-1 bg-[#0ea5e9] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
-                    FLAGSHIP SAAS
+                    NATIONAL HACKATHON
                   </div>
 
                   <div className="flex flex-wrap items-center gap-2 mb-2">
                     <h3 className="text-2xl font-extrabold text-white tracking-tight">
-                      ⚡ Dispatch OS
+                      🏛️ CoalDarpan
                     </h3>
-                    <span className="text-white/40 text-xs font-mono-code">— Autonomous Incident Triage Engine</span>
+                    <span className="text-white/40 text-xs font-mono-code">— Smart Issue Routing PWA</span>
                   </div>
 
                   <p className="text-white/80 text-sm leading-relaxed mb-4">
-                    Full-stack incident management platform leveraging <strong>Google Gemini 1.5 Flash</strong> for autonomous classification, priority badging, and bilingual diagnostic briefs (EN/HI) with 98%+ precision. Features real-time WebSockets, 7-day predictive surge forecasting, and native PWA deployment.
+                    Digital governance and smart issue routing Progressive Web App built during a national hackathon to digitize offline processes. Features role-based dashboards, real-time <strong>WebSocket</strong> notifications, <strong>JWT</strong> authentication, and AI-powered categorization using <strong>Google Gemini</strong> for image analysis. Supports offline capabilities with PWA architecture.
                   </p>
 
                   {/* Live Stats */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                      <div className="text-[#38bdf8] font-bold text-lg">&lt; 2s</div>
-                      <div className="text-[10px] text-white/50 font-mono-code uppercase">AI Triage Speed</div>
+                      <div className="text-[#38bdf8] font-bold text-lg">AI</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Gemini Vision</div>
                     </div>
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                      <div className="text-emerald-400 font-bold text-lg">98.4%</div>
-                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Reasoning Precision</div>
-                    </div>
-                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                      <div className="text-amber-400 font-bold text-lg">50ms</div>
+                      <div className="text-emerald-400 font-bold text-lg">Real-time</div>
                       <div className="text-[10px] text-white/50 font-mono-code uppercase">WebSocket Sync</div>
                     </div>
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">JWT</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Auth Security</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
                       <div className="text-purple-400 font-bold text-lg">PWA</div>
-                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Play Store Ready</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Offline Ready</div>
                     </div>
                   </div>
 
@@ -353,7 +353,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                   {/* Links */}
                   <div className="flex items-center gap-3 mt-5 pt-3 border-t border-white/[0.08]">
                     <a
-                      href="https://ai-smart-issue-routing-jbb8.vercel.app"
+                      href="https://coaldarpan.vercel.app"
                       target="_blank"
                       rel="noreferrer"
                       className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#38bdf8] hover:text-white transition-all shadow-md flex items-center gap-1.5"
@@ -362,7 +362,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       <span>↗</span>
                     </a>
                     <a
-                      href="https://github.com/ayush-3945/ai-smart-issue-routing"
+                      href="https://github.com/ayush-3945"
                       target="_blank"
                       rel="noreferrer"
                       className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
@@ -496,13 +496,13 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
               <div className="space-y-4 max-w-2xl mx-auto">
                 <div className="text-[11px] font-mono-code text-[#38bdf8]">SYSTEM ESSAY • AUG 2026</div>
                 <h2 className="text-2xl font-bold text-white">
-                  Why Autonomous Triage is the Future of Enterprise IT Operations
+                  How AI-Powered Smart Governance Can Digitize Offline Processes
                 </h2>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  Traditional IT support models rely on manual ticket ingestion, where complaints sit in unassigned queues for 24 to 48 hours before human triage even begins.
+                  Traditional governance workflows rely on manual paper-based reporting, where complaints sit unprocessed for days before reaching the right authority.
                 </p>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  With <strong>Dispatch OS</strong>, we engineered an autonomous incident lifecycle engine that executes multi-step reasoning in under 2 seconds using Google Gemini 1.5 Flash structured schemas.
+                  With <strong>CoalDarpan</strong>, we built an AI-powered smart issue routing PWA that uses Google Gemini for image analysis and automated categorization, delivering real-time updates via WebSockets to role-based dashboards.
                 </p>
               </div>
             )}

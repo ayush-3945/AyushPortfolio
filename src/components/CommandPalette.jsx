@@ -21,7 +21,7 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
   if (!isOpen) return null;
 
   const actions = [
-    { label: 'View Flagship Project: Dispatch OS', icon: '⚡', category: 'Projects', action: () => onSelectAction('projects') },
+    { label: 'View Flagship Project: CoalDarpan', icon: '🏛️', category: 'Projects', action: () => onSelectAction('projects') },
     { label: 'View AI Interview Agent', icon: '🎙️', category: 'Projects', action: () => onSelectAction('projects') },
     { label: 'View Flashmon CLI Tool', icon: '🛠️', category: 'Projects', action: () => onSelectAction('projects') },
     { label: 'Open Tech Stack Matrix', icon: '🧠', category: 'Skills', action: () => onSelectAction('stack') },
