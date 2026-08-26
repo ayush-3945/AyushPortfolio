@@ -331,7 +331,7 @@ Try 'sudo hire-me' for a developer easter egg!
           primary: '#F5A623',
           hover: '#FFC15E',
           background: '#06090e',
-          matrix: 'GitHub Green Matrix #34d399'
+          githubGreen: '#34d399 (Contributions Matrix)'
         });
         break;
 
@@ -517,7 +517,7 @@ Try 'sudo hire-me' for a developer easter egg!
                 <div className="text-[#FFC15E] font-bold">ACTIVE PALETTE: {item.name}</div>
                 <div>Primary Accent: <span className="text-[#F5A623] font-bold">{item.primary}</span></div>
                 <div>Hover Glow: <span className="text-[#FFC15E] font-bold">{item.hover}</span></div>
-                <div>Matrix Matrix: <span className="text-emerald-400 font-bold">{item.matrix}</span></div>
+                <div>GitHub Green: <span className="text-emerald-400 font-bold">{item.githubGreen}</span></div>
               </div>
             )}
 
