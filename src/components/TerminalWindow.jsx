@@ -19,7 +19,7 @@ const AVAILABLE_COMMANDS = [
 ];
 
 export default function TerminalWindow({ onOpenWindow, onClose }) {
-  const { personal, projects, skills } = portfolioData;
+  const { personal, projects } = portfolioData;
   const [input, setInput] = useState('');
   
   // 3. Command History Persistence across window close/open within the session
@@ -241,7 +241,11 @@ Try 'sudo hire-me' for a developer easter egg!
         newOutput.push({
           type: 'skills',
           flag,
-          skills
+          skills: {
+            frontend: ['React 19', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+            backend: ['Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'REST APIs'],
+            tools: ['Gemini AI', 'Python', 'C/C++', 'Java', 'Git', 'Vercel', 'Firebase']
+          }
         });
         break;
 
