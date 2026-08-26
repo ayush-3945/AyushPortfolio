@@ -36,16 +36,16 @@ export default function GithubHeatmap({ onClick }) {
   return (
     <div
       onClick={onClick}
-      className="glass-bento rounded-2xl p-5 cursor-pointer group relative overflow-hidden flex flex-col justify-between min-h-[220px]"
+      className="glass-bento rounded-2xl p-5 cursor-pointer group relative overflow-hidden flex flex-col justify-between min-h-[220px] hover:border-[#F5A623]/40"
     >
       {/* Top Handle Indicator */}
       <div className="w-8 h-1 rounded-full bg-white/20 mx-auto mb-2"></div>
 
       <div className="flex items-center justify-between mb-3 text-xs">
-        <span className="font-mono-code font-bold text-white/70 tracking-wider uppercase text-[11px] group-hover:text-emerald-400 transition-colors">
+        <span className="font-mono-code font-bold text-white/70 tracking-wider uppercase text-[11px] group-hover:text-[#F5A623] transition-colors">
           GITHUB CONTRIBUTIONS
         </span>
-        <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+        <span className="w-2 h-2 rounded-full bg-[#F5A623] shadow-[0_0_8px_#FFC15E]"></span>
       </div>
 
       {/* Heatmap Grid */}

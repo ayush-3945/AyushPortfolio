@@ -43,17 +43,16 @@ export default function SpotifyWidget() {
     <div
       onClick={handleClick}
       title={liveData?.songUrl ? 'Click to open on Spotify' : 'Click to skip track'}
-      className="glass-bento rounded-2xl p-5 cursor-pointer group flex flex-col justify-between min-h-[140px] relative overflow-hidden select-none hover:border-emerald-500/40 transition-all shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
+      className="glass-bento rounded-2xl p-5 cursor-pointer group flex flex-col justify-between min-h-[140px] relative overflow-hidden select-none hover:border-[#F5A623]/40 transition-all shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
     >
       {/* Top Handle Indicator */}
       <div className="w-8 h-1 rounded-full bg-white/20 mx-auto mb-2"></div>
 
       <div className="flex items-center justify-between gap-3.5 my-auto">
-        
         {/* Left Glowing Star / Album Art */}
-        <div className="relative w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.35)] text-black overflow-hidden border border-white/20">
+        <div className="relative w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(245,166,35,0.25)] text-black overflow-hidden border border-white/20">
           {song.albumArt ? (
-            <img src={song.albumArt} alt={song.title} className="w-full h-full object-cover" />
+            <img src={song.albumArt} alt={song.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           ) : (
             <span className="text-xl">★</span>
           )}
@@ -62,31 +61,30 @@ export default function SpotifyWidget() {
         {/* Middle Track Info */}
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5 text-[10px] font-mono-code text-white/40 uppercase tracking-widest mb-0.5">
-            {liveData?.isLive && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_#34d399]"></span>}
+            {liveData?.isLive && <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse shadow-[0_0_6px_#FFC15E]"></span>}
             <span>{statusLabel}</span>
           </div>
-          <h4 className="text-white font-extrabold text-sm tracking-tight truncate group-hover:text-emerald-300 transition-colors">
+          <h4 className="text-white font-extrabold text-sm tracking-tight truncate group-hover:text-[#FFC15E] transition-colors">
             {song.title}
           </h4>
-          <p className="text-white/60 text-xs truncate mt-0.5">
+          <p className="text-white/60 text-xs truncate mt-0.5 font-medium">
             {song.artist}
           </p>
         </div>
 
-        {/* Right Animated Green Equalizer Bars */}
-        <div className="flex items-end gap-1 h-5 flex-shrink-0">
-          <span className={`w-1 bg-[#1db954] rounded-full ${isPlaying ? 'eq-bar-1' : 'h-1'}`}></span>
-          <span className={`w-1 bg-[#1db954] rounded-full ${isPlaying ? 'eq-bar-2' : 'h-2'}`}></span>
-          <span className={`w-1 bg-[#1db954] rounded-full ${isPlaying ? 'eq-bar-3' : 'h-3'}`}></span>
-          <span className={`w-1 bg-[#1db954] rounded-full ${isPlaying ? 'eq-bar-4' : 'h-1'}`}></span>
+        {/* Right Animated Amber Equalizer Bars */}
+        <div className="flex items-end gap-[3px] h-4 flex-shrink-0">
+          <span className={`w-1 bg-[#F5A623] rounded-full ${isPlaying ? 'eq-bar-1' : 'h-1'}`}></span>
+          <span className={`w-1 bg-[#FFC15E] rounded-full ${isPlaying ? 'eq-bar-2' : 'h-2'}`}></span>
+          <span className={`w-1 bg-[#F5A623] rounded-full ${isPlaying ? 'eq-bar-3' : 'h-3'}`}></span>
+          <span className={`w-1 bg-[#FFC15E] rounded-full ${isPlaying ? 'eq-bar-4' : 'h-1'}`}></span>
         </div>
-
       </div>
 
       {/* Footer Info */}
       <div className="flex items-center justify-between text-[9px] font-mono-code text-white/30 pt-2 border-t border-white/[0.04]">
         <span>{liveData ? '🟢 Real-time Spotify Connected' : `Playlist Mode (${currentIdx + 1}/${fallbackSongs.length})`}</span>
-        <span className="text-emerald-400 font-semibold">{liveData ? 'Open on Spotify ↗' : 'DHH / Synthpop'}</span>
+        <span className="text-[#F5A623] font-semibold">{liveData ? 'Open on Spotify ↗' : 'DHH / Synthpop'}</span>
       </div>
     </div>
   );

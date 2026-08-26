@@ -47,18 +47,18 @@ export function StatusCard({ onContactClick }) {
   return (
     <div
       onClick={onContactClick}
-      className="glass-bento rounded-2xl p-5 cursor-pointer group flex flex-col justify-between hover:border-emerald-500/40"
+      className="glass-bento rounded-2xl p-5 cursor-pointer group flex flex-col justify-between hover:border-[#F5A623]/40"
     >
       {/* Top Handle Indicator */}
       <div className="w-8 h-1 rounded-full bg-white/20 mx-auto mb-2"></div>
 
       <div className="flex items-center gap-2 text-xs font-mono-code text-white/50 mb-2">
-        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]"></span>
-        <span className="uppercase text-[10px] tracking-wider text-emerald-400 font-bold">STATUS</span>
+        <span className="w-2 h-2 rounded-full bg-[#F5A623] animate-pulse shadow-[0_0_8px_#FFC15E]"></span>
+        <span className="uppercase text-[10px] tracking-wider text-[#F5A623] font-bold">STATUS</span>
       </div>
 
       <div className="my-1">
-        <h4 className="text-white font-semibold text-sm tracking-tight group-hover:text-emerald-300 transition-colors">
+        <h4 className="text-white font-semibold text-sm tracking-tight group-hover:text-[#FFC15E] transition-colors">
           Available for new opportunities
         </h4>
       </div>
@@ -82,11 +82,11 @@ export function LatestWritingCard({ onArticleClick }) {
           <span>📖</span>
           <span className="uppercase tracking-wider">LATEST WRITING</span>
         </div>
-        <span className="text-[10px] font-mono-code text-emerald-400 group-hover:text-emerald-300 transition-colors font-bold">VIEW ALL ↗</span>
+        <span className="text-[10px] font-mono-code text-[#F5A623] group-hover:text-[#FFC15E] transition-colors font-bold">VIEW ALL ↗</span>
       </div>
 
       <div className="my-1">
-        <h4 className="text-white font-bold text-sm tracking-tight group-hover:text-emerald-300 transition-colors leading-snug">
+        <h4 className="text-white font-bold text-sm tracking-tight group-hover:text-[#FFC15E] transition-colors leading-snug">
           {article.title}
         </h4>
         <p className="text-white/50 text-xs mt-1.5 line-clamp-2 leading-relaxed">
@@ -96,7 +96,7 @@ export function LatestWritingCard({ onArticleClick }) {
 
       <div className="flex items-center justify-between text-xs mt-3 pt-2 border-t border-white/[0.06] text-white/40 font-mono-code">
         <span>{article.date}</span>
-        <span className="text-emerald-400 group-hover:text-emerald-300 group-hover:translate-x-1 transition-all font-bold text-[11px]">READ ↗</span>
+        <span className="text-[#F5A623] group-hover:text-[#FFC15E] group-hover:translate-x-1 transition-all font-bold text-[11px]">READ ↗</span>
       </div>
     </div>
   );

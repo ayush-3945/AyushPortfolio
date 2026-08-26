@@ -36,7 +36,7 @@ export default function MacDock({ openWindows = [], activeSection = 'hero', onTo
 
   return (
     <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 max-w-[95vw]">
-      <div className="px-4 py-2.5 rounded-2xl bg-[#06090e]/90 backdrop-blur-2xl border border-white/[0.1] shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(16,185,129,0.1)] flex items-center gap-2 sm:gap-3">
+      <div className="px-4 py-2.5 rounded-2xl bg-[#06090e]/90 backdrop-blur-2xl border border-white/[0.1] shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(245,166,35,0.1)] flex items-center gap-2 sm:gap-3">
         
         {/* Navigation Dock Apps */}
         {dockItems.map((item) => {
@@ -51,11 +51,11 @@ export default function MacDock({ openWindows = [], activeSection = 'hero', onTo
               onClick={item.action}
               className={`group relative p-2.5 rounded-xl transition-all duration-200 hover:-translate-y-2 hover:scale-125 cursor-pointer flex flex-col items-center justify-center ${
                 isFront
-                  ? 'bg-emerald-500/25 text-emerald-300 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.4)] scale-105'
+                  ? 'bg-[#F5A623]/25 text-[#FFC15E] border border-[#F5A623]/50 shadow-[0_0_15px_rgba(245,166,35,0.4)] scale-105'
                   : isOpen
                   ? 'bg-white/[0.12] text-white'
                   : isActive
-                  ? 'bg-emerald-500/15 text-emerald-300'
+                  ? 'bg-[#F5A623]/15 text-[#FFC15E]'
                   : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
@@ -68,7 +68,7 @@ export default function MacDock({ openWindows = [], activeSection = 'hero', onTo
 
               {/* Active Dot for Open Window or Active Section */}
               {(isOpen || isActive) && (
-                <span className={`w-1.5 h-1.5 rounded-full absolute -bottom-1 ${isOpen ? 'bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse' : 'bg-white/40'}`}></span>
+                <span className={`w-1.5 h-1.5 rounded-full absolute -bottom-1 ${isOpen ? 'bg-[#F5A623] shadow-[0_0_8px_#FFC15E] animate-pulse' : 'bg-white/40'}`}></span>
               )}
             </button>
           );

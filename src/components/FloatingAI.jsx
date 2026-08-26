@@ -81,7 +81,7 @@ const FloatingAI = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setOpen(!open)}
-          className="w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-pink-500 
+          className="w-14 h-14 rounded-full bg-gradient-to-r from-amber-500 to-pink-500 
                      text-white flex items-center justify-center shadow-xl 
                      hover:scale-110 transition duration-300"
         >
@@ -116,7 +116,7 @@ const FloatingAI = () => {
                   transition={{ duration: 0.3 }}
                   className={`max-w-[80%] px-4 py-2 rounded-xl text-sm ${
                     msg.role === "user"
-                      ? "bg-gradient-to-r from-emerald-500 to-pink-500 text-white ml-auto"
+                      ? "bg-gradient-to-r from-amber-500 to-pink-500 text-white ml-auto"
                       : "bg-dark/60 text-gray-300"
                   }`}
                 >
@@ -161,7 +161,7 @@ const FloatingAI = () => {
 
               <button
                 onClick={() => sendMessage(input)}
-                className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-pink-500 
+                className="px-4 py-2 bg-gradient-to-r from-amber-500 to-pink-500 
                            text-white rounded-lg hover:scale-105 transition"
               >
                 Send

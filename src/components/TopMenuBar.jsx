@@ -30,14 +30,14 @@ export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
       <div className="flex items-center gap-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-bold tracking-widest text-white uppercase text-xs hover:text-emerald-400 transition-colors cursor-pointer flex items-center gap-2"
+          className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#FFC15E] transition-colors cursor-pointer flex items-center gap-2"
         >
-          <span className="text-emerald-400">⚡</span>
+          <span className="text-[#F5A623]">⚡</span>
           <span>AYUSH</span>
         </button>
         <button
           onClick={() => navigate('contact')}
-          className="text-white/60 hover:text-emerald-300 transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
+          className="text-white/60 hover:text-[#FFC15E] transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
         >
           CONTACT
         </button>
@@ -50,7 +50,7 @@ export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
 
       {/* Right Custom Protocol */}
       <div className="flex items-center gap-4">
-        <span className="text-emerald-300 text-[10px] font-mono-code tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 font-bold shadow-[0_0_12px_rgba(16,185,129,0.2)]">
+        <span className="text-[#FFC15E] text-[10px] font-mono-code tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-[#F5A623]/12 border border-[#F5A623]/30 font-bold shadow-[0_0_12px_rgba(245,166,35,0.2)]">
           SIUUU PROTOCOL // 2026 ⚡
         </span>
       </div>

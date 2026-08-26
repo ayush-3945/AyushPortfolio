@@ -11,7 +11,7 @@ import MacDock from './components/MacDock';
 import CommandPalette from './components/CommandPalette';
 import GlowCursor from './components/GlowCursor';
 
-export default function App() {
+export default function app() {
   const [openWindows, setOpenWindows] = useState([]); // Array of active desktop windows
   const [activeSection, setActiveSection] = useState('hero');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -65,10 +65,10 @@ export default function App() {
   // ScrollSpy: Automatically highlight current section in dock on scroll
   useEffect(() => {
     const sectionIds = ['hero', 'projects', 'stack', 'experience', 'article', 'contact'];
-    
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 250;
-      
+
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const section = document.getElementById(sectionIds[i]);
         if (section && section.offsetTop <= scrollPosition) {
@@ -83,12 +83,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#06090e] text-[#f8fafc] relative overflow-x-hidden dot-grid selection:bg-emerald-500/30 selection:text-white">
-      
-      {/* Background Ambient Glow Lighting */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[420px] bg-gradient-to-b from-emerald-500/10 via-teal-600/5 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+    <div className="min-h-screen bg-[#07090e] text-[#f8fafc] relative overflow-x-hidden dot-grid selection:bg-[#a855f7]/30 selection:text-white">
 
-      {/* Interactive Trailing Emerald Glow Spotlight Cursor */}
+      {/* Background Ambient Glow Lighting */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-gradient-to-b from-[#a855f7]/10 via-purple-600/5 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+
+      {/* Interactive Trailing Purple Glow Spotlight Cursor */}
       <GlowCursor />
 
       {/* 1. macOS Top Menu Bar */}

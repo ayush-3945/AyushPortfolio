@@ -94,7 +94,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
     {
       name: 'TAILWIND',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#34d399]/10 border border-[#34d399]/30 flex items-center justify-center text-[#34d399] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+        <div className="w-10 h-10 rounded-lg bg-[#FFC15E]/10 border border-[#FFC15E]/30 flex items-center justify-center text-[#FFC15E] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
           ≈
         </div>
       )
@@ -142,7 +142,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
     {
       name: 'C / C++',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-bold text-[#34d399] text-xs">
+        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-bold text-[#FFC15E] text-xs">
           C++
         </div>
       )
@@ -284,7 +284,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                 {/* Systems Architecture Brief */}
                 <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs font-mono-code text-white/60 flex items-center justify-between">
                   <span>● Full-Stack Systems, Real-Time WebSockets & Distributed Backends</span>
-                  <button onClick={() => onSwitchWindow('projects')} className="text-[#34d399] hover:underline font-bold">
+                  <button onClick={() => onSwitchWindow('projects')} className="text-[#FFC15E] hover:underline font-bold">
                     View Live Projects ➔
                   </button>
                 </div>
@@ -297,8 +297,8 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
             {activeWindow === 'projects' && (
               <div className="space-y-8">
                 {/* Flagship: CoalDarpan */}
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#10b981]/30 relative overflow-hidden shadow-xl">
-                  <div className="absolute top-0 right-0 px-3 py-1 bg-[#10b981] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#F5A623]/30 relative overflow-hidden shadow-xl">
+                  <div className="absolute top-0 right-0 px-3 py-1 bg-[#F5A623] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
                     NATIONAL HACKATHON
                   </div>
 
@@ -316,11 +316,11 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                   {/* Live Stats */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                      <div className="text-[#34d399] font-bold text-lg">AI</div>
+                      <div className="text-[#FFC15E] font-bold text-lg">AI</div>
                       <div className="text-[10px] text-white/50 font-mono-code uppercase">Gemini Vision</div>
                     </div>
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                      <div className="text-emerald-400 font-bold text-lg">Real-time</div>
+                      <div className="text-amber-400 font-bold text-lg">Real-time</div>
                       <div className="text-[10px] text-white/50 font-mono-code uppercase">WebSocket Sync</div>
                     </div>
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
@@ -328,7 +328,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       <div className="text-[10px] text-white/50 font-mono-code uppercase">Auth Security</div>
                     </div>
                     <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
-                      <div className="text-emerald-400 font-bold text-lg">PWA</div>
+                      <div className="text-amber-400 font-bold text-lg">PWA</div>
                       <div className="text-[10px] text-white/50 font-mono-code uppercase">Offline Ready</div>
                     </div>
                   </div>
@@ -336,7 +336,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                   {/* Interactive Triage Simulator */}
                   <div className="mt-5 p-4 rounded-xl bg-black/40 border border-white/10 space-y-3">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-bold text-[#34d399] font-mono-code">⚡ TRY LIVE TRIAGE SIMULATOR</span>
+                      <span className="font-bold text-[#FFC15E] font-mono-code">⚡ TRY LIVE TRIAGE SIMULATOR</span>
                       <span className="text-white/40 text-[10px]">Powered by Gemini 1.5 Flash</span>
                     </div>
 
@@ -346,33 +346,33 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                         value={simTitle}
                         onChange={(e) => setSimTitle(e.target.value)}
                         placeholder="Issue Title..."
-                        className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#10b981]"
+                        className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#F5A623]"
                       />
                       <input
                         type="text"
                         value={simDesc}
                         onChange={(e) => setSimDesc(e.target.value)}
                         placeholder="Issue Description..."
-                        className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#10b981]"
+                        className="px-3 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-white outline-none focus:border-[#F5A623]"
                       />
                     </div>
 
                     <button
                       onClick={runSimulator}
                       disabled={simLoading}
-                      className="w-full py-2 rounded-lg bg-gradient-to-r from-[#10b981] to-[#059669] text-white font-bold text-xs hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center gap-2"
+                      className="w-full py-2 rounded-lg bg-gradient-to-r from-[#F5A623] to-[#C97F1C] text-white font-bold text-xs hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center gap-2"
                     >
                       {simLoading ? '⚡ Analyzing with Gemini 1.5 Flash...' : '🔮 Run Instant AI Incident Triage'}
                     </button>
 
                     {simResult && (
-                      <div className="p-3 rounded-lg bg-[#10b981]/10 border border-[#10b981]/30 text-xs space-y-1 animate-fadeIn">
+                      <div className="p-3 rounded-lg bg-[#F5A623]/10 border border-[#F5A623]/30 text-xs space-y-1 animate-fadeIn">
                         <div className="flex items-center justify-between font-bold">
-                          <span className="text-[#34d399]">Category: {simResult.category}</span>
+                          <span className="text-[#FFC15E]">Category: {simResult.category}</span>
                           <span className="text-amber-400">Priority: {simResult.priority} ({simResult.confidence})</span>
                         </div>
                         <p className="text-white/80">{simResult.summary}</p>
-                        <p className="text-emerald-400 font-mono-code text-[11px]">💡 Action: {simResult.suggestedResolution}</p>
+                        <p className="text-amber-400 font-mono-code text-[11px]">💡 Action: {simResult.suggestedResolution}</p>
                       </div>
                     )}
                   </div>
@@ -383,7 +383,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       href="https://coaldarpan.vercel.app"
                       target="_blank"
                       rel="noreferrer"
-                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#34d399] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-1.5"
                     >
                       <span>LAUNCH LIVE APP</span>
                       <span>↗</span>
@@ -410,7 +410,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                     href="https://github.com/ayush-3945/AI-Interview-Agent"
                     target="_blank"
                     rel="noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-white/10 text-white font-mono-code text-xs hover:bg-[#34d399] hover:text-black transition-colors"
+                    className="px-3 py-1.5 rounded-lg bg-white/10 text-white font-mono-code text-xs hover:bg-[#FFC15E] hover:text-black transition-colors"
                   >
                     View Code ↗
                   </a>
@@ -438,11 +438,11 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       {/* Header: Company & Live dot + Date & Location */}
                       <div className="flex flex-wrap items-baseline justify-between gap-2">
                         <div className="flex items-center gap-2">
-                          <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors tracking-tight">
+                          <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors tracking-tight">
                             {exp.company}
                           </h3>
                           {exp.isLive && (
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] inline-block"></span>
+                            <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#FFC15E] inline-block"></span>
                           )}
                         </div>
                         <div className="text-right">
@@ -469,7 +469,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] font-mono-code text-white/40 pt-2 tracking-widest uppercase">
                         {exp.skills.map((skill, sIdx) => (
                           <React.Fragment key={sIdx}>
-                            <span className="hover:text-emerald-300 transition-colors">{skill}</span>
+                            <span className="hover:text-amber-300 transition-colors">{skill}</span>
                             {sIdx < exp.skills.length - 1 && <span className="text-white/20">•</span>}
                           </React.Fragment>
                         ))}
@@ -493,9 +493,9 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                 </div>
 
                 {contactSubmitted ? (
-                  <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center animate-fadeIn">
+                  <div className="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-center animate-fadeIn">
                     <span className="text-3xl mb-2 inline-block">🚀</span>
-                    <h4 className="text-emerald-400 font-bold text-base">Message Sent Successfully!</h4>
+                    <h4 className="text-amber-400 font-bold text-base">Message Sent Successfully!</h4>
                     <p className="text-white/70 text-xs mt-1">
                       I'll get back to you shortly at {formData.email || 'your email'}.
                     </p>
@@ -510,7 +510,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#10b981]"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#F5A623]"
                       />
                     </div>
 
@@ -522,7 +522,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#10b981]"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#F5A623]"
                       />
                     </div>
 
@@ -534,14 +534,14 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Tell me about your project..."
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#10b981] resize-none"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#F5A623] resize-none"
                       ></textarea>
                     </div>
 
                     <button
                       type="submit"
                       disabled={contactLoading}
-                      className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#10b981] hover:text-white transition-all shadow-lg cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
+                      className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#F5A623] hover:text-white transition-all shadow-lg cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
                     >
                       {contactLoading ? (
                         <>
@@ -562,7 +562,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
             {/* ========================================================= */}
             {activeWindow === 'article' && (
               <div className="space-y-4 max-w-2xl mx-auto">
-                <div className="text-[11px] font-mono-code text-[#34d399]">SYSTEM ESSAY • AUG 2026</div>
+                <div className="text-[11px] font-mono-code text-[#FFC15E]">SYSTEM ESSAY • AUG 2026</div>
                 <h2 className="text-2xl font-bold text-white">
                   How AI-Powered Smart Governance Can Digitize Offline Processes
                 </h2>

@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#8b5cf6", // neon purple
-        secondary: "#a78bfa",
-        dark: "#0f0f1a",
-        card: "rgba(30, 30, 46, 0.7)",
+        primary: "#F5A623", // warm amber gold
+        secondary: "#FFC15E",
+        dark: "#06090e",
+        card: "rgba(10, 15, 23, 0.75)",
       },
       animation: {
         glow: "glow 2s ease-in-out infinite alternate",
       },
       keyframes: {
         glow: {
-          "0%": { boxShadow: "0 0 5px #8b5cf6, 0 0 10px #8b5cf6" },
-          "100%": { boxShadow: "0 0 20px #a78bfa, 0 0 40px #8b5cf6" },
+          "0%": { boxShadow: "0 0 5px #F5A623, 0 0 10px #F5A623" },
+          "100%": { boxShadow: "0 0 20px #FFC15E, 0 0 40px #F5A623" },
         },
       },
     },

@@ -5,10 +5,14 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --accent-primary: #F5A623;
+    --accent-hover: #FFC15E;
+    --accent-muted: rgba(245, 166, 35, 0.12);
+    --accent-deep: #C97F1C;
   }
   
   body {
-    background-color: #07090e;
+    background-color: #06090e;
     color: #f8fafc;
     font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   }
@@ -38,36 +42,42 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(16, 185, 129, 0.08);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(245, 166, 35, 0.06);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-bento:hover {
-  border-color: rgba(52, 211, 153, 0.4);
-  box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(16, 185, 129, 0.25);
+  border-color: rgba(245, 166, 35, 0.4);
+  box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(245, 166, 35, 0.22);
 }
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 45%, #10b981 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #FFC15E 50%, #F5A623 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, #FFC15E 0%, #F5A623 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-emerald {
-  background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
+  background: linear-gradient(135deg, #FFC15E 0%, #F5A623 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-purple {
-  background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
+  background: linear-gradient(135deg, #FFC15E 0%, #F5A623 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-cyan {
-  background: linear-gradient(135deg, #a7f3d0 0%, #10b981 100%);
+  background: linear-gradient(135deg, #FFC15E 0%, #F5A623 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -79,7 +89,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #05080d;
+  background: #06090e;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -88,7 +98,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #F5A623;
 }
 
 /* Audio Equalizer Animation */

@@ -40,31 +40,27 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-black/80 backdrop-blur-md animate-fadeIn">
       <div className="absolute inset-0" onClick={() => onClose(false)}></div>
 
-      <div className="relative w-full max-w-xl bg-[#090d14] border border-white/20 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_30px_rgba(14,165,233,0.2)] overflow-hidden z-10 animate-scaleUp">
+      <div className="relative w-full max-w-xl bg-[#090d14] border border-white/20 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_30px_rgba(245,166,35,0.2)] overflow-hidden z-10 animate-scaleUp">
         
         {/* Search Input Bar */}
-        <div className="p-4 border-b border-white/10 flex items-center gap-3">
-          <span className="text-white/40 text-sm font-mono-code">🔍</span>
+        <div className="flex items-center px-4 py-3.5 border-b border-white/10 gap-3">
+          <span className="text-white/40 text-lg">🔍</span>
           <input
             autoFocus
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Type a command or search (e.g. projects, resume, contact)..."
-            className="w-full bg-transparent text-white text-sm outline-none placeholder:text-white/30 font-medium"
+            placeholder="Type a command or jump to section..."
+            className="w-full bg-transparent text-white placeholder-white/40 text-sm outline-none font-sans"
           />
-          <span className="text-[10px] font-mono-code text-white/40 border border-white/10 px-1.5 py-0.5 rounded">
+          <kbd className="px-2 py-0.5 rounded bg-white/10 text-white/50 text-[10px] font-mono-code font-bold">
             ESC
-          </span>
+          </kbd>
         </div>
 
-        {/* Results List */}
-        <div className="max-h-72 overflow-y-auto p-2 scrollbar-subtle space-y-1">
-          {filtered.length === 0 ? (
-            <div className="p-6 text-center text-xs text-white/40 font-mono-code">
-              No matching commands found.
-            </div>
-          ) : (
+        {/* Action List */}
+        <div className="max-h-72 overflow-y-auto p-2 space-y-1">
+          {filtered.length > 0 ? (
             filtered.map((action, idx) => (
               <button
                 key={idx}
@@ -72,24 +68,26 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
                   action.action();
                   onClose(false);
                 }}
-                className="w-full px-3 py-2.5 rounded-xl hover:bg-emerald-500/15 hover:border hover:border-emerald-500/30 transition-all flex items-center justify-between text-left group cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl hover:bg-[#F5A623]/15 hover:border hover:border-[#F5A623]/30 transition-all flex items-center justify-between text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-base">{action.icon}</span>
                   <div>
-                    <div className="text-xs font-semibold text-white group-hover:text-emerald-300 transition-colors">
+                    <div className="text-xs font-semibold text-white group-hover:text-[#FFC15E] transition-colors">
                       {action.label}
-                    </div>
-                    <div className="text-[10px] text-white/40 font-mono-code">
-                      {action.category}
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono-code text-white/40 group-hover:text-emerald-300">
-                  ENTER ↵
+
+                <span className="text-[10px] font-mono-code text-white/40 group-hover:text-[#FFC15E]">
+                  {action.category} ↗
                 </span>
               </button>
             ))
+          ) : (
+            <div className="p-6 text-center text-white/40 text-xs font-mono-code">
+              No matching commands found.
+            </div>
           )}
         </div>
 

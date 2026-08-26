@@ -52,23 +52,23 @@ export default function GlowCursor() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-40 overflow-hidden hidden md:block transition-opacity duration-300">
-      {/* 1. Large Soft Emerald Ambient Spotlight that tracks cursor */}
+      {/* 1. Large Soft Amber Ambient Spotlight that tracks cursor */}
       <div
         className="absolute rounded-full blur-[75px] opacity-75 transition-transform duration-75 ease-out"
         style={{
           width: '400px',
           height: '400px',
           transform: `translate(${trailingPos.x - 200}px, ${trailingPos.y - 200}px)`,
-          background: 'radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(5, 150, 105, 0.06) 50%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(245, 166, 35, 0.16) 0%, rgba(201, 127, 28, 0.06) 50%, transparent 75%)',
         }}
       />
 
       {/* 2. Precision Inner Light Aura */}
       <div
-        className={`absolute rounded-full border border-emerald-400/30 transition-all duration-150 ease-out backdrop-blur-[1px] ${
+        className={`absolute rounded-full border border-amber-400/30 transition-all duration-150 ease-out backdrop-blur-[1px] ${
           isHovered
-            ? 'w-10 h-10 -ml-5 -mt-5 bg-emerald-500/15 border-emerald-400/70 shadow-[0_0_20px_rgba(16,185,129,0.5)] scale-110'
-            : 'w-6 h-6 -ml-3 -mt-3 bg-emerald-400/10 shadow-[0_0_12px_rgba(16,185,129,0.25)]'
+            ? 'w-10 h-10 -ml-5 -mt-5 bg-amber-500/15 border-amber-400/70 shadow-[0_0_20px_rgba(245,166,35,0.5)] scale-110'
+            : 'w-6 h-6 -ml-3 -mt-3 bg-amber-400/10 shadow-[0_0_12px_rgba(245,166,35,0.25)]'
         }`}
         style={{
           transform: `translate(${position.x}px, ${position.y}px)`,
@@ -77,7 +77,7 @@ export default function GlowCursor() {
 
       {/* 3. Center Micro Pointer Dot */}
       <div
-        className="absolute w-1.5 h-1.5 -ml-[3px] -mt-[3px] rounded-full bg-emerald-300 shadow-[0_0_10px_#34d399] transition-transform duration-75"
+        className="absolute w-1.5 h-1.5 -ml-[3px] -mt-[3px] rounded-full bg-amber-300 shadow-[0_0_10px_#FFC15E] transition-transform duration-75"
         style={{
           transform: `translate(${position.x}px, ${position.y}px)`,
         }}

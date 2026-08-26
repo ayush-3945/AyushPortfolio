@@ -40,7 +40,7 @@ export default function HeroBento({ onOpenWindow, onScrollTo }) {
           <div className="flex items-center gap-4 pt-2">
             <button
               onClick={() => navigate('contact')}
-              className="px-7 py-3.5 rounded-xl bg-white text-black font-extrabold text-xs tracking-widest uppercase hover:bg-emerald-400 hover:text-black transition-all shadow-[0_10px_25px_rgba(255,255,255,0.1)] hover:shadow-emerald-500/30 cursor-pointer flex items-center gap-2 group"
+              className="px-7 py-3.5 rounded-xl bg-white text-black font-extrabold text-xs tracking-widest uppercase hover:bg-[#F5A623] hover:text-black transition-all shadow-[0_10px_25px_rgba(255,255,255,0.1)] hover:shadow-[#F5A623]/40 cursor-pointer flex items-center gap-2 group"
             >
               <span>START PROJECT</span>
               <span className="group-hover:translate-x-1 transition-transform">↗</span>
@@ -50,16 +50,16 @@ export default function HeroBento({ onOpenWindow, onScrollTo }) {
               href={personal.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3.5 text-white/70 hover:text-emerald-300 font-mono-code font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-2 hover:border-emerald-500/30"
+              className="px-6 py-3.5 text-white/70 hover:text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-2 hover:border-[#F5A623]/30"
             >
               <span>READ RESUME</span>
             </a>
           </div>
         </div>
 
-        {/* Center Column: Vibrant Personal Portrait with Emerald Glow Frame (4 cols on lg) */}
+        {/* Center Column: Vibrant Personal Portrait with Amber Gold Glow Frame (4 cols on lg) */}
         <div className="lg:col-span-4 flex justify-center items-center">
-          <div className="relative w-full max-w-[360px] aspect-square rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(16,185,129,0.2)] bg-[#070b10] group">
+          <div className="relative w-full max-w-[360px] aspect-square rounded-2xl overflow-hidden border border-[#F5A623]/30 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(245,166,35,0.2)] bg-[#070b10] group">
             {/* Real Color Portrait */}
             <img
               src={ayushPhoto}
@@ -67,11 +67,11 @@ export default function HeroBento({ onOpenWindow, onScrollTo }) {
               className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 brightness-105 contrast-110"
               style={{ objectPosition: 'center 15%' }}
             />
-            {/* Ambient Emerald Bottom Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06090e] via-transparent to-emerald-950/20 opacity-60 pointer-events-none"></div>
+            {/* Ambient Amber Bottom Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06090e] via-transparent to-amber-950/20 opacity-60 pointer-events-none"></div>
             {/* Live Indicator Pill on Photo */}
             <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center gap-1.5 pointer-events-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse shadow-[0_0_8px_#FFC15E]"></span>
               <span className="text-[10px] font-mono-code font-bold text-white/80 tracking-wider uppercase">DEV // AI</span>
             </div>
           </div>
