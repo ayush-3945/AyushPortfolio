@@ -37,7 +37,7 @@ export default function HeroBento({ onOpenWindow, onScrollTo }) {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <button
               onClick={() => navigate('contact')}
               className="px-7 py-3.5 rounded-xl bg-white text-black font-extrabold text-xs tracking-widest uppercase hover:bg-[#F5A623] hover:text-black transition-all shadow-[0_10px_25px_rgba(255,255,255,0.1)] hover:shadow-[#F5A623]/40 cursor-pointer flex items-center gap-2 group"
@@ -50,10 +50,19 @@ export default function HeroBento({ onOpenWindow, onScrollTo }) {
               href={personal.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3.5 text-white/70 hover:text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-2 hover:border-[#F5A623]/30"
+              className="px-5 py-3.5 text-white/70 hover:text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-2 hover:border-[#F5A623]/30"
             >
               <span>READ RESUME</span>
             </a>
+
+            <button
+              onClick={() => onOpenWindow('terminal')}
+              className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-[#F5A623]/50 text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-1.5 cursor-pointer shadow-[0_0_12px_rgba(245,166,35,0.15)]"
+              title="Launch Interactive Terminal"
+            >
+              <span className="text-[#F5A623]">&gt;_</span>
+              <span>TERMINAL</span>
+            </button>
           </div>
         </div>
 
