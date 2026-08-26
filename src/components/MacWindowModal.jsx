@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
+import TerminalWindow from './TerminalWindow';
 
 export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }) {
   if (!activeWindow) return null;
@@ -64,45 +65,44 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
     }
   };
 
-  // 10 Core Tech Badges matching Rohit's exact ARSENAL layout
+  // 10 Core Tech Badges
   const techArsenal = [
     {
       name: 'TYPESCRIPT',
-      bg: 'bg-[#3178c6]',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#3178c6] flex items-center justify-center font-extrabold text-white text-base shadow-[0_0_15px_rgba(49,120,198,0.4)]">
+        <div className="w-9 h-9 rounded-xl bg-[#3178c6]/20 border border-[#3178c6]/40 flex items-center justify-center text-[#3178c6] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(49,120,198,0.25)]">
           TS
         </div>
       )
     },
     {
-      name: 'REACT',
+      name: 'REACT.JS',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#00d8ff]/10 border border-[#00d8ff]/30 flex items-center justify-center text-[#00d8ff] text-2xl shadow-[0_0_15px_rgba(0,216,255,0.3)]">
+        <div className="w-9 h-9 rounded-xl bg-[#61dafb]/20 border border-[#61dafb]/40 flex items-center justify-center text-[#61dafb] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(97,218,251,0.25)]">
           ⚛
+        </div>
+      )
+    },
+    {
+      name: 'NEXT.JS',
+      icon: (
+        <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white font-mono-code font-black text-sm">
+          ▲
         </div>
       )
     },
     {
       name: 'NODE.JS',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#5fa04e]/10 border border-[#5fa04e]/30 flex items-center justify-center text-[#5fa04e] text-xl font-bold shadow-[0_0_15px_rgba(95,160,78,0.3)]">
+        <div className="w-9 h-9 rounded-xl bg-[#339933]/20 border border-[#339933]/40 flex items-center justify-center text-[#339933] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(51,153,51,0.25)]">
           ⬢
         </div>
       )
     },
     {
-      name: 'TAILWIND',
+      name: 'EXPRESS.JS',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#FFC15E]/10 border border-[#FFC15E]/30 flex items-center justify-center text-[#FFC15E] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-          ≈
-        </div>
-      )
-    },
-    {
-      name: 'EXPRESS',
-      icon: (
-        <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center font-bold text-white text-sm">
+        <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white/80 font-mono-code font-black text-sm">
           ex
         </div>
       )
@@ -110,7 +110,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
     {
       name: 'MONGODB',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#00ed64]/10 border border-[#00ed64]/30 flex items-center justify-center text-[#00ed64] text-xl font-bold shadow-[0_0_15px_rgba(0,237,100,0.3)]">
+        <div className="w-9 h-9 rounded-xl bg-[#47a248]/20 border border-[#47a248]/40 flex items-center justify-center text-[#47a248] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(71,162,72,0.25)]">
           🍃
         </div>
       )
@@ -118,63 +118,64 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
     {
       name: 'SOCKET.IO',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-lg">
+        <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white font-mono-code font-black text-sm">
           ⚡
         </div>
       )
     },
     {
-      name: 'GEMINI AI',
+      name: 'TAILWIND CSS',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#1a73e8] via-[#8ab4f8] to-[#ea4335] flex items-center justify-center text-white text-lg shadow-[0_0_15px_rgba(138,180,248,0.4)]">
-          ✦
-        </div>
-      )
-    },
-    {
-      name: 'PYTHON',
-      icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#3776ab]/15 border border-[#ffd438]/30 flex items-center justify-center text-[#ffd438] text-xl">
-          🐍
+        <div className="w-9 h-9 rounded-xl bg-[#38bdf8]/20 border border-[#38bdf8]/40 flex items-center justify-center text-[#38bdf8] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(56,189,248,0.25)]">
+          ≈
         </div>
       )
     },
     {
       name: 'C / C++',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-bold text-[#FFC15E] text-xs">
+        <div className="w-9 h-9 rounded-xl bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center text-[#659ad2] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(0,89,156,0.25)]">
           C++
         </div>
       )
     },
+    {
+      name: 'JAVA',
+      icon: (
+        <div className="w-9 h-9 rounded-xl bg-[#e76f00]/20 border border-[#e76f00]/40 flex items-center justify-center text-[#f89820] font-mono-code font-black text-sm shadow-[0_0_15px_rgba(231,111,0,0.25)]">
+          ☕
+        </div>
+      )
+    }
   ];
 
   const windowTitle = {
+    terminal: 'ayush@portfolio: ~ (zsh)',
     stack: 'TECH STACK',
     projects: 'PROJECTS',
     experience: 'EXPERIENCE',
     contact: 'CONTACT',
     article: 'WRITING'
-  }[activeWindow] || 'SYSTEM';
+  }[activeWindow] || 'AYUSH OS';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-lg animate-fadeIn select-none">
-      {/* Click outside to close */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-fadeIn">
+      {/* Background Click to Dismiss */}
       <div className="absolute inset-0" onClick={onClose}></div>
 
-      {/* Layered Window Deck Container */}
+      {/* Container holding stacked windows mockup */}
       <div className="relative w-full max-w-4xl z-10 flex flex-col items-center">
         
-        {/* Faint Stacked Window Layer 1 (Experience) */}
+        {/* Faint Stacked Window Layer 1 (Stack) */}
         <div 
-          onClick={() => onSwitchWindow('experience')}
-          className="w-[94%] h-12 -mb-8 rounded-2xl bg-[#090c13] border border-white/[0.08] flex items-center px-4 justify-between cursor-pointer hover:border-white/20 transition-all opacity-40 hover:opacity-70 shadow-lg"
+          onClick={() => onSwitchWindow('stack')}
+          className="w-[94%] h-10 -mb-7 rounded-2xl bg-[#080b11] border border-white/[0.08] flex items-center px-4 justify-between cursor-pointer hover:border-white/20 transition-all opacity-50 hover:opacity-80 shadow-2xl"
         >
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500/40"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500/40"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></span>
           </div>
-          <span className="text-[11px] font-mono-code text-white/50 font-bold uppercase tracking-wider">EXPERIENCE</span>
+          <span className="text-[10px] font-mono-code text-white/50 uppercase tracking-wider">TECH STACK</span>
           <div className="w-6"></div>
         </div>
 
@@ -192,7 +193,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
         </div>
 
         {/* 🌟 Active Front macOS Window */}
-        <div className="relative w-full max-h-[85vh] bg-[#0c1017] border border-white/[0.12] rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.95),0_0_30px_rgba(14,165,233,0.15)] flex flex-col overflow-hidden animate-scaleUp">
+        <div className="relative w-full max-h-[85vh] bg-[#0c1017] border border-white/[0.12] rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.95),0_0_30px_rgba(245,166,35,0.15)] flex flex-col overflow-hidden animate-scaleUp">
           
           {/* macOS Titlebar */}
           <div className="px-5 py-4 bg-[#090d14] border-b border-white/[0.08] flex items-center justify-between flex-shrink-0">
@@ -219,7 +220,7 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
 
             {/* Fast Switch Tabs */}
             <div className="flex items-center gap-1.5">
-              {['stack', 'projects', 'experience', 'contact'].map((tab) => (
+              {['terminal', 'stack', 'projects', 'experience', 'contact'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => onSwitchWindow(tab)}
@@ -229,15 +230,23 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       : 'text-white/40 hover:text-white/70'
                   }`}
                 >
-                  {tab}
+                  {tab === 'terminal' ? '>_ term' : tab}
                 </button>
               ))}
             </div>
           </div>
 
           {/* Window Body */}
-          <div className="p-6 md:p-10 overflow-y-auto flex-1 scrollbar-subtle space-y-6 relative">
+          <div className={`overflow-y-auto flex-1 scrollbar-subtle relative ${activeWindow === 'terminal' ? 'p-0' : 'p-6 md:p-10 space-y-6'}`}>
             
+            {/* 0. TERMINAL WINDOW */}
+            {activeWindow === 'terminal' && (
+              <TerminalWindow
+                onOpenWindow={onSwitchWindow}
+                onClose={onClose}
+              />
+            )}
+
             {/* ========================================================= */}
             {/* 1. TECH STACK (Exact ARSENAL layout from screenshot!)      */}
             {/* ========================================================= */}

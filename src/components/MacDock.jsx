@@ -20,6 +20,7 @@ export default function MacDock({ openWindows = [], activeSection = 'hero', onTo
   };
 
   const dockItems = [
+    { id: 'terminal', label: 'Terminal (>_)', icon: Terminal, action: () => handleItemClick('terminal') },
     { id: 'projects', label: 'Projects', icon: Briefcase, action: () => handleItemClick('projects') },
     { id: 'stack', label: 'Tech Stack', icon: Cpu, action: () => handleItemClick('stack') },
     { id: 'experience', label: 'Experience', icon: Code2, action: () => handleItemClick('experience') },

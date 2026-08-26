@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
+import TerminalWindow from './TerminalWindow';
 
 export default function MacWindowManager({ openWindows, onBringToFront, onCloseWindow, onSwitchWindow }) {
   if (!openWindows || openWindows.length === 0) return null;
@@ -128,6 +129,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
   ];
 
   const windowTitles = {
+    terminal: 'ayush@portfolio: ~ (zsh)',
     stack: 'TECH STACK',
     projects: 'PROJECTS',
     experience: 'EXPERIENCE',
@@ -158,7 +160,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
               }}
               className={`absolute left-0 right-0 max-h-[75vh] rounded-2xl border transition-all duration-300 pointer-events-auto flex flex-col overflow-hidden ${
                 isFront
-                  ? 'bg-[#0c1017] border-white/[0.16] shadow-[0_30px_70px_rgba(0,0,0,0.95),0_0_30px_rgba(14,165,233,0.15)] opacity-100'
+                  ? 'bg-[#0c1017] border-white/[0.16] shadow-[0_30px_70px_rgba(0,0,0,0.95),0_0_30px_rgba(245,166,35,0.15)] opacity-100'
                   : 'bg-[#090d14] border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.7)] opacity-70 hover:opacity-95 cursor-pointer'
               }`}
             >
@@ -201,11 +203,17 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
               </div>
 
               {/* Window Content */}
-              <div className={`p-6 md:p-8 overflow-y-auto flex-1 scrollbar-subtle space-y-6 relative ${isFront ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+              <div className={`overflow-y-auto flex-1 scrollbar-subtle relative ${winId === 'terminal' ? 'p-0' : 'p-6 md:p-8 space-y-6'} ${isFront ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                 
                 {/* ========================================================= */}
-                {/* 1. TECH STACK (REAL MADRID // SIUUU)                       */}
+                {/* 0. TERMINAL WINDOW                                        */}
                 {/* ========================================================= */}
+                {winId === 'terminal' && (
+                  <TerminalWindow
+                    onOpenWindow={onSwitchWindow}
+                    onClose={() => onCloseWindow('terminal')}
+                  />
+                )}
                 {winId === 'stack' && (
                   <div className="space-y-6 relative">
                     {/* Faint Background Watermark */}

@@ -21,6 +21,7 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
   if (!isOpen) return null;
 
   const actions = [
+    { label: 'Launch Hacker Terminal (>_)', icon: '💻', category: 'Terminal', action: () => onSelectAction('terminal') },
     { label: 'View Flagship Project: CoalDarpan', icon: '🏛️', category: 'Projects', action: () => onSelectAction('projects') },
     { label: 'View AI Interview Agent', icon: '🎙️', category: 'Projects', action: () => onSelectAction('projects') },
     { label: 'Open Tech Stack Matrix', icon: '🧠', category: 'Skills', action: () => onSelectAction('stack') },
