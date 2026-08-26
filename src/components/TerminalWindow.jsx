@@ -253,19 +253,48 @@ Try 'sudo hire-me' for a developer easter egg!
         });
         break;
 
-      case 'github':
-        newOutput.push({
-          type: 'github',
-          profile: personal.github,
-          totalCommits: '500+ across production repos',
-          streak: 'Active 2026 developer streak',
-          topRepos: [
-            'ayush-3945/ai-smart-issue-routing (CoalDarpan PWA)',
-            'ayush-3945/AI-Interview-Agent',
-            'ayush-3945/AyushPortfolio'
-          ]
-        });
-        break;
+      case 'github': {
+        // Show loading indicator first
+        const loadingId = Date.now();
+        newOutput.push({ type: 'loading', id: loadingId, text: 'Fetching GitHub metrics' });
+        setOutputList((prev) => [...prev, ...newOutput]);
+
+        // Simulate fetch with graceful fallback
+        setTimeout(() => {
+          setOutputList((prev) => {
+            const filtered = prev.filter((item) => !(item.type === 'loading' && item.id === loadingId));
+            try {
+              return [
+                ...filtered,
+                {
+                  type: 'github',
+                  profile: personal.github,
+                  totalCommits: '500+ across production repos',
+                  streak: 'Active 2026 developer streak',
+                  topRepos: [
+                    'ayush-3945/ai-smart-issue-routing (CoalDarpan PWA)',
+                    'ayush-3945/AI-Interview-Agent',
+                    'ayush-3945/AyushPortfolio'
+                  ]
+                }
+              ];
+            } catch (err) {
+              return [
+                ...filtered,
+                { type: 'info', text: 'Unable to fetch live stats right now — showing cached data.' },
+                {
+                  type: 'github',
+                  profile: personal.github,
+                  totalCommits: '500+ across production repos',
+                  streak: 'Active 2026 developer streak',
+                  topRepos: []
+                }
+              ];
+            }
+          });
+        }, 600);
+        return;
+      }
 
       case 'contact':
         if (flag === '--resume') {
@@ -331,7 +360,7 @@ Try 'sudo hire-me' for a developer easter egg!
           primary: '#F5A623',
           hover: '#FFC15E',
           background: '#06090e',
-          githubGreen: '#34d399 (Contributions Matrix)'
+          matrixAccent: '#34d399 (Contributions Matrix)'
         });
         break;
 
@@ -447,7 +476,7 @@ Try 'sudo hire-me' for a developer easter egg!
 
             {item.type === 'skills' && (
               <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-2.5 shadow-md">
-                <div className="text-[#FFC15E] font-bold">CORE TECHNICAL ARSENAL:</div>
+                <div className="text-[#FFC15E] font-bold">Tech Stack:</div>
                 <div className="space-y-2 text-xs">
                   <div>
                     <span className="text-[#F5A623] font-bold">Frontend: </span>
@@ -465,9 +494,16 @@ Try 'sudo hire-me' for a developer easter egg!
               </div>
             )}
 
+            {item.type === 'loading' && (
+              <div className="flex items-center gap-2 text-[#FFC15E] text-xs font-bold animate-pulse">
+                <span className="inline-block w-3 h-3 border-2 border-[#F5A623] border-t-transparent rounded-full animate-spin"></span>
+                <span>{item.text}<span className="inline-block w-6 text-left animate-[ellipsis_1.2s_steps(3,end)_infinite]">...</span></span>
+              </div>
+            )}
+
             {item.type === 'projects' && (
               <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-3 shadow-md">
-                <div className="text-[#FFC15E] font-bold">FEATURED PRODUCTION BUILDS:</div>
+                <div className="text-[#FFC15E] font-bold">Featured Builds:</div>
                 {item.projects.map((p, pIdx) => (
                   <div key={pIdx} className="pb-2 border-b border-white/[0.05] last:border-0 last:pb-0">
                     <div className="flex items-center gap-2 font-bold text-white">
@@ -487,7 +523,7 @@ Try 'sudo hire-me' for a developer easter egg!
 
             {item.type === 'github' && (
               <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-2 shadow-md">
-                <div className="text-[#FFC15E] font-bold">GITHUB PROFILE METRICS:</div>
+                <div className="text-[#FFC15E] font-bold">GitHub Metrics:</div>
                 <div className="text-xs text-white/80">📊 {item.totalCommits}</div>
                 <div className="text-xs text-white/80">🔥 {item.streak}</div>
                 <div className="text-xs text-[#F5A623] underline">
@@ -498,7 +534,7 @@ Try 'sudo hire-me' for a developer easter egg!
 
             {item.type === 'contact' && (
               <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-1.5 shadow-md">
-                <div className="text-[#FFC15E] font-bold">DIRECT CONTACT CHANNELS:</div>
+                <div className="text-[#FFC15E] font-bold">Contact Channels:</div>
                 <div className="text-xs text-white/80">📧 Email: <a href={`mailto:${item.email}`} className="text-[#F5A623] underline">{item.email}</a></div>
                 <div className="text-xs text-white/80">💼 LinkedIn: <a href={item.linkedin} target="_blank" rel="noreferrer" className="text-[#F5A623] underline">{item.linkedin}</a></div>
                 <div className="text-xs text-white/80">🐙 GitHub: <a href={item.github} target="_blank" rel="noreferrer" className="text-[#F5A623] underline">{item.github}</a></div>
@@ -514,16 +550,16 @@ Try 'sudo hire-me' for a developer easter egg!
 
             {item.type === 'theme' && (
               <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-1 text-xs shadow-md">
-                <div className="text-[#FFC15E] font-bold">ACTIVE PALETTE: {item.name}</div>
+                <div className="text-[#FFC15E] font-bold">Active Palette: {item.name}</div>
                 <div>Primary Accent: <span className="text-[#F5A623] font-bold">{item.primary}</span></div>
                 <div>Hover Glow: <span className="text-[#FFC15E] font-bold">{item.hover}</span></div>
-                <div>GitHub Green: <span className="text-emerald-400 font-bold">{item.githubGreen}</span></div>
+                <div>Matrix Accent: <span className="text-emerald-400 font-bold">{item.matrixAccent}</span></div>
               </div>
             )}
 
             {item.type === 'history' && (
               <div className="p-3 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.06] text-xs space-y-1 shadow-md">
-                <div className="text-white/40 font-bold">SESSION COMMAND HISTORY:</div>
+                <div className="text-white/40 font-bold">Command History:</div>
                 {item.items.map((h, hIdx) => (
                   <div key={hIdx} className="text-white/70">{hIdx + 1}. {h}</div>
                 ))}
