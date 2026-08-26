@@ -37,9 +37,6 @@ export default function ProjectsSection() {
                 <h3 className="text-2xl sm:text-3xl font-black text-white group-hover:text-[#FFC15E] transition-colors tracking-tight">
                   CoalDarpan
                 </h3>
-                <span className="px-3 py-1 rounded-full bg-[#F5A623]/15 text-[#FFC15E] border border-[#F5A623]/30 text-[11px] font-mono-code font-bold uppercase tracking-wider shadow-[0_0_12px_rgba(245,166,35,0.3)]">
-                  NATIONAL HACKATHON WINNER
-                </span>
               </div>
               <span className="text-xs font-mono-code text-white/40 font-semibold">2026 • PRODUCTION PWA</span>
             </div>
