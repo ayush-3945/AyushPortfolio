@@ -80,7 +80,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
     {
       name: 'C / C++',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-black text-[#c084fc] text-xs shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+        <div className="w-10 h-10 rounded-lg bg-[#00599c]/20 border border-[#00599c]/40 flex items-center justify-center font-black text-[#34d399] text-xs shadow-[0_0_15px_rgba(56,189,248,0.3)]">
           C++
         </div>
       )
@@ -120,7 +120,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
     {
       name: 'TAILWIND',
       icon: (
-        <div className="w-10 h-10 rounded-lg bg-[#c084fc]/10 border border-[#c084fc]/30 flex items-center justify-center text-[#c084fc] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+        <div className="w-10 h-10 rounded-lg bg-[#34d399]/10 border border-[#34d399]/30 flex items-center justify-center text-[#34d399] text-xl font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]">
           ≈
         </div>
       )
@@ -217,7 +217,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                       <div className="flex items-center gap-3">
                         <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase flex items-center gap-2">
                           <span>REAL MADRID</span>
-                          <span className="text-[#c084fc] text-xl">⚡</span>
+                          <span className="text-[#34d399] text-xl">⚡</span>
                         </h2>
                         <span className="text-white/20 text-lg">|</span>
                         <span className="text-xs font-mono-code text-amber-400 tracking-widest uppercase font-bold">
@@ -245,7 +245,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
 
                     <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs font-mono-code text-white/60 flex items-center justify-between">
                       <span className="text-amber-300 font-bold">👑 Elite Engineering & Real-Time Distributed Architecture</span>
-                      <button onClick={() => onSwitchWindow('projects')} className="text-[#c084fc] hover:underline font-bold">
+                      <button onClick={() => onSwitchWindow('projects')} className="text-[#34d399] hover:underline font-bold">
                         Explore Builds ➔
                       </button>
                     </div>
@@ -271,20 +271,20 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                           FEATURED WORKS // 02
                         </span>
                       </div>
-                      <span className="text-[11px] font-mono-code text-purple-400">3 Production Projects</span>
+                      <span className="text-[11px] font-mono-code text-emerald-400">3 Production Projects</span>
                     </div>
 
                     <div className="space-y-4">
                       {/* Project 1: CoalDarpan */}
-                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#a855f7]/30 hover:border-[#a855f7]/60 transition-all flex flex-col justify-between group shadow-lg">
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#10b981]/30 hover:border-[#10b981]/60 transition-all flex flex-col justify-between group shadow-lg">
                         <div>
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
                             <div className="flex items-center gap-2">
                               <span className="text-base">🏛️</span>
-                              <h3 className="text-lg font-bold text-white group-hover:text-[#c084fc] transition-colors">
+                              <h3 className="text-lg font-bold text-white group-hover:text-[#34d399] transition-colors">
                                 CoalDarpan
                               </h3>
-                              <span className="px-2 py-0.5 rounded-md bg-[#a855f7]/10 text-[#c084fc] border border-[#a855f7]/30 text-[10px] font-mono-code font-bold">
+                              <span className="px-2 py-0.5 rounded-md bg-[#10b981]/10 text-[#34d399] border border-[#10b981]/30 text-[10px] font-mono-code font-bold">
                                 NATIONAL HACKATHON
                               </span>
                             </div>
@@ -309,7 +309,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             href="https://coaldarpan.vercel.app"
                             target="_blank"
                             rel="noreferrer"
-                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#c084fc] hover:text-white transition-all flex items-center gap-1.5"
+                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#34d399] hover:text-white transition-all flex items-center gap-1.5"
                           >
                             <span>Live App</span>
                             <span>↗</span>
@@ -327,15 +327,15 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                       </div>
 
                       {/* Project 2: AI Interview Agent */}
-                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-white/[0.08] hover:border-purple-500/40 transition-all flex flex-col justify-between group shadow-lg">
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-white/[0.08] hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-lg">
                         <div>
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
                             <div className="flex items-center gap-2">
                               <span className="text-base">🎙️</span>
-                              <h3 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
+                              <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
                                 AI Interview Agent
                               </h3>
-                              <span className="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/30 text-[10px] font-mono-code font-bold">
+                              <span className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono-code font-bold">
                                 MULTIMODAL AI
                               </span>
                             </div>
@@ -392,7 +392,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                           {/* Header: Company & Live dot + Date & Location */}
                           <div className="flex flex-wrap items-baseline justify-between gap-2">
                             <div className="flex items-center gap-2">
-                              <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors tracking-tight">
+                              <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors tracking-tight">
                                 {exp.company}
                               </h3>
                               {exp.isLive && (
@@ -423,7 +423,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] font-mono-code text-white/40 pt-2 tracking-widest uppercase">
                             {exp.skills.map((skill, sIdx) => (
                               <React.Fragment key={sIdx}>
-                                <span className="hover:text-purple-300 transition-colors">{skill}</span>
+                                <span className="hover:text-emerald-300 transition-colors">{skill}</span>
                                 {sIdx < exp.skills.length - 1 && <span className="text-white/20">•</span>}
                               </React.Fragment>
                             ))}
@@ -450,9 +450,9 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                     </div>
 
                     {contactSubmitted ? (
-                      <div className="p-6 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-center animate-fadeIn">
+                      <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center animate-fadeIn">
                         <span className="text-3xl mb-2 inline-block">🚀</span>
-                        <h4 className="text-purple-400 font-bold text-base">Message Sent Successfully!</h4>
+                        <h4 className="text-emerald-400 font-bold text-base">Message Sent Successfully!</h4>
                         <p className="text-white/70 text-xs mt-1">
                           I'll get back to you shortly at {formData.email || 'your email'}.
                         </p>
@@ -467,7 +467,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             placeholder="John Doe"
-                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#a855f7]"
+                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#10b981]"
                           />
                         </div>
 
@@ -479,7 +479,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="john@example.com"
-                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#a855f7]"
+                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#10b981]"
                           />
                         </div>
 
@@ -491,14 +491,14 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             placeholder="Tell me about your project..."
-                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#a855f7] resize-none"
+                            className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm outline-none focus:border-[#10b981] resize-none"
                           ></textarea>
                         </div>
 
                         <button
                           type="submit"
                           disabled={contactLoading}
-                          className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#a855f7] hover:text-white transition-all shadow-lg cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
+                          className="w-full py-3 rounded-xl bg-white text-black font-extrabold text-xs tracking-wider uppercase hover:bg-[#10b981] hover:text-white transition-all shadow-lg cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
                         >
                           {contactLoading ? (
                             <>
@@ -518,7 +518,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                 {/* 5. ARTICLE WINDOW                                         */}
                 {winId === 'article' && (
                   <div className="space-y-4 max-w-2xl mx-auto">
-                    <div className="text-[11px] font-mono-code text-[#c084fc]">SYSTEM ESSAY • AUG 2026</div>
+                    <div className="text-[11px] font-mono-code text-[#34d399]">SYSTEM ESSAY • AUG 2026</div>
                     <h2 className="text-2xl font-bold text-white">
                       How AI-Powered Smart Governance Can Digitize Offline Processes
                     </h2>

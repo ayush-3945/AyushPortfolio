@@ -11,12 +11,12 @@ export default function ArticleSection() {
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-white/[0.08]">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono-code text-purple-400 uppercase tracking-widest mb-1.5 font-bold">
-            <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+          <div className="flex items-center gap-2 text-xs font-mono-code text-emerald-400 uppercase tracking-widest mb-1.5 font-bold">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
             <span>SYSTEM ESSAY & CASE STUDY</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-300">Writing & Case Studies</span>
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300">Writing & Case Studies</span>
           </h2>
         </div>
         <span className="text-xs font-mono-code text-white/40 tracking-widest uppercase">
@@ -26,12 +26,12 @@ export default function ArticleSection() {
 
       <div className="glass-bento rounded-3xl p-7 sm:p-10 border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.7)] group">
         <div className="max-w-3xl space-y-6">
-          <div className="flex items-center gap-3 text-xs font-mono-code text-purple-400">
+          <div className="flex items-center gap-3 text-xs font-mono-code text-emerald-400">
             <BookOpen size={16} />
             <span>SYSTEM ESSAY • {article.date} • {article.readTime}</span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-purple-300 transition-colors">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-emerald-300 transition-colors">
             {article.title}
           </h3>
 
@@ -51,7 +51,7 @@ export default function ArticleSection() {
               href={article.link}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-500/10 border border-purple-500/30 hover:bg-purple-500/20 text-purple-300 font-mono-code font-bold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(168,85,247,0.2)]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-300 font-mono-code font-bold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)]"
             >
               <span>READ FULL REPOSITORY WRITEUP</span>
               <ExternalLink size={14} />

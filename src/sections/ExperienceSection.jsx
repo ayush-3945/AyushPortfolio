@@ -10,12 +10,12 @@ export default function ExperienceSection() {
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-white/[0.08]">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono-code text-purple-400 uppercase tracking-widest mb-1.5 font-bold">
-            <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+          <div className="flex items-center gap-2 text-xs font-mono-code text-emerald-400 uppercase tracking-widest mb-1.5 font-bold">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
             <span>CAREER & ACADEMIC PATHWAY</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            Experience <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-300">& Journey</span>
+            Experience <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300">& Journey</span>
           </h2>
         </div>
         <span className="text-xs font-mono-code text-white/40 tracking-widest uppercase">
@@ -34,7 +34,7 @@ export default function ExperienceSection() {
               {/* Header: Company & Live dot + Date & Location */}
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div className="flex items-center gap-2.5">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors tracking-tight">
                     {exp.company}
                   </h3>
                   {exp.isLive && (
@@ -65,7 +65,7 @@ export default function ExperienceSection() {
               <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[10px] sm:text-[11px] font-mono-code text-white/40 pt-2 tracking-widest uppercase">
                 {exp.skills.map((skill, sIdx) => (
                   <React.Fragment key={sIdx}>
-                    <span className="hover:text-purple-300 transition-colors">{skill}</span>
+                    <span className="hover:text-emerald-300 transition-colors">{skill}</span>
                     {sIdx < exp.skills.length - 1 && <span className="text-white/20">•</span>}
                   </React.Fragment>
                 ))}

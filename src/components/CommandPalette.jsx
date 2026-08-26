@@ -72,12 +72,12 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
                   action.action();
                   onClose(false);
                 }}
-                className="w-full px-3 py-2.5 rounded-xl hover:bg-purple-500/15 hover:border hover:border-purple-500/30 transition-all flex items-center justify-between text-left group cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl hover:bg-emerald-500/15 hover:border hover:border-emerald-500/30 transition-all flex items-center justify-between text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-base">{action.icon}</span>
                   <div>
-                    <div className="text-xs font-semibold text-white group-hover:text-purple-300 transition-colors">
+                    <div className="text-xs font-semibold text-white group-hover:text-emerald-300 transition-colors">
                       {action.label}
                     </div>
                     <div className="text-[10px] text-white/40 font-mono-code">
@@ -85,7 +85,7 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono-code text-white/40 group-hover:text-purple-300">
+                <span className="text-[10px] font-mono-code text-white/40 group-hover:text-emerald-300">
                   ENTER ↵
                 </span>
               </button>

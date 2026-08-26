@@ -21,7 +21,7 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
           >
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-pink-500 to-emerald-600 bg-clip-text text-transparent">
               Ayush Pandey
             </span>
           </motion.h1>
@@ -58,7 +58,7 @@ const Hero = () => {
                   .getElementById("projects")
                   .scrollIntoView({ behavior: "smooth" })
               }
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition duration-300"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white font-semibold shadow-lg hover:scale-105 transition duration-300"
             >
               View Projects
             </button>
@@ -78,7 +78,7 @@ const Hero = () => {
             <a
               href="/Ayush_Pandey_Resume.pdf"
               download="Ayush_Pandey_Resume.pdf"
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 text-white font-semibold shadow-md hover:scale-105 transition duration-300 flex items-center justify-center"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-semibold shadow-md hover:scale-105 transition duration-300 flex items-center justify-center"
             >
               Download Resume
             </a>

@@ -34,34 +34,40 @@
 
 /* Glass Bento Card Aura */
 .glass-bento {
-  background: rgba(13, 17, 26, 0.75);
+  background: rgba(10, 15, 23, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(16, 185, 129, 0.08);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-bento:hover {
-  border-color: rgba(168, 85, 247, 0.35);
-  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(168, 85, 247, 0.25);
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(16, 185, 129, 0.25);
 }
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 45%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-emerald {
+  background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-purple {
-  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-cyan {
-  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #a7f3d0 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -73,7 +79,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #07090e;
+  background: #05080d;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -82,7 +88,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a855f7;
+  background: #10b981;
 }
 
 /* Audio Equalizer Animation */

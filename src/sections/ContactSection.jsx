@@ -49,12 +49,12 @@ export default function ContactSection() {
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-white/[0.08]">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono-code text-purple-400 uppercase tracking-widest mb-1.5 font-bold">
-            <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+          <div className="flex items-center gap-2 text-xs font-mono-code text-emerald-400 uppercase tracking-widest mb-1.5 font-bold">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
             <span>GET IN TOUCH // 04</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            Let's Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-300">Something Extraordinary</span>
+            Let's Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300">Something Extraordinary</span>
           </h2>
         </div>
         <span className="text-xs font-mono-code text-white/40 tracking-widest uppercase">
@@ -68,7 +68,7 @@ export default function ContactSection() {
         <div className="lg:col-span-7 glass-bento rounded-3xl p-7 sm:p-10 border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.7)] flex flex-col justify-between">
           {submitted ? (
             <div className="my-auto py-12 text-center space-y-3 animate-fadeIn">
-              <div className="w-16 h-16 rounded-full bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-300 mx-auto text-3xl shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+              <div className="w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 mx-auto text-3xl shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                 <CheckCircle2 size={32} />
               </div>
               <h3 className="text-2xl font-bold text-white">Message Delivered to Ayush!</h3>
@@ -87,7 +87,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm outline-none focus:border-purple-400 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm outline-none focus:border-emerald-400 transition-colors"
                   />
                 </div>
 
@@ -99,7 +99,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm outline-none focus:border-purple-400 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm outline-none focus:border-emerald-400 transition-colors"
                   />
                 </div>
               </div>
@@ -112,18 +112,18 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell me about your project, ideas or opportunities..."
-                  className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm outline-none focus:border-purple-400 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm outline-none focus:border-emerald-400 transition-colors resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-500 via-fuchsia-500 to-indigo-500 text-white font-black text-xs tracking-widest uppercase hover:opacity-90 transition-all shadow-[0_10px_25px_rgba(168,85,247,0.3)] cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-black font-black text-xs tracking-widest uppercase hover:opacity-95 transition-all shadow-[0_10px_25px_rgba(16,185,129,0.3)] cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
-                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
                     <span>DISPATCHING MESSAGE...</span>
                   </>
                 ) : (
@@ -150,21 +150,21 @@ export default function ContactSection() {
             <div className="space-y-3 pt-2">
               <a
                 href={`mailto:${personal.email}`}
-                className="flex items-center gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-purple-500/40 transition-all group"
+                className="flex items-center gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-emerald-500/40 transition-all group"
               >
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-300 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-300 group-hover:scale-110 transition-transform">
                   <Mail size={18} />
                 </div>
                 <div>
                   <div className="text-[10px] font-mono-code text-white/40 uppercase">EMAIL ADDRESS</div>
-                  <div className="text-xs sm:text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
+                  <div className="text-xs sm:text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors">
                     {personal.email}
                   </div>
                 </div>
               </a>
 
               <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-300">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-300">
                   <MapPin size={18} />
                 </div>
                 <div>
@@ -185,7 +185,7 @@ export default function ContactSection() {
                 href={personal.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:border-purple-500/40 text-white hover:text-purple-300 transition-all flex items-center justify-center"
+                className="p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/40 text-white hover:text-emerald-300 transition-all flex items-center justify-center"
               >
                 <Github size={18} />
               </a>
@@ -193,7 +193,7 @@ export default function ContactSection() {
                 href={personal.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:border-purple-500/40 text-white hover:text-purple-300 transition-all flex items-center justify-center"
+                className="p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/40 text-white hover:text-emerald-300 transition-all flex items-center justify-center"
               >
                 <Linkedin size={18} />
               </a>
@@ -201,7 +201,7 @@ export default function ContactSection() {
                 href={personal.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:border-purple-500/40 text-white hover:text-purple-300 transition-all flex items-center justify-center"
+                className="p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/40 text-white hover:text-emerald-300 transition-all flex items-center justify-center"
               >
                 <Twitter size={18} />
               </a>
