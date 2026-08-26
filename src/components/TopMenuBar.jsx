@@ -27,20 +27,13 @@ export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
   return (
     <header className="w-full border-b border-white/[0.08] bg-[#06090e]/90 backdrop-blur-xl px-6 md:px-12 py-3.5 flex items-center justify-between text-xs tracking-wider z-50 sticky top-0">
       {/* Left */}
-      <div className="flex items-center gap-5 sm:gap-6">
+      <div className="flex items-center gap-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#FFC15E] transition-colors cursor-pointer flex items-center gap-2"
         >
           <span className="text-[#F5A623]">⚡</span>
           <span>AYUSH</span>
-        </button>
-        <button
-          onClick={() => onOpenWindow('terminal')}
-          className="text-[#FFC15E] hover:text-white transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer flex items-center gap-1 bg-[#F5A623]/10 px-2.5 py-1 rounded-md border border-[#F5A623]/25 font-bold"
-        >
-          <span>&gt;_</span>
-          <span>TERMINAL</span>
         </button>
         <button
           onClick={() => navigate('contact')}
