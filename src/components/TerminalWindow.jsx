@@ -21,21 +21,37 @@ const AVAILABLE_COMMANDS = [
 export default function TerminalWindow({ onOpenWindow, onClose }) {
   const { personal, projects, skills } = portfolioData;
   const [input, setInput] = useState('');
-  const [history, setHistory] = useState([]);
+  
+  // 3. Command History Persistence across window close/open within the session
+  const [history, setHistory] = useState(() => {
+    try {
+      const saved = sessionStorage.getItem('terminal_cmd_history');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  });
+
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [outputList, setOutputList] = useState([]);
+  
+  // 1. Matrix mode defaults to OFF
   const [matrixMode, setMatrixMode] = useState(false);
   
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const matrixCanvasRef = useRef(null);
 
-  // Initial Welcome Banner
+  // 2. Intro Animation: Full ASCII banner only on FIRST open per session
   useEffect(() => {
-    setOutputList([
-      {
-        type: 'banner',
-        content: `
+    try {
+      const hasOpened = sessionStorage.getItem('terminal_has_opened');
+      if (!hasOpened) {
+        sessionStorage.setItem('terminal_has_opened', 'true');
+        setOutputList([
+          {
+            type: 'banner',
+            content: `
  █████╗ ██╗   ██╗██╗   ██╗███████╗██╗  ██╗
 ██╔══██╗╚██╗ ██╔╝██║   ██║██╔════╝██║  ██║
 ███████║ ╚████╔╝ ██║   ██║███████╗███████║
@@ -47,8 +63,24 @@ export default function TerminalWindow({ onOpenWindow, onClose }) {
 Type 'help' to view available commands.
 Try 'sudo hire-me' for a developer easter egg!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+          }
+        ]);
+      } else {
+        setOutputList([
+          {
+            type: 'compact_welcome',
+            content: `⚡ AYUSH PANDEY // TERMINAL v1.0.0 (zsh) — Type 'help' for commands, 'sudo hire-me' for easter egg.`
+          }
+        ]);
       }
-    ]);
+    } catch (e) {
+      setOutputList([
+        {
+          type: 'compact_welcome',
+          content: `⚡ AYUSH PANDEY // TERMINAL v1.0.0 (zsh) — Type 'help' to begin.`
+        }
+      ]);
+    }
   }, []);
 
   // Auto scroll to bottom
@@ -61,7 +93,7 @@ Try 'sudo hire-me' for a developer easter egg!
     inputRef.current?.focus();
   };
 
-  // Matrix Rain Canvas Effect
+  // Matrix Rain Canvas Effect with 15% opacity
   useEffect(() => {
     if (!matrixMode || !matrixCanvasRef.current) return;
     const canvas = matrixCanvasRef.current;
@@ -146,8 +178,17 @@ Try 'sudo hire-me' for a developer easter egg!
       const rawCmd = input.trim();
       if (!rawCmd) return;
 
-      // Add to command history
-      setHistory((prev) => [...prev, rawCmd]);
+      // Add to command history & persist to sessionStorage
+      setHistory((prev) => {
+        const updated = [...prev, rawCmd];
+        try {
+          sessionStorage.setItem('terminal_cmd_history', JSON.stringify(updated));
+        } catch (e) {
+          // ignore
+        }
+        return updated;
+      });
+
       setHistoryIndex(-1);
       setInput('');
 
@@ -330,25 +371,39 @@ Try 'sudo hire-me' for a developer easter egg!
   return (
     <div
       onClick={handleFocus}
+      role="region"
+      aria-label="Interactive Developer Terminal"
       className="relative w-full h-[520px] bg-[#06090e] text-[#f8fafc] font-mono-code text-xs sm:text-sm p-4 overflow-y-auto select-text scrollbar-subtle"
       style={{ fontFamily: "'JetBrains Mono', monospace" }}
     >
-      {/* Matrix Canvas Layer */}
+      {/* 1. Matrix Canvas Layer - Subdued 15% opacity so text remains fully legible */}
       {matrixMode && (
         <canvas
           ref={matrixCanvasRef}
-          className="absolute inset-0 pointer-events-none opacity-30 z-0"
+          className="absolute inset-0 pointer-events-none opacity-15 z-0"
         />
       )}
 
-      {/* Output Renderers */}
-      <div className="relative z-10 space-y-3">
+      {/* 4. Output Renderers with accessible live log */}
+      <div 
+        role="log" 
+        aria-live="polite" 
+        aria-relevant="additions" 
+        aria-atomic="false" 
+        className="relative z-10 space-y-3"
+      >
         {outputList.map((item, idx) => (
           <div key={idx} className="leading-relaxed">
             {item.type === 'banner' && (
               <pre className="text-[#F5A623] text-[10px] sm:text-xs leading-tight font-bold whitespace-pre-wrap">
                 {item.content}
               </pre>
+            )}
+
+            {item.type === 'compact_welcome' && (
+              <div className="p-2.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] text-[#FFC15E] text-xs font-bold">
+                {item.content}
+              </div>
             )}
 
             {item.type === 'command' && (
@@ -359,7 +414,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'help' && (
-              <div className="my-2 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-1.5">
+              <div className="my-2 p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-1.5 shadow-md">
                 <div className="text-[#FFC15E] font-bold pb-1 border-b border-white/[0.06]">
                   AVAILABLE COMMANDS:
                 </div>
@@ -375,7 +430,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'whoami' && (
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-2">
+              <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-2 shadow-md">
                 <div className="text-lg font-bold text-white flex items-center gap-2">
                   <span>👨‍💻 {item.name}</span>
                   <span className="text-xs px-2 py-0.5 rounded bg-[#F5A623]/20 text-[#FFC15E] border border-[#F5A623]/30">
@@ -391,7 +446,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'skills' && (
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-2.5">
+              <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-2.5 shadow-md">
                 <div className="text-[#FFC15E] font-bold">CORE TECHNICAL ARSENAL:</div>
                 <div className="space-y-2 text-xs">
                   <div>
@@ -411,7 +466,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'projects' && (
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-3">
+              <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-3 shadow-md">
                 <div className="text-[#FFC15E] font-bold">FEATURED PRODUCTION BUILDS:</div>
                 {item.projects.map((p, pIdx) => (
                   <div key={pIdx} className="pb-2 border-b border-white/[0.05] last:border-0 last:pb-0">
@@ -431,7 +486,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'github' && (
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-2">
+              <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-2 shadow-md">
                 <div className="text-[#FFC15E] font-bold">GITHUB PROFILE METRICS:</div>
                 <div className="text-xs text-white/80">📊 {item.totalCommits}</div>
                 <div className="text-xs text-white/80">🔥 {item.streak}</div>
@@ -442,7 +497,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'contact' && (
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-1.5">
+              <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-1.5 shadow-md">
                 <div className="text-[#FFC15E] font-bold">DIRECT CONTACT CHANNELS:</div>
                 <div className="text-xs text-white/80">📧 Email: <a href={`mailto:${item.email}`} className="text-[#F5A623] underline">{item.email}</a></div>
                 <div className="text-xs text-white/80">💼 LinkedIn: <a href={item.linkedin} target="_blank" rel="noreferrer" className="text-[#F5A623] underline">{item.linkedin}</a></div>
@@ -458,7 +513,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'theme' && (
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-1 text-xs">
+              <div className="p-3.5 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.08] space-y-1 text-xs shadow-md">
                 <div className="text-[#FFC15E] font-bold">ACTIVE PALETTE: {item.name}</div>
                 <div>Primary Accent: <span className="text-[#F5A623] font-bold">{item.primary}</span></div>
                 <div>Hover Glow: <span className="text-[#FFC15E] font-bold">{item.hover}</span></div>
@@ -467,7 +522,7 @@ Try 'sudo hire-me' for a developer easter egg!
             )}
 
             {item.type === 'history' && (
-              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs space-y-1">
+              <div className="p-3 rounded-xl bg-[#06090e]/85 backdrop-blur-[2px] border border-white/[0.06] text-xs space-y-1 shadow-md">
                 <div className="text-white/40 font-bold">SESSION COMMAND HISTORY:</div>
                 {item.items.map((h, hIdx) => (
                   <div key={hIdx} className="text-white/70">{hIdx + 1}. {h}</div>
@@ -489,12 +544,19 @@ Try 'sudo hire-me' for a developer easter egg!
           </div>
         ))}
 
-        {/* Live Input Line */}
+        {/* 4. Live Accessible Input Line */}
         <div className="flex items-center gap-2 pt-2">
-          <span className="text-[#FFC15E] font-bold">ayush@portfolio:~$</span>
+          <label htmlFor="terminal-command-input" className="sr-only">
+            Terminal command line input. Type help to view available commands.
+          </label>
+          <span className="text-[#FFC15E] font-bold select-none" aria-hidden="true">ayush@portfolio:~$</span>
           <input
+            id="terminal-command-input"
             ref={inputRef}
             type="text"
+            role="textbox"
+            aria-label="Terminal command line input"
+            aria-describedby="terminal-help-hint"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -502,6 +564,9 @@ Try 'sudo hire-me' for a developer easter egg!
             className="flex-1 bg-transparent text-white outline-none border-none font-mono-code text-xs sm:text-sm caret-[#F5A623]"
             placeholder="type command (e.g. help, skills, sudo hire-me)..."
           />
+          <span id="terminal-help-hint" className="sr-only">
+            Type help to view available commands, or sudo hire-me for priority recruiter handshake.
+          </span>
         </div>
 
         <div ref={bottomRef} />
