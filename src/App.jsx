@@ -10,6 +10,7 @@ import ContactSection from './sections/ContactSection';
 import MacDock from './components/MacDock';
 import CommandPalette from './components/CommandPalette';
 import GlowCursor from './components/GlowCursor';
+import CoalDarpanVisualizer from './sections/CoalDarpanVisualizer';
 
 export default function app() {
   const [openWindows, setOpenWindows] = useState([]); // Array of active desktop windows
@@ -107,6 +108,9 @@ export default function app() {
 
         {/* Featured Projects */}
         <ProjectsSection />
+
+        {/* CoalDarpan AI Architecture Visualizer */}
+        <CoalDarpanVisualizer />
 
         {/* Tech Stack Matrix */}
         <StackSection />
