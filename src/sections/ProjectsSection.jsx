@@ -25,49 +25,52 @@ export default function ProjectsSection() {
       </div>
 
       <div className="space-y-8">
-        {/* Flagship: CoalDarpan */}
+        {/* Project 1: DevPulse */}
         <div className="glass-bento rounded-3xl p-6 sm:p-9 relative overflow-hidden border border-[#F5A623]/30 hover:border-[#F5A623]/60 shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(245,166,35,0.15)] group transition-all duration-300">
           {/* Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-amber-600/20 via-orange-600/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
-          <div className="relative z-10 space-y-6">
+          <div className="relative z-10 space-y-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="text-2xl">🏛️</span>
+                <span className="text-2xl">📊</span>
                 <h3 className="text-2xl sm:text-3xl font-black text-white group-hover:text-[#FFC15E] transition-colors tracking-tight">
-                  CoalDarpan
+                  DevPulse
                 </h3>
+                <span className="px-3 py-1 rounded-full bg-[#F5A623]/12 text-[#FFC15E] border border-[#F5A623]/25 text-[10px] font-mono-code font-bold uppercase tracking-wider">
+                  ANALYTICS DASHBOARD
+                </span>
               </div>
-              <span className="text-xs font-mono-code text-white/40 font-semibold">2026 • PRODUCTION PWA</span>
+              <span className="text-xs font-mono-code text-white/40 font-semibold">2026 • FULL STACK</span>
             </div>
 
             <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-4xl">
-              Digital governance and smart issue routing Progressive Web App (PWA) built to eliminate statutory bottlenecks in offline coal mining workflows. Engineered with <strong>Google Gemini AI</strong> for automated image hazard classification, real-time bi-directional <strong>WebSockets</strong> for instant dispatch notifications, and secure <strong>JWT</strong> role-based dashboards.
+              A GitHub analytics dashboard — enter any username to get a visual breakdown of contribution activity, top languages, repo health scores, and an <strong>AI-generated developer personality report</strong> powered by <strong>Google Gemini</strong>. Features interactive charts, contribution heatmaps, and real-time data from the GitHub REST API.
             </p>
 
             {/* Architecture Metrics Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-[#FFC15E] font-black text-xl">Gemini 1.5</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">AI Vision Engine</div>
+                <div className="text-[#FFC15E] font-black text-xl">Gemini</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">AI Personality</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-[#F5A623] font-black text-xl">&lt; 50ms</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">WebSocket Sync</div>
+                <div className="text-[#F5A623] font-black text-xl">Chart.js</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Visual Analytics</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-amber-400 font-black text-xl">JWT + RBAC</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Role Security</div>
+                <div className="text-amber-400 font-black text-xl">REST API</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">GitHub Data</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-[#FFC15E] font-black text-xl">Offline PWA</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Service Workers</div>
+                <div className="text-[#FFC15E] font-black text-xl">Heatmap</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Contributions</div>
               </div>
             </div>
 
             {/* Tech Tags */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['React', 'Node.js', 'Express', 'MongoDB Atlas', 'Socket.io', 'Google Gemini', 'Tailwind CSS', 'JWT', 'PWA'].map((t, i) => (
+              {['React', 'Node.js', 'Express', 'MongoDB', 'GitHub REST API', 'Gemini API', 'Chart.js'].map((t, i) => (
                 <span key={i} className="text-xs font-mono-code px-3 py-1.5 rounded-xl bg-white/[0.04] text-white/70 border border-white/[0.08]">
                   {t}
                 </span>
@@ -77,7 +80,7 @@ export default function ProjectsSection() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/[0.08]">
               <a
-                href="https://coaldarpan.vercel.app"
+                href="https://devpulse-app.vercel.app"
                 target="_blank"
                 rel="noreferrer"
                 className="px-7 py-3 rounded-xl bg-white text-black font-black text-xs tracking-wider uppercase hover:bg-[#F5A623] hover:text-black transition-all shadow-[0_10px_25px_rgba(255,255,255,0.15)] flex items-center gap-2"
@@ -87,7 +90,7 @@ export default function ProjectsSection() {
               </a>
 
               <a
-                href="https://github.com/ayush-3945/ai-smart-issue-routing"
+                href="https://github.com/ayush-3945/DevPulse"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-3 rounded-xl bg-white/[0.05] border border-white/10 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2"
