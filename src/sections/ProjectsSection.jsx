@@ -38,39 +38,39 @@ export default function ProjectsSection() {
                   DevPulse
                 </h3>
                 <span className="px-3 py-1 rounded-full bg-[#F5A623]/12 text-[#FFC15E] border border-[#F5A623]/25 text-[10px] font-mono-code font-bold uppercase tracking-wider">
-                  ANALYTICS DASHBOARD
+                  AI-POWERED ANALYTICS
                 </span>
               </div>
               <span className="text-xs font-mono-code text-white/40 font-semibold">2026 • FULL STACK</span>
             </div>
 
             <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-4xl">
-              A GitHub analytics dashboard — enter any username to get a visual breakdown of contribution activity, top languages, repo health scores, and an <strong>AI-generated developer personality report</strong> powered by <strong>Google Gemini</strong>. Features interactive charts, contribution heatmaps, and real-time data from the GitHub REST API.
+              Your GitHub, Actually Understood. An interactive analytics platform that aggregates cross-repository stats, visualizes commit rhythms with interactive heatmaps, and uses <strong>Google Gemini AI</strong> to analyze coding styles into shareable developer archetypes. Built with <strong>React 19</strong>, <strong>Chart.js</strong>, and the <strong>GitHub Octokit API</strong>.
             </p>
 
             {/* Architecture Metrics Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-[#FFC15E] font-black text-xl">Gemini</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">AI Personality</div>
+                <div className="text-[#FFC15E] font-black text-xl">Gemini AI</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Developer DNA</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-[#F5A623] font-black text-xl">Chart.js</div>
+                <div className="text-[#F5A623] font-black text-xl">Octokit</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">GitHub API</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-amber-400 font-black text-xl">Chart.js</div>
                 <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Visual Analytics</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-amber-400 font-black text-xl">REST API</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">GitHub Data</div>
-              </div>
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
-                <div className="text-[#FFC15E] font-black text-xl">Heatmap</div>
-                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Contributions</div>
+                <div className="text-[#FFC15E] font-black text-xl">React 19</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Vite + SPA</div>
               </div>
             </div>
 
             {/* Tech Tags */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['React', 'Node.js', 'Express', 'MongoDB', 'GitHub REST API', 'Gemini API', 'Chart.js'].map((t, i) => (
+              {['React 19', 'Vite', 'Tailwind CSS', 'Express', 'Google Gemini AI', 'GitHub Octokit API', 'Chart.js'].map((t, i) => (
                 <span key={i} className="text-xs font-mono-code px-3 py-1.5 rounded-xl bg-white/[0.04] text-white/70 border border-white/[0.08]">
                   {t}
                 </span>
@@ -80,7 +80,7 @@ export default function ProjectsSection() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/[0.08]">
               <a
-                href="https://devpulse-app.vercel.app"
+                href="https://dev-pulse-kohl-theta.vercel.app"
                 target="_blank"
                 rel="noreferrer"
                 className="px-7 py-3 rounded-xl bg-white text-black font-black text-xs tracking-wider uppercase hover:bg-[#F5A623] hover:text-black transition-all shadow-[0_10px_25px_rgba(255,255,255,0.15)] flex items-center gap-2"
