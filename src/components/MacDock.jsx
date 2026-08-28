@@ -30,7 +30,7 @@ export default function MacDock({ openWindows = [], activeSection = 'hero', onTo
   ];
 
   const socialItems = [
-    { label: 'GitHub', icon: Github, url: portfolioData.personal.github },
+    { label: 'GitHub Feed', icon: Github, action: () => handleItemClick('github') },
     { label: 'LinkedIn', icon: Linkedin, url: portfolioData.personal.linkedin },
     { label: 'Twitter', icon: Twitter, url: portfolioData.personal.twitter },
   ];
@@ -80,13 +80,33 @@ export default function MacDock({ openWindows = [], activeSection = 'hero', onTo
         {/* Socials with Clean Outline Icons */}
         {socialItems.map((s, idx) => {
           const SocialIcon = s.icon;
+          const commonClasses = "group relative p-2.5 rounded-xl text-white/60 hover:text-white hover:-translate-y-2 hover:scale-125 hover:bg-white/[0.06] transition-all duration-200 cursor-pointer flex items-center justify-center";
+          
+          if (s.action) {
+            return (
+              <button
+                key={idx}
+                onClick={s.action}
+                className={commonClasses}
+              >
+                <SocialIcon size={19} strokeWidth={1.8} />
+                <span className="absolute -top-9 opacity-0 group-hover:opacity-100 transition-opacity bg-[#080b11] text-white text-[10px] font-mono-code font-bold px-2 py-0.5 rounded-md border border-white/10 shadow-lg pointer-events-none whitespace-nowrap">
+                  {s.label}
+                </span>
+                {openWindows.includes('github') && s.label.includes('GitHub') && (
+                  <span className="w-1.5 h-1.5 rounded-full absolute -bottom-1 bg-[#F5A623] shadow-[0_0_8px_#FFC15E] animate-pulse"></span>
+                )}
+              </button>
+            );
+          }
+
           return (
             <a
               key={idx}
               href={s.url}
               target="_blank"
               rel="noreferrer"
-              className="group relative p-2.5 rounded-xl text-white/60 hover:text-white hover:-translate-y-2 hover:scale-125 hover:bg-white/[0.06] transition-all duration-200 cursor-pointer flex items-center justify-center"
+              className={commonClasses}
             >
               <SocialIcon size={19} strokeWidth={1.8} />
               <span className="absolute -top-9 opacity-0 group-hover:opacity-100 transition-opacity bg-[#080b11] text-white text-[10px] font-mono-code font-bold px-2 py-0.5 rounded-md border border-white/10 shadow-lg pointer-events-none whitespace-nowrap">

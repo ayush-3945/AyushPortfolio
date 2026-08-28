@@ -28,7 +28,7 @@ export default function CommandPalette({ isOpen, onClose, onSelectAction }) {
     { label: 'View Experience & Education', icon: '💼', category: 'Experience', action: () => onSelectAction('experience') },
     { label: 'Send Message / Get In Touch', icon: '✉️', category: 'Contact', action: () => onSelectAction('contact') },
     { label: 'Download Resume PDF', icon: '📄', category: 'Resume', action: () => window.open(portfolioData.personal.resumeUrl, '_blank') },
-    { label: 'Open GitHub Profile (@ayush-3945)', icon: '🐙', category: 'Social', action: () => window.open(portfolioData.personal.github, '_blank') },
+    { label: 'View Live GitHub Commits (@ayush-3945)', icon: '🐙', category: 'Social', action: () => onSelectAction('github') },
     { label: 'Open LinkedIn Profile', icon: '💼', category: 'Social', action: () => window.open(portfolioData.personal.linkedin, '_blank') },
   ];
 

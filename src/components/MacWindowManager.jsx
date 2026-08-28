@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import TerminalWindow from './TerminalWindow';
+import GithubFeedWindow from './GithubFeedWindow';
 
 export default function MacWindowManager({ openWindows, onBringToFront, onCloseWindow, onSwitchWindow }) {
   if (!openWindows || openWindows.length === 0) return null;
@@ -213,6 +214,13 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                     onOpenWindow={onSwitchWindow}
                     onClose={() => onCloseWindow('terminal')}
                   />
+                )}
+                
+                {/* ========================================================= */}
+                {/* 1. GITHUB FEED WINDOW                                     */}
+                {/* ========================================================= */}
+                {winId === 'github' && (
+                  <GithubFeedWindow />
                 )}
                 {winId === 'stack' && (
                   <div className="space-y-6 relative">
