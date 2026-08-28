@@ -292,9 +292,6 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                               <h3 className="text-lg font-bold text-white group-hover:text-[#FFC15E] transition-colors">
                                 CoalDarpan
                               </h3>
-                              <span className="px-2 py-0.5 rounded-md bg-[#F5A623]/10 text-[#FFC15E] border border-[#F5A623]/30 text-[10px] font-mono-code font-bold">
-                                NATIONAL HACKATHON
-                              </span>
                             </div>
                             <span className="text-[11px] font-mono-code text-white/40">2026</span>
                           </div>
@@ -371,6 +368,57 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
                           >
                             <span>GitHub Repo</span>
+                            <span>↗</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Project 3: DevPulse */}
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-white/[0.08] hover:border-amber-500/40 transition-all flex flex-col justify-between group shadow-lg">
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">📊</span>
+                              <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                                DevPulse
+                              </h3>
+                              <span className="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] font-mono-code font-bold">
+                                AI ANALYTICS
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-mono-code text-white/40">2026</span>
+                          </div>
+
+                          <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
+                            Interactive dashboard visualizing commit heatmaps, generating AI Developer Archetypes with Gemini 1.5 Flash, featuring a witty "Roast Mode", and providing actionable repository diagnostics.
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {['React 19', 'Express', 'MongoDB', 'Gemini 1.5 Flash', 'Chart.js'].map((t, i) => (
+                              <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <a
+                            href="https://dev-pulse-kohl-theta.vercel.app"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all flex items-center gap-1.5"
+                          >
+                            <span>Live App</span>
+                            <span>↗</span>
+                          </a>
+                          <a
+                            href="https://github.com/ayush-3945/DevPulse"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                          >
+                            <span>GitHub</span>
                             <span>↗</span>
                           </a>
                         </div>

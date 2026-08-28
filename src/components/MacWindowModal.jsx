@@ -307,10 +307,6 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
               <div className="space-y-8">
                 {/* Flagship: CoalDarpan */}
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#F5A623]/30 relative overflow-hidden shadow-xl">
-                  <div className="absolute top-0 right-0 px-3 py-1 bg-[#F5A623] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
-                    NATIONAL HACKATHON
-                  </div>
-
                   <div className="flex flex-wrap items-center gap-2 mb-2">
                     <h3 className="text-2xl font-extrabold text-white tracking-tight">
                       🏛️ CoalDarpan
@@ -423,6 +419,53 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                   >
                     View Code ↗
                   </a>
+                </div>
+
+                {/* DevPulse */}
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-[#1c1106]/90 to-[#120a03]/90 border border-[#FFC15E]/30 relative overflow-hidden shadow-xl">
+                  <div className="absolute top-0 right-0 px-3 py-1 bg-[#FFC15E] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
+                    AI ANALYTICS
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h3 className="text-2xl font-extrabold text-white tracking-tight">
+                      📊 DevPulse
+                    </h3>
+                    <span className="text-white/40 text-xs font-mono-code">— Developer DNA Platform</span>
+                  </div>
+                  
+                  <p className="text-white/80 text-sm leading-relaxed mb-4">
+                    Interactive dashboard visualizing commit heatmaps, generating AI Developer Archetypes with <strong>Gemini 1.5 Flash</strong>, featuring a witty "Roast Mode", and providing actionable repository diagnostics. Backed by <strong>MongoDB TTL caching</strong> for high performance.
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {['React 19', 'Express', 'MongoDB', 'Gemini 1.5 Flash', 'Chart.js'].map((t, i) => (
+                      <span key={i} className="text-[10px] font-mono-code px-2 py-1 rounded-md bg-[#FFC15E]/10 text-[#FFC15E] border border-[#FFC15E]/20">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/[0.08]">
+                    <a
+                      href="https://dev-pulse-kohl-theta.vercel.app"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                    >
+                      <span>LAUNCH APP</span>
+                      <span>↗</span>
+                    </a>
+                    <a
+                      href="https://github.com/ayush-3945/DevPulse"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span>GITHUB REPO</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
