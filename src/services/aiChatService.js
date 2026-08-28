@@ -84,8 +84,8 @@ function getLocalSmartAnswer(userQuery) {
   if (q.includes('coaldarpan') || q.includes('coal')) {
     return "I built **CoalDarpan** during a national hackathon! It's a smart hazard-response PWA featuring Google Gemini AI for image hazard analysis, sub-50ms WebSocket alert sync, and role-based JWT dashboards. Check it out at [coaldarpan.vercel.app](https://coaldarpan.vercel.app)!";
   }
-  if (q.includes('devpulse')) {
-    return "**DevPulse** is my GitHub analytics & Developer DNA platform! It aggregates cross-repo metrics, visualizes commit rhythms with Chart.js heatmaps, and uses Google Gemini AI to analyze coding styles into shareable developer archetypes. Live at [dev-pulse-kohl-theta.vercel.app](https://dev-pulse-kohl-theta.vercel.app)!";
+  if (q.includes('devpulse') || q.includes('roast') || q.includes('diagnostic')) {
+    return "**DevPulse** is my AI-powered GitHub analytics & Developer DNA platform! It aggregates cross-repo metrics, visualizes commit rhythms with heatmaps, features automated Repository Diagnostics, and uses Gemini 1.5 Flash to generate unique Developer Archetypes and a witty 'Roast Mode'. Live at [dev-pulse-kohl-theta.vercel.app](https://dev-pulse-kohl-theta.vercel.app)!";
   }
   if (q.includes('interview') || q.includes('agent') || q.includes('mock')) {
     return "My **AI Interview Agent** conducts real-time technical mock interviews! It uses Gemini AI prompt pipelines for dynamic role-based question chains and the Web Speech API for voice response capturing and automated rubric scoring.";
@@ -102,8 +102,8 @@ function getLocalSmartAnswer(userQuery) {
   if (q.includes('contact') || q.includes('email') || q.includes('reach')) {
     return "You can reach me directly via email at **ayushpandey23042006@gmail.com**, connect on LinkedIn at [linkedin.com/in/ayush-kumar-pandey-a6880532b](https://linkedin.com/in/ayush-kumar-pandey-a6880532b), or check my code on GitHub at [github.com/ayush-3945](https://github.com/ayush-3945)!";
   }
-  if (q.includes('challenge') || q.includes('technical challenge') || q.includes('problem')) {
-    return "A major technical challenge I solved in **CoalDarpan** was handling zero-connectivity underground coal mines. I implemented PWA Service Worker caching with indexed data queueing so incident reports queue offline and auto-sync via WebSockets the moment connectivity is restored!";
+  if (q.includes('challenge') || q.includes('technical challenge') || q.includes('problem') || q.includes('timeout') || q.includes('rate limit')) {
+    return "Two major technical challenges I solved: In **DevPulse**, I overcame GitHub API rate limits and Vercel 504 timeouts by implementing a MongoDB TTL caching layer and switching to Gemini 1.5 Flash structured JSON. In **CoalDarpan**, I handled zero-connectivity underground mines using PWA Service Worker caching with offline data queueing that auto-syncs via WebSockets!";
   }
   if (q.includes('hire') || q.includes('available') || q.includes('job') || q.includes('internship') || q.includes('role')) {
     return "Yes! I'm actively available for **Full Stack, Frontend, and AI Engineering roles** and internships. I'm ready to contribute to high-impact teams immediately!";

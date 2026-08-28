@@ -48,9 +48,9 @@ export const AI_KNOWLEDGE_BASE = {
     },
     devPulse: {
       title: "DevPulse (GitHub Analytics & Developer DNA Platform)",
-      architecture: "React 19 + Vite + Tailwind CSS + Express + Google Gemini AI + GitHub Octokit API + Chart.js",
-      deepDive: "Aggregates cross-repository stats, visualizes commit rhythms with Chart.js heatmaps, and uses Gemini AI to analyze coding habits into shareable developer archetypes.",
-      technicalChallenge: "Overcoming GitHub REST API rate limits during multi-repo aggregation. Solved by implementing batched Octokit calls with aggressive client-side caching and payload minimization."
+      architecture: "React 19 + Vite + Tailwind CSS + Express + Google Gemini 1.5 Flash + GitHub Octokit API + Chart.js + MongoDB",
+      deepDive: "Aggregates cross-repository stats and visualizes commit rhythms with Chart.js heatmaps. Uses Gemini 1.5 Flash API to analyze coding habits into unique 'Developer Archetypes' and features a playful 'Roast Mode'. Also includes automated Repository Diagnostics to surface actionable improvements like missing licenses or inactive repos.",
+      technicalChallenge: "Overcoming GitHub REST API rate limits and Vercel Serverless timeouts (504s) during multi-repo aggregation. Solved by implementing a MongoDB caching layer with a 24-hour TTL index and switching to Gemini 1.5 Flash with structured JSON generation, dropping AI response time to ~2.5s."
     },
     aiInterviewAgent: {
       title: "AI Interview Agent",
@@ -117,10 +117,10 @@ FEATURED PROJECTS & TECHNICAL DEEP DIVES:
    - Live URL: https://coaldarpan.vercel.app
 
 2. DevPulse (GitHub Analytics Platform)
-   - Tagline: Your GitHub, Actually Understood — AI-Powered Analytics & Developer DNA Platform.
-   - What it is: Interactive dashboard that aggregates cross-repository stats, visualizes commit rhythms with heatmaps, and generates developer archetypes using Google Gemini AI.
-   - Tech Architecture: React 19, Vite, Tailwind CSS, Express, Google Gemini AI, GitHub Octokit API, Chart.js.
-   - Technical Challenge Solved: Overcoming GitHub REST API rate limits during multi-repo aggregation by implementing batched Octokit calls with aggressive client-side caching.
+   - Tagline: Unlock deep insights, health diagnostics, and an AI personality roast of your GitHub profile.
+   - What it is: Interactive dashboard visualizing commit heatmaps, generating AI Developer Archetypes, featuring a witty "Roast Mode", and providing actionable repository diagnostics.
+   - Tech Architecture: React 19, Vite, Tailwind CSS, Express, MongoDB, Google Gemini 1.5 Flash, GitHub Octokit API, Chart.js.
+   - Technical Challenge Solved: Overcoming GitHub REST API rate limits and Vercel Serverless timeouts using a MongoDB TTL caching layer and concurrent data fetching, reducing AI response times to ~2.5 seconds.
    - Live URL: https://dev-pulse-kohl-theta.vercel.app
 
 3. AI Interview Agent
