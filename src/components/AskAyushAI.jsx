@@ -235,20 +235,23 @@ export default function AskAyushAI() {
               </div>
             )}
 
-            {/* Starter Prompt Pills (Shown initially or when history is short) */}
+            {/* Starter Prompt Chips (Shown initially or when history is short) */}
             {messages.length <= 2 && !isTyping && (
-              <div className="pt-2 space-y-1.5">
-                <div className="text-[10px] font-mono-code text-white/40 font-bold uppercase tracking-wider px-1">
-                  Suggested Prompts:
+              <div className="pt-2 space-y-2">
+                <div className="flex items-center justify-between text-[10px] font-mono-code text-white/40 font-bold uppercase tracking-wider px-1">
+                  <span>Suggested Prompts (10):</span>
+                  <span className="text-[9px] text-[#F5A623]/70 font-normal">← Scroll / Click →</span>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                {/* Horizontally scrollable chip container with custom scrollbar */}
+                <div className="flex items-center gap-2 overflow-x-auto pb-2 pt-1 scrollbar-subtle -mx-1 px-1">
                   {AI_KNOWLEDGE_BASE.starterPrompts.map((prompt, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSend(prompt)}
-                      className="px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-[#F5A623]/50 hover:bg-[#F5A623]/10 text-white/80 hover:text-[#FFC15E] text-[11px] font-mono-code transition-all cursor-pointer text-left shadow-sm"
+                      className="shrink-0 px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-[#F5A623]/60 hover:bg-[#F5A623]/12 text-white/80 hover:text-[#FFC15E] text-[11px] font-mono-code transition-all cursor-pointer shadow-sm flex items-center gap-1.5 active:scale-95"
                     >
-                      💡 {prompt}
+                      <span className="text-[#F5A623]">💡</span>
+                      <span>{prompt}</span>
                     </button>
                   ))}
                 </div>

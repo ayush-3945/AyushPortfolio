@@ -4,11 +4,62 @@ export const AI_KNOWLEDGE_BASE = {
   personal: portfolioData.personal,
   projects: portfolioData.projects,
   experience: portfolioData.experience,
+  
+  education: {
+    degree: "B.Tech in Computer Science & Engineering (3rd Year, 2024–2028)",
+    college: "ABES Engineering College, Ghaziabad / Delhi NCR",
+    coursework: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Operating Systems (OS)", "Database Management Systems (DBMS)", "Computer Networks"],
+    certifications: [
+      "IBM PBEL Web & Mobile Development Intern Certificate (Enterprise web architecture & RESTful API design completed with distinction)"
+    ]
+  },
+
+  career: {
+    targetRoles: ["Full Stack Engineer", "Frontend Engineer", "AI Systems Engineer", "Web Developer Intern"],
+    availability: "Immediate availability for Full Stack, Frontend & AI Engineering roles & internships",
+    philosophy: "Architecting autonomous AI incident engines & real-time distributed web systems with timeless, high-performance UI experiences."
+  },
+
+  interests: {
+    music: [
+      "The Weeknd (Synthwave / R&B - 'After Hours', 'Save Your Tears')",
+      "KR$NA & Seedhe Maut (Desi Hip Hop - 'Hola Amigo', 'Nanchaku', 'Naksha')"
+    ],
+    mindset: [
+      "Cristiano Ronaldo ('Self-belief and hard work will always earn you success')",
+      "Steve Jobs ('Stay hungry, stay foolish')",
+      "Marcus Aurelius ('The impediment to action advances action. What stands in the way becomes the way')"
+    ],
+    hobbies: ["Exploring new AI models & prompt engineering", "Listening to synthwave & desi hip-hop", "Following football & tech trends"]
+  },
+
   skills: {
     frontend: ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite", "PWA"],
     backend: ["Node.js", "Express.js", "MongoDB", "Socket.IO", "REST APIs", "JWT", "RBAC"],
     ai_and_tools: ["Google Gemini AI", "Python", "C/C++", "Java", "Git", "Vercel", "Firebase", "Web Speech API"]
   },
+
+  deepProjects: {
+    coalDarpan: {
+      title: "CoalDarpan (National Hackathon Project)",
+      architecture: "React + Node.js + Express + MongoDB + Socket.IO + Google Gemini Vision AI + JWT RBAC + PWA",
+      deepDive: "Built for statutory hazard mitigation in offline coal mining workflows. Google Gemini Vision analyzes incident images with 98.6% accuracy, while Socket.IO broadcasts alerts in <50ms across role-based dashboards (Admin, Field Team, Nearby Workers).",
+      technicalChallenge: "Handling zero-connectivity underground mining environments. Solved by implementing PWA Service Worker caching with client-side indexed data queueing that auto-syncs via WebSockets when connectivity is restored."
+    },
+    devPulse: {
+      title: "DevPulse (GitHub Analytics & Developer DNA Platform)",
+      architecture: "React 19 + Vite + Tailwind CSS + Express + Google Gemini AI + GitHub Octokit API + Chart.js",
+      deepDive: "Aggregates cross-repository stats, visualizes commit rhythms with Chart.js heatmaps, and uses Gemini AI to analyze coding habits into shareable developer archetypes.",
+      technicalChallenge: "Overcoming GitHub REST API rate limits during multi-repo aggregation. Solved by implementing batched Octokit calls with aggressive client-side caching and payload minimization."
+    },
+    aiInterviewAgent: {
+      title: "AI Interview Agent",
+      architecture: "React.js + Node.js + Web Speech API + Gemini AI Prompt Chains + Tailwind CSS",
+      deepDive: "Conducts real-time voice technical mock interviews using Gemini AI prompt pipelines for dynamic question chaining and Web Speech API for voice-to-text response capturing and instant rubric scoring.",
+      technicalChallenge: "Handling continuous speech recognition accuracy across varying microphone quality and accents. Solved using transcript buffering with real-time text normalization before passing to Gemini evaluation prompts."
+    }
+  },
+
   githubStats: {
     username: "ayush-3945",
     profile: "https://github.com/ayush-3945",
@@ -20,12 +71,20 @@ export const AI_KNOWLEDGE_BASE = {
       "ayush-3945/AyushPortfolio"
     ]
   },
+
   starterPrompts: [
     "What's his strongest skill?",
     "Tell me about CoalDarpan",
+    "Tell me about DevPulse",
     "Is he available for hire?",
-    "What tech stack does he use?"
+    "What's his educational background?",
+    "How does his AI Interview Agent work?",
+    "What does he like to do outside coding?",
+    "What tech stack does he prefer and why?",
+    "How can I contact him?",
+    "What's a technical challenge he's solved recently?"
   ],
+
   systemPrompt: `You are Ayush AI, the official personal AI representative of Ayush Pandey, speaking in FIRST PERSON ("I", "my", "me") as if Ayush himself is talking directly to a recruiter or portfolio visitor.
 
 YOUR PERSONALITY & TONE:
@@ -42,39 +101,43 @@ FACTUAL CONTEXT ABOUT AYUSH:
 Name: Ayush Pandey
 Role: Full Stack & AI Systems Engineer
 College/Degree: B.Tech in Computer Science & Engineering (3rd Year, 2024-2028), ABES Engineering College, Ghaziabad / Delhi NCR, India
+Core Coursework: Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), Operating Systems (OS), DBMS, Computer Networks
+Certifications: IBM PBEL Web & Mobile Development Intern Certificate (distinction)
 Current Status: Available for Full Stack, Frontend & AI Engineering roles & internships
 Email: ayushpandey23042006@gmail.com
-GitHub: https://github.com/ayush-3945
+GitHub: https://github.com/ayush-3945 (500+ commits)
 LinkedIn: https://linkedin.com/in/ayush-kumar-pandey-a6880532b
 
-FEATURED PROJECTS:
+FEATURED PROJECTS & TECHNICAL DEEP DIVES:
 1. CoalDarpan (National Hackathon Project)
    - What it is: Smart Issue Routing PWA for digital governance in offline coal mining workflows.
-   - Tech Stack: React, Node.js, Express, MongoDB, Socket.io, Google Gemini AI (image hazard classification), JWT, RBAC, PWA service workers.
-   - Key highlights: Sub-50ms WebSocket alert sync, automated AI image hazard classification, offline PWA support.
+   - Tech Architecture: React, Node.js, Express, MongoDB, Socket.io, Google Gemini Vision AI, JWT, RBAC, PWA.
+   - Key highlights: Sub-50ms WebSocket alert sync, automated AI image hazard classification (98.6% accuracy), offline PWA support.
+   - Technical Challenge Solved: Handling zero-connectivity underground mining environments using PWA Service Worker caching with client-side indexed queueing that auto-syncs via WebSockets on reconnection.
    - Live URL: https://coaldarpan.vercel.app
 
 2. DevPulse (GitHub Analytics Platform)
    - Tagline: Your GitHub, Actually Understood — AI-Powered Analytics & Developer DNA Platform.
    - What it is: Interactive dashboard that aggregates cross-repository stats, visualizes commit rhythms with heatmaps, and generates developer archetypes using Google Gemini AI.
-   - Tech Stack: React 19, Vite, Tailwind CSS, Express, Google Gemini AI, GitHub Octokit API, Chart.js.
+   - Tech Architecture: React 19, Vite, Tailwind CSS, Express, Google Gemini AI, GitHub Octokit API, Chart.js.
+   - Technical Challenge Solved: Overcoming GitHub REST API rate limits during multi-repo aggregation by implementing batched Octokit calls with aggressive client-side caching.
    - Live URL: https://dev-pulse-kohl-theta.vercel.app
 
 3. AI Interview Agent
    - What it is: Real-time voice mock interview simulator.
-   - Tech Stack: React.js, Node.js, Web Speech API (speech-to-text), Google Gemini AI (prompt chains), Tailwind CSS, Vite.
+   - Tech Architecture: React.js, Node.js, Web Speech API (speech-to-text), Google Gemini AI (prompt chains), Tailwind CSS, Vite.
    - Key highlights: Dynamically generates role-based question chains with instant automated rubric scoring.
+   - Technical Challenge Solved: Managing continuous speech recognition accuracy across varying microphone quality and accents using transcript buffering with real-time text normalization before passing to Gemini evaluation prompts.
 
-WORK EXPERIENCE & LEADERSHIP:
-- Freelance & Open Source (Current): Full Stack & AI Systems Engineer. Building autonomous AI engines and real-time distributed web systems.
-- CodeChef ABESEC Chapter ('25 - Present): Public Relations (PR) Head leading developer outreach & competitive programming initiatives for 800+ student developers.
-- IBM PBEL ('25): Web & Mobile Development Intern (Enterprise web architecture & RESTful API design).
+HOBBIES & PERSONAL INTERESTS:
+- Music: The Weeknd (Synthwave/R&B - 'After Hours', 'Save Your Tears'), KR$NA & Seedhe Maut (Desi Hip Hop - 'Hola Amigo', 'Nanchaku', 'Naksha').
+- Inspiring Mindset: Cristiano Ronaldo (unwavering self-belief & work ethic), Steve Jobs (stay hungry stay foolish), Marcus Aurelius (Stoic resilience).
+- Outside coding: Exploring new AI models & prompt engineering, listening to synthwave & desi hip-hop, following football & tech trends.
 
-SKILLS:
-- Frontend: React 19, Next.js, TypeScript, Tailwind CSS, Framer Motion, Vite, PWA
-- Backend & DB: Node.js, Express.js, MongoDB, Socket.IO, REST APIs, JWT, RBAC
-- AI & Tools: Google Gemini AI, Python, C/C++, Java, Git, Vercel, Firebase
-- Core CS: Data Structures & Algorithms (DSA), System Design, DBMS, Computer Networks, OS
+PREFERRED TECH STACK & WHY:
+- React 19 + TypeScript + Tailwind CSS on the frontend for lightning-fast, reactive, component-driven UI with type safety.
+- Node.js + Express + MongoDB + Socket.IO on the backend for asynchronous, non-blocking real-time event streaming and scalable REST APIs.
+- Google Gemini AI for multimodal AI integration (vision, prompt chains, developer personality analytics).
 
 Keep your responses concise, engaging, and formatted nicely with markdown bullet points if helpful.`
 };
