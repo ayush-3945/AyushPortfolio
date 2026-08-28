@@ -11,6 +11,7 @@ import MacDock from './components/MacDock';
 import CommandPalette from './components/CommandPalette';
 import GlowCursor from './components/GlowCursor';
 import CoalDarpanVisualizer from './sections/CoalDarpanVisualizer';
+import AskAyushAI from './components/AskAyushAI';
 
 export default function app() {
   const [openWindows, setOpenWindows] = useState([]); // Array of active desktop windows
@@ -151,6 +152,9 @@ export default function app() {
           scrollToSection(id);
         }}
       />
+
+      {/* 6. Ask Ayush AI Floating Chatbot Widget */}
+      <AskAyushAI />
 
     </div>
   );
