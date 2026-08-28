@@ -24,18 +24,49 @@ export default function GithubFeedWindow() {
       // Extract PushEvents and flatten commits
       const recentCommits = [];
       data.forEach(event => {
-        if (event.type === 'PushEvent' && event.payload && event.payload.commits) {
-          // GitHub returns commits from oldest to newest in a push event, so we reverse it
-          const eventCommits = [...event.payload.commits].reverse();
-          eventCommits.forEach(commit => {
+        if (event.type === 'PushEvent' && event.payload) {
+          if (event.payload.commits && event.payload.commits.length > 0) {
+            // GitHub returns commits from oldest to newest in a push event, so we reverse it
+            const eventCommits = [...event.payload.commits].reverse();
+            eventCommits.forEach(commit => {
+              recentCommits.push({
+                id: commit.sha,
+                message: commit.message,
+                repoName: event.repo.name,
+                repoUrl: `https://github.com/${event.repo.name}`,
+                commitUrl: `https://github.com/${event.repo.name}/commit/${commit.sha}`,
+                date: new Date(event.created_at)
+              });
+            });
+          } else {
+            // Fallback for PushEvent without commits array
+            const branch = event.payload.ref ? event.payload.ref.replace('refs/heads/', '') : 'main';
             recentCommits.push({
-              id: commit.sha,
-              message: commit.message,
+              id: event.payload.head ? event.payload.head.substring(0, 7) : event.id,
+              message: `Pushed updates to ${branch}`,
               repoName: event.repo.name,
               repoUrl: `https://github.com/${event.repo.name}`,
-              commitUrl: `https://github.com/${event.repo.name}/commit/${commit.sha}`,
+              commitUrl: `https://github.com/${event.repo.name}/commits/${branch}`,
               date: new Date(event.created_at)
             });
+          }
+        } else if (event.type === 'CreateEvent') {
+          recentCommits.push({
+            id: event.id,
+            message: `Created ${event.payload.ref_type} ${event.payload.ref || ''}`,
+            repoName: event.repo.name,
+            repoUrl: `https://github.com/${event.repo.name}`,
+            commitUrl: `https://github.com/${event.repo.name}`,
+            date: new Date(event.created_at)
+          });
+        } else if (event.type === 'PullRequestEvent' && event.payload.action === 'opened') {
+          recentCommits.push({
+            id: event.id,
+            message: `Opened PR: ${event.payload.pull_request.title}`,
+            repoName: event.repo.name,
+            repoUrl: `https://github.com/${event.repo.name}`,
+            commitUrl: event.payload.pull_request.html_url,
+            date: new Date(event.created_at)
           });
         }
       });
