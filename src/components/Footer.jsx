@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { portfolioData } from '../data/portfolioData';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -11,6 +11,16 @@ export default function Footer({ onScrollTo, onToggleWindow }) {
   
   const routerNavigate = useNavigate();
   const location = useLocation();
+  const [activeIcon, setActiveIcon] = useState(null);
+
+  const handleSocialClick = (e, id, url) => {
+    e.preventDefault();
+    setActiveIcon(id);
+    setTimeout(() => {
+      setActiveIcon(null);
+      window.open(url, id === 'mail' ? '_self' : '_blank');
+    }, 400); // 400ms for animation
+  };
 
   const handleNavClick = (id) => {
     if (id === 'hero') {
@@ -110,18 +120,29 @@ export default function Footer({ onScrollTo, onToggleWindow }) {
               Connect
             </h3>
             <div className="flex gap-3 mb-6">
-              <a href={portfolioData.personal.github} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all">
-                <Github size={18} />
-              </a>
-              <a href={portfolioData.personal.linkedin} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all">
-                <Linkedin size={18} />
-              </a>
-              <a href={portfolioData.personal.twitter} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all">
-                <Twitter size={18} />
-              </a>
-              <a href={`mailto:${portfolioData.personal.email}`} className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all">
-                <Mail size={18} />
-              </a>
+              {[
+                { id: 'github', icon: Github, url: portfolioData.personal.github },
+                { id: 'linkedin', icon: Linkedin, url: portfolioData.personal.linkedin },
+                { id: 'twitter', icon: Twitter, url: portfolioData.personal.twitter },
+                { id: 'mail', icon: Mail, url: `mailto:${portfolioData.personal.email}` }
+              ].map((item) => {
+                const IconComponent = item.icon;
+                const isActive = activeIcon === item.id;
+                return (
+                  <a 
+                    key={item.id}
+                    href={item.url} 
+                    onClick={(e) => handleSocialClick(e, item.id, item.url)}
+                    className={`w-10 h-10 rounded-lg border flex items-center justify-center transition-all duration-300 ${
+                      isActive 
+                        ? 'text-[#F5A623] bg-[#F5A623]/20 border-[#F5A623]/50 scale-110 shadow-[0_0_15px_rgba(245,166,35,0.4)]' 
+                        : 'border-white/10 text-white/60 hover:text-white hover:bg-white/5 hover:border-white/20 hover:-translate-y-1'
+                    }`}
+                  >
+                    <IconComponent size={18} />
+                  </a>
+                );
+              })}
             </div>
             <a 
               href={`mailto:${portfolioData.personal.email}`}
