@@ -1,6 +1,5 @@
 import React from 'react';
 import HeroBento from '../components/HeroBento';
-import ActivityLogPreview from '../components/ActivityLogPreview';
 import ProjectsSection from '../sections/ProjectsSection';
 import CoalDarpanVisualizer from '../sections/CoalDarpanVisualizer';
 import StackSection from '../sections/StackSection';
@@ -16,9 +15,6 @@ export default function Home({ handleToggleWindow, scrollToSection }) {
         onOpenWindow={handleToggleWindow}
         onScrollTo={scrollToSection}
       />
-
-      {/* Activity Log Preview (Syslog) */}
-      <ActivityLogPreview />
 
       {/* Featured Projects */}
       <ProjectsSection />
