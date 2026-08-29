@@ -78,13 +78,13 @@ export const portfolioData = {
       githubUrl: "https://github.com/ayush-3945/AI-Interview-Agent"
     },
     {
-      id: "coal-darpan",
-      title: "CoalDarpan",
-      subtitle: "Smart Issue Routing PWA",
+      id: "dispatch-os",
+      title: "Dispatch OS",
+      subtitle: "Autonomous Incident Triage Platform",
       year: "2026",
       featured: true,
-      description: "A digital governance and issue routing Progressive Web App built during a national hackathon to digitize offline processes. Features role-based dashboards, real-time notifications via WebSockets, JWT-based authentication, and AI-powered categorization using Google Gemini for image analysis. Supports offline capabilities with PWA architecture.",
-      techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS", "Google Gemini", "JWT", "PWA"],
+      description: "Automated incident classification and bilingual (EN/HI) diagnostic briefing using Google Gemini 1.5 Flash, reducing triage turnaround from days to under 2 minutes. Engineered real-time bi-directional dashboard sync for 500+ concurrent events via Socket.io, and accelerated load times by 40% using parallel MongoDB aggregations and TTL caching.",
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "Gemini 1.5 Flash", "JWT", "Recharts"],
       liveUrl: "https://coaldarpan.vercel.app",
       githubUrl: "https://github.com/ayush-3945/ai-smart-issue-routing"
     },
@@ -143,8 +143,8 @@ export const portfolioData = {
 
   articles: [
     {
-      title: "How AI-Powered Smart Governance Can Digitize Offline Processes",
-      excerpt: "A reflection on building CoalDarpan — a national hackathon PWA using Google Gemini for image analysis, real-time WebSockets, and role-based dashboards to digitize governance workflows.",
+      title: "Building Dispatch OS: Autonomous Incident Triage",
+      excerpt: "A reflection on engineering an automated incident classification and real-time dashboard sync platform using Gemini 1.5 Flash and WebSockets.",
       date: "Aug 2026",
       readTime: "4 min read",
       link: "https://coaldarpan.vercel.app"
