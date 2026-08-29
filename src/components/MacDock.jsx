@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { 
   Briefcase, 
   Code2, 
@@ -14,9 +15,23 @@ import {
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function MacDock({ openWindows = [], activeSection = 'hero', onToggleWindow, onOpenSearch }) {
+export default function MacDock({ openWindows = [], activeSection = 'hero', onToggleWindow, onOpenSearch, onScrollTo }) {
+  const routerNavigate = useNavigate();
+  const location = useLocation();
+
   const handleItemClick = (id) => {
-    if (onToggleWindow) onToggleWindow(id);
+    if (['terminal', 'github'].includes(id)) {
+      if (onToggleWindow) onToggleWindow(id);
+    } else {
+      if (location.pathname !== '/') {
+        routerNavigate('/');
+        setTimeout(() => {
+          if (onScrollTo) onScrollTo(id);
+        }, 100);
+      } else {
+        if (onScrollTo) onScrollTo(id);
+      }
+    }
   };
 
   const dockItems = [

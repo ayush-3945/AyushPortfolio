@@ -1,10 +1,36 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
   const [timeStr, setTimeStr] = useState('');
-  const navigate = (id) => {
-    if (onOpenWindow) onOpenWindow(id);
-    else if (onScrollTo) onScrollTo(id);
+  const routerNavigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigate = (id) => {
+    if (id === 'home') {
+      if (location.pathname !== '/') routerNavigate('/');
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (id === 'activity') {
+      routerNavigate('/activity');
+      return;
+    }
+
+    if (onOpenWindow && ['terminal', 'github'].includes(id)) {
+      onOpenWindow(id);
+    } else {
+      if (location.pathname !== '/') {
+        routerNavigate('/');
+        // Simple timeout to wait for home page to render before scrolling
+        setTimeout(() => {
+          if (onScrollTo) onScrollTo(id);
+        }, 100);
+      } else {
+        if (onScrollTo) onScrollTo(id);
+      }
+    }
   };
 
   useEffect(() => {
@@ -29,15 +55,21 @@ export default function TopMenuBar({ onOpenWindow, onScrollTo }) {
       {/* Left */}
       <div className="flex items-center gap-6">
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => handleNavigate('home')}
           className="font-bold tracking-widest text-white uppercase text-xs hover:text-[#FFC15E] transition-colors cursor-pointer flex items-center gap-2"
         >
           <span className="text-[#F5A623]">⚡</span>
           <span>AYUSH</span>
         </button>
         <button
-          onClick={() => navigate('contact')}
+          onClick={() => handleNavigate('activity')}
           className="text-white/60 hover:text-[#FFC15E] transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer"
+        >
+          LOGS
+        </button>
+        <button
+          onClick={() => handleNavigate('contact')}
+          className="text-white/60 hover:text-[#FFC15E] transition-colors font-mono-code text-[11px] tracking-wider uppercase cursor-pointer hidden sm:block"
         >
           CONTACT
         </button>

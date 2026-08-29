@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { portfolioData } from '../data/portfolioData';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
@@ -7,12 +8,33 @@ export default function Footer({ onScrollTo, onToggleWindow }) {
     "React", "Node.js", "Gemini AI", "WebSockets", "MongoDB", "Tailwind CSS",
     "Express", "TypeScript", "System Design", "AWS", "Figma", "Redux"
   ];
+  
+  const routerNavigate = useNavigate();
+  const location = useLocation();
 
   const handleNavClick = (id) => {
+    if (id === 'hero') {
+      if (location.pathname !== '/') routerNavigate('/');
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    if (id === 'activity') {
+      routerNavigate('/activity');
+      return;
+    }
+
     if (onToggleWindow && ['terminal', 'stack'].includes(id)) {
       onToggleWindow(id);
-    } else if (onScrollTo) {
-      onScrollTo(id);
+    } else {
+      if (location.pathname !== '/') {
+        routerNavigate('/');
+        setTimeout(() => {
+          if (onScrollTo) onScrollTo(id);
+        }, 100);
+      } else {
+        if (onScrollTo) onScrollTo(id);
+      }
     }
   };
 
@@ -67,7 +89,7 @@ export default function Footer({ onScrollTo, onToggleWindow }) {
                 { id: 'hero', label: '00 home' },
                 { id: 'projects', label: '01 projects' },
                 { id: 'stack', label: '02 stack' },
-                { id: 'experience', label: '03 logs' },
+                { id: 'activity', label: '03 logs' },
                 { id: 'article', label: '04 blog' },
                 { id: 'contact', label: '05 contact' }
               ].map((link) => (
