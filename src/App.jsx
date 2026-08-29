@@ -7,11 +7,13 @@ import StackSection from './sections/StackSection';
 import ExperienceSection from './sections/ExperienceSection';
 import ArticleSection from './sections/ArticleSection';
 import ContactSection from './sections/ContactSection';
+import ActivityLogSection from './sections/ActivityLogSection';
 import MacDock from './components/MacDock';
 import CommandPalette from './components/CommandPalette';
 import GlowCursor from './components/GlowCursor';
 import CoalDarpanVisualizer from './sections/CoalDarpanVisualizer';
 import AskAyushAI from './components/AskAyushAI';
+import Footer from './components/Footer';
 
 export default function app() {
   const [openWindows, setOpenWindows] = useState([]); // Array of active desktop windows
@@ -107,6 +109,9 @@ export default function app() {
           onScrollTo={scrollToSection}
         />
 
+        {/* Activity Log (Syslog) */}
+        <ActivityLogSection />
+
         {/* Featured Projects */}
         <ProjectsSection />
 
@@ -125,6 +130,9 @@ export default function app() {
         {/* Direct Contact Form & Info */}
         <ContactSection />
       </main>
+
+      {/* Upgraded Footer */}
+      <Footer onScrollTo={scrollToSection} onToggleWindow={handleToggleWindow} />
 
       {/* 3. True Non-Blocking Multi-Window Desktop Manager (Opens on Click) */}
       <MacWindowManager
