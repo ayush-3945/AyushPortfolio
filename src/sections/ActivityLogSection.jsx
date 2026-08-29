@@ -68,6 +68,9 @@ export default function ActivityLogSection() {
         }
       });
       
+      // Ensure strict chronological order (newest first)
+      recentCommits.sort((a, b) => b.date - a.date);
+      
       setCommits(recentCommits.slice(0, 20)); // Store top 20
     } catch (err) {
       console.error('Error fetching Activity Log:', err);
