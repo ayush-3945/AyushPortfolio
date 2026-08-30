@@ -10,7 +10,7 @@ export const portfolioData = {
     github: "https://github.com/ayush-3945",
     linkedin: "https://linkedin.com/in/ayush-kumar-pandey-a6880532b",
     twitter: "https://twitter.com/PandeyAyush2304",
-    resumeUrl: "/Ayush_Pandey_Resume.pdf"
+    resumeUrl: "/Ayush_CV.pdf"
   },
 
   songs: [
