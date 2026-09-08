@@ -159,10 +159,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📫 Contact & Links
 
-**Ayush Pandey** - [ayushpandey23042006@gmail.com](mailto:ayushpandey23042006@gmail.com)
-
-**Live Portfolio:** [https://ayush-portfolio-gamma-mocha.vercel.app](https://ayush-portfolio-gamma-mocha.vercel.app)  
-**LinkedIn:** [https://linkedin.com/in/ayush-kumar-pandey-a6880532b](https://linkedin.com/in/ayush-kumar-pandey-a6880532b)  
+**Ayush Pandey** - [ayushpandey23042006@gmail.com](mailto:ayushpandey23042006@gmail.com) 
 **GitHub:** [https://github.com/ayush-3945](https://github.com/ayush-3945)
 
 <p align="center">
