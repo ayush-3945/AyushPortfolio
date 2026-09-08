@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ayush-3945/AyushPortfolio/main/codezenith/public/vite.svg" alt="Logo" width="80" height="80">
 
   <h1 align="center">Ayush Pandey - Portfolio OS</h1>
 
