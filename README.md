@@ -10,7 +10,6 @@
 
 A modern, highly interactive, and uniquely designed personal portfolio built with React and Tailwind CSS. It features a custom "True Non-Blocking Multi-Window Desktop Manager", live GitHub integrations, and an AI-powered assistant.
 
-🔗 **Live Demo:** [https://ayush-portfolio-gamma-mocha.vercel.app](https://ayush-portfolio-gamma-mocha.vercel.app) *(Custom `.tech` domain coming soon!)*
 
 ---
 
