@@ -74,7 +74,7 @@ export const portfolioData = {
       featured: true,
       description: "An AI-native talent intelligence & ATS platform that automates hiring with semantic resume-to-job matching, real-time JD quality scoring with bias detection, interactive pipeline tracking, and dynamic interview kit generation.",
       techStack: ["React 19", "Node.js", "Express", "MongoDB", "Gemini 2.5 Flash API", "JWT", "Vanilla CSS"],
-      liveUrl: "https://github.com/ayush-3945/Aptly",
+      liveUrl: "https://aptly-zeta.vercel.app",
       githubUrl: "https://github.com/ayush-3945/Aptly"
     },
     {

@@ -322,10 +322,19 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
 
                         <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
                           <a
+                            href="https://aptly-zeta.vercel.app"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all flex items-center gap-1.5"
+                          >
+                            <span>Live Demo</span>
+                            <span>↗</span>
+                          </a>
+                          <a
                             href="https://github.com/ayush-3945/Aptly"
                             target="_blank"
                             rel="noreferrer"
-                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all flex items-center gap-1.5"
+                            className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
                           >
                             <span>GitHub Repo</span>
                             <span>↗</span>

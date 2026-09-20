@@ -350,10 +350,19 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
 
                   <div className="flex items-center gap-3 mt-4 pt-3 border-t border-white/[0.08]">
                     <a
+                      href="https://aptly-zeta.vercel.app"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all shadow-md flex items-center gap-1.5"
+                    >
+                      <span>LIVE DEMO</span>
+                      <span>↗</span>
+                    </a>
+                    <a
                       href="https://github.com/ayush-3945/Aptly"
                       target="_blank"
                       rel="noreferrer"
-                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                      className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
                     >
                       <span>GITHUB REPO</span>
                       <span>↗</span>

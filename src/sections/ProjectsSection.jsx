@@ -83,10 +83,20 @@ export default function ProjectsSection() {
             {/* Action Links */}
             <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/[0.06]">
               <a
+                href="https://aptly-zeta.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-bold text-xs transition-all shadow-md flex items-center gap-2"
+              >
+                <span>Live Demo</span>
+                <ExternalLink size={14} />
+              </a>
+
+              <a
                 href="https://github.com/ayush-3945/Aptly"
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2.5 rounded-xl bg-white text-black font-black text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-2 group/btn"
+                className="px-5 py-2.5 rounded-xl bg-white/[0.05] border border-white/15 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-semibold text-xs transition-all flex items-center gap-2 group/btn"
               >
                 <span>GitHub Repository</span>
                 <span className="group-hover/btn:translate-x-0.5 transition-transform">↗</span>
