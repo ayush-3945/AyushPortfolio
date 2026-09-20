@@ -63,7 +63,7 @@ export default function StackSection() {
       )
     },
     {
-      name: 'GEMINI 1.5 AI',
+      name: 'GEMINI 2.5 AI',
       category: 'Multimodal LLM / Pipelines',
       bg: 'bg-[#10b981]',
       icon: (

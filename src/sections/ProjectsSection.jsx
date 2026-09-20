@@ -213,6 +213,18 @@ export default function ProjectsSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-white/[0.06]">
+              <div title="Demo coming soon" className="cursor-not-allowed inline-flex">
+                <a
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  title="Demo coming soon"
+                  className="px-6 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white/40 font-mono-code font-bold text-xs tracking-wider uppercase opacity-50 pointer-events-none cursor-not-allowed flex items-center gap-2 select-none"
+                >
+                  <span>LIVE DEMO</span>
+                  <ExternalLink size={14} />
+                </a>
+              </div>
+
               <a
                 href="https://github.com/ayush-3945/AI-Interview-Agent"
                 target="_blank"

@@ -420,6 +420,17 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                         </div>
 
                         <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <div title="Demo coming soon" className="cursor-not-allowed inline-flex">
+                            <a
+                              href="#"
+                              onClick={(e) => e.preventDefault()}
+                              title="Demo coming soon"
+                              className="px-4 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-white/40 font-semibold text-xs opacity-50 pointer-events-none cursor-not-allowed flex items-center gap-1.5 select-none"
+                            >
+                              <span>Live Demo</span>
+                              <span>↗</span>
+                            </a>
+                          </div>
                           <a
                             href="https://github.com/ayush-3945/AI-Interview-Agent"
                             target="_blank"
