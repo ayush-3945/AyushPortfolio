@@ -9,7 +9,7 @@ export default function AskAyushAI() {
     {
       id: 1,
       sender: 'ai',
-      text: "Hey! 👋 I'm **Ayush AI**, Ayush Pandey's personal assistant. Ask me anything about my projects (**CoalDarpan**, **DevPulse**), tech stack, or availability for hire!",
+      text: "Hey! 👋 I'm **Ayush AI**, Ayush Pandey's personal assistant. Ask me anything about my projects (**Aptly.AI**, **CoalDarpan**, **DevPulse**), tech stack, or availability for hire!",
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);

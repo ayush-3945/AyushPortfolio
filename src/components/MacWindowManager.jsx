@@ -287,11 +287,53 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                           FEATURED WORKS // 02
                         </span>
                       </div>
-                      <span className="text-[11px] font-mono-code text-amber-400">3 Production Projects</span>
+                      <span className="text-[11px] font-mono-code text-amber-400">4 Production Projects</span>
                     </div>
 
                     <div className="space-y-4">
-                      {/* Project 1: CoalDarpan */}
+                      {/* Project 1: Aptly.AI */}
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#F5A623]/40 hover:border-[#F5A623]/70 transition-all flex flex-col justify-between group shadow-lg">
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">⚡</span>
+                              <h3 className="text-lg font-bold text-white group-hover:text-[#FFC15E] transition-colors">
+                                Aptly.AI
+                              </h3>
+                              <span className="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] font-mono-code font-bold">
+                                CLINICAL TALENT & ATS
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-mono-code text-white/40">2026</span>
+                          </div>
+
+                          <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
+                            An AI-native talent intelligence & ATS platform that automates hiring with semantic resume-to-job matching, real-time JD quality scoring with bias detection, interactive pipeline tracking, and dynamic interview kit generation.
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {['React 19', 'Node.js', 'Express', 'MongoDB', 'Gemini 2.5 Flash', 'JWT', 'Vanilla CSS'].map((t, i) => (
+                              <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <a
+                            href="https://github.com/ayush-3945/Aptly"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all flex items-center gap-1.5"
+                          >
+                            <span>GitHub Repo</span>
+                            <span>↗</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Project 2: CoalDarpan */}
                       <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#F5A623]/30 hover:border-[#F5A623]/60 transition-all flex flex-col justify-between group shadow-lg">
                         <div>
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">

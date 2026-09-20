@@ -40,6 +40,12 @@ export const AI_KNOWLEDGE_BASE = {
   },
 
   deepProjects: {
+    aptlyAI: {
+      title: "Aptly.AI (Clinical Talent Intelligence & ATS Platform)",
+      architecture: "React 19 + Node.js + Express + MongoDB + Gemini 2.5 Flash API + JWT + Vanilla CSS",
+      deepDive: "An AI-native talent intelligence & ATS platform that automates hiring with semantic resume-to-job matching, real-time JD quality scoring with bias detection, interactive Kanban pipeline tracking, and dynamic interview question kit generation.",
+      technicalChallenge: "Ensuring high-accuracy semantic matching between varied resume formats and job descriptions while maintaining zero bias. Solved using automated PDF parsing with Gemini 2.5 Flash coupled with a deterministic fallback scoring engine."
+    },
     coalDarpan: {
       title: "CoalDarpan (National Hackathon Project)",
       architecture: "React + Node.js + Express + MongoDB + Socket.IO + Google Gemini Vision AI + JWT RBAC + PWA",

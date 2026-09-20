@@ -305,7 +305,63 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
             {/* ========================================================= */}
             {activeWindow === 'projects' && (
               <div className="space-y-8">
-                {/* Flagship: CoalDarpan */}
+                {/* Flagship: Aptly.AI */}
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-[#121624]/90 to-[#0d101a]/90 border border-[#F5A623]/40 relative overflow-hidden shadow-xl">
+                  <div className="absolute top-0 right-0 px-3 py-1 bg-[#F5A623] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
+                    AI-NATIVE ATS
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h3 className="text-2xl font-extrabold text-white tracking-tight">
+                      ⚡ Aptly.AI
+                    </h3>
+                    <span className="text-white/40 text-xs font-mono-code">— Clinical Talent Intelligence & ATS Platform</span>
+                  </div>
+
+                  <p className="text-white/80 text-sm leading-relaxed mb-4">
+                    An AI-native talent intelligence & ATS platform that automates hiring with semantic resume-to-job matching, real-time JD quality scoring with bias detection, interactive pipeline tracking, and dynamic interview kit generation.
+                  </p>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-[#FFC15E] font-bold text-lg">Gemini 2.5</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Resume Matcher</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">Kanban</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">ATS Pipeline</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">Live Scorer</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">JD Quality & Bias</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">Custom Kits</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Interview Generator</div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {['React 19', 'Node.js', 'Express', 'MongoDB', 'Gemini 2.5 Flash API', 'JWT', 'Vanilla CSS'].map((t, i) => (
+                      <span key={i} className="text-[10px] font-mono-code px-2 py-1 rounded-md bg-[#FFC15E]/10 text-[#FFC15E] border border-[#FFC15E]/20">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-white/[0.08]">
+                    <a
+                      href="https://github.com/ayush-3945/Aptly"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                    >
+                      <span>GITHUB REPO</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Project 2: CoalDarpan */}
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-[#0f172a]/90 to-[#0c121e]/90 border border-[#F5A623]/30 relative overflow-hidden shadow-xl">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
                     <h3 className="text-2xl font-extrabold text-white tracking-tight">

@@ -78,6 +78,9 @@ export async function sendChatMessage(userMessage, conversationHistory = []) {
 function getLocalSmartAnswer(userQuery) {
   const q = userQuery.toLowerCase();
 
+  if (q.includes('aptly') || q.includes('ats') || q.includes('talent')) {
+    return "**Aptly.AI** is my AI-native clinical talent intelligence & ATS platform! It automates hiring with semantic resume-to-job matching, real-time JD quality scoring with bias detection, interactive Kanban pipeline tracking, and dynamic interview kit generation using Gemini 2.5 Flash API! Check out the repo at [github.com/ayush-3945/Aptly](https://github.com/ayush-3945/Aptly)!";
+  }
   if (q.includes('skill') || q.includes('strongest')) {
     return "My strongest technical skills are **React 19, Node.js, TypeScript, Google Gemini AI**, and **real-time WebSockets**. I excel at architecting high-throughput frontend UIs and autonomous backend incident engines!";
   }
@@ -109,5 +112,5 @@ function getLocalSmartAnswer(userQuery) {
     return "Yes! I'm actively available for **Full Stack, Frontend, and AI Engineering roles** and internships. I'm ready to contribute to high-impact teams immediately!";
   }
 
-  return "I'm Ayush Pandey, a Full Stack & AI Systems Engineer! Feel free to ask me about my projects (**CoalDarpan**, **DevPulse**, **AI Interview Agent**), my tech stack, education, or availability for roles!";
+  return "I'm Ayush Pandey, a Full Stack & AI Systems Engineer! Feel free to ask me about my projects (**Aptly.AI**, **CoalDarpan**, **DevPulse**, **AI Interview Agent**), my tech stack, education, or availability for roles!";
 }
