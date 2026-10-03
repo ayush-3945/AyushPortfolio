@@ -100,7 +100,7 @@ export default function HeroBento({ onOpenWindow, onScrollTo }) {
 
         {/* GitHub Heatmap Grid (4 cols) */}
         <div className="md:col-span-4 lg:col-span-4">
-          <GithubHeatmap onClick={() => navigate('projects')} />
+          <GithubHeatmap onClick={() => navigate('github')} />
         </div>
 
       </div>

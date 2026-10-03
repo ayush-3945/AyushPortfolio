@@ -135,7 +135,8 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
     projects: 'PROJECTS',
     experience: 'EXPERIENCE',
     contact: 'CONTACT',
-    article: 'WRITING'
+    article: 'WRITING',
+    github: 'GITHUB ACTIVITY'
   };
 
   return (
