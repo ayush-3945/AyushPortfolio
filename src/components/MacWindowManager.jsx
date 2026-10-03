@@ -424,9 +424,9 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             href="https://coaldarpan.vercel.app"
                             target="_blank"
                             rel="noreferrer"
-                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all flex items-center gap-1.5"
+                            className="px-4 py-1.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all flex items-center gap-1.5"
                           >
-                            <span>Live App</span>
+                            <span>Live Demo</span>
                             <span>↗</span>
                           </a>
                           <a
@@ -435,7 +435,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             rel="noreferrer"
                             className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
                           >
-                            <span>GitHub</span>
+                            <span>GitHub Repo</span>
                             <span>↗</span>
                           </a>
                         </div>
@@ -528,9 +528,9 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             href="https://dev-pulse-kohl-theta.vercel.app"
                             target="_blank"
                             rel="noreferrer"
-                            className="px-4 py-1.5 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all flex items-center gap-1.5"
+                            className="px-4 py-1.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all flex items-center gap-1.5"
                           >
-                            <span>Live App</span>
+                            <span>Live Demo</span>
                             <span>↗</span>
                           </a>
                           <a
@@ -539,7 +539,7 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                             rel="noreferrer"
                             className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
                           >
-                            <span>GitHub</span>
+                            <span>GitHub Repo</span>
                             <span>↗</span>
                           </a>
                         </div>

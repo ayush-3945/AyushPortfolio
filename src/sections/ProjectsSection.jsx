@@ -238,14 +238,14 @@ export default function ProjectsSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/[0.08]">
+            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/[0.06]">
               <a
                 href="https://dev-pulse-kohl-theta.vercel.app"
                 target="_blank"
                 rel="noreferrer"
-                className="px-7 py-3 rounded-xl bg-white text-black font-black text-xs tracking-wider uppercase hover:bg-[#F5A623] hover:text-black transition-all shadow-[0_10px_25px_rgba(255,255,255,0.15)] flex items-center gap-2"
+                className="px-5 py-2.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-bold text-xs transition-all shadow-md flex items-center gap-2"
               >
-                <span>VISIT LIVE APP</span>
+                <span>Live Demo</span>
                 <ExternalLink size={14} />
               </a>
 
@@ -253,16 +253,93 @@ export default function ProjectsSection() {
                 href="https://github.com/ayush-3945/DevPulse"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3 rounded-xl bg-white/[0.05] border border-white/10 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2"
+                className="px-5 py-2.5 rounded-xl bg-white/[0.05] border border-white/15 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-semibold text-xs transition-all flex items-center gap-2 group/btn"
               >
-                <span>VIEW SOURCE CODE</span>
-                <Github size={14} />
+                <span>GitHub Repository</span>
+                <span className="group-hover/btn:translate-x-0.5 transition-transform">↗</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Project 2: AI Interview Agent */}
+        {/* Project 4: CoalDarpan */}
+        <div className="glass-bento rounded-3xl p-6 sm:p-9 relative overflow-hidden border border-[#F5A623]/30 hover:border-[#F5A623]/60 shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(245,166,35,0.15)] group transition-all duration-300">
+          <div className="relative z-10 space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-2xl">🏛️</span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white group-hover:text-[#FFC15E] transition-colors tracking-tight">
+                  CoalDarpan
+                </h3>
+                <span className="px-3 py-1 rounded-full bg-[#F5A623]/12 text-[#FFC15E] border border-[#F5A623]/25 text-[10px] font-mono-code font-bold uppercase tracking-wider">
+                  SMART ISSUE ROUTING PWA
+                </span>
+              </div>
+              <span className="text-xs font-mono-code text-white/40 font-semibold">2026 • GOVERNANCE PWA</span>
+            </div>
+
+            <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-4xl">
+              Digital governance and smart issue routing Progressive Web App built during a national hackathon to digitize offline processes. Features role-based dashboards, real-time <strong>WebSocket</strong> notifications, <strong>JWT</strong> authentication, and AI-powered categorization using <strong>Google Gemini</strong> for image analysis.
+            </p>
+
+            {/* Architecture Metrics Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-[#FFC15E] font-black text-xl">Gemini Vision</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Hazard Analysis</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-[#F5A623] font-black text-xl">WebSocket</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">&lt;50ms Alert Sync</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-amber-400 font-black text-xl">JWT RBAC</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Role Dashboards</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-amber-300 font-black text-xl">PWA Ready</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Offline Queueing</div>
+              </div>
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Tailwind CSS', 'Google Gemini', 'JWT', 'PWA'].map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white/70 text-xs font-mono-code hover:border-[#F5A623]/40 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Links */}
+            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/[0.06]">
+              <a
+                href="https://coaldarpan.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-bold text-xs transition-all shadow-md flex items-center gap-2"
+              >
+                <span>Live Demo</span>
+                <ExternalLink size={14} />
+              </a>
+
+              <a
+                href="https://github.com/ayush-3945/ai-smart-issue-routing"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-white/[0.05] border border-white/15 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-semibold text-xs transition-all flex items-center gap-2 group/btn"
+              >
+                <span>GitHub Repository</span>
+                <span className="group-hover/btn:translate-x-0.5 transition-transform">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 5: AI Interview Agent */}
         <div className="glass-bento rounded-3xl p-6 sm:p-9 relative overflow-hidden border border-white/[0.08] hover:border-[#F5A623]/40 shadow-[0_20px_50px_rgba(0,0,0,0.7)] group transition-all duration-300">
           <div className="space-y-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -292,15 +369,15 @@ export default function ProjectsSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-white/[0.06]">
+            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/[0.06]">
               <div title="Demo coming soon" className="cursor-not-allowed inline-flex">
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
                   title="Demo coming soon"
-                  className="px-6 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white/40 font-mono-code font-bold text-xs tracking-wider uppercase opacity-50 pointer-events-none cursor-not-allowed flex items-center gap-2 select-none"
+                  className="px-5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white/40 font-bold text-xs opacity-50 pointer-events-none cursor-not-allowed flex items-center gap-2 select-none"
                 >
-                  <span>LIVE DEMO</span>
+                  <span>Live Demo</span>
                   <ExternalLink size={14} />
                 </a>
               </div>
@@ -309,10 +386,10 @@ export default function ProjectsSection() {
                 href="https://github.com/ayush-3945/AI-Interview-Agent"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-2.5 rounded-xl bg-white/[0.06] border border-white/10 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-mono-code font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2"
+                className="px-5 py-2.5 rounded-xl bg-white/[0.05] border border-white/15 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-semibold text-xs transition-all flex items-center gap-2 group/btn"
               >
-                <span>GITHUB REPO</span>
-                <Github size={14} />
+                <span>GitHub Repository</span>
+                <span className="group-hover/btn:translate-x-0.5 transition-transform">↗</span>
               </a>
             </div>
           </div>

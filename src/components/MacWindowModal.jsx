@@ -518,9 +518,9 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       href="https://coaldarpan.vercel.app"
                       target="_blank"
                       rel="noreferrer"
-                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                      className="px-4 py-2 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all shadow-md flex items-center gap-1.5"
                     >
-                      <span>LAUNCH LIVE APP</span>
+                      <span>LIVE DEMO</span>
                       <span>↗</span>
                     </a>
                     <a
@@ -581,9 +581,9 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
                       href="https://dev-pulse-kohl-theta.vercel.app"
                       target="_blank"
                       rel="noreferrer"
-                      className="px-4 py-2 rounded-xl bg-white text-black font-extrabold text-xs hover:bg-[#FFC15E] hover:text-white transition-all shadow-md flex items-center gap-1.5"
+                      className="px-4 py-2 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all shadow-md flex items-center gap-1.5"
                     >
-                      <span>LAUNCH APP</span>
+                      <span>LIVE DEMO</span>
                       <span>↗</span>
                     </a>
                     <a
