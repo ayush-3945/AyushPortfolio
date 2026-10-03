@@ -40,6 +40,12 @@ export const AI_KNOWLEDGE_BASE = {
   },
 
   deepProjects: {
+    cartify: {
+      title: "Cartify (Production-Ready Full-Stack MERN E-Commerce Platform)",
+      architecture: "React 18 + Redux Toolkit + Node.js + Express + MongoDB Atlas + Material-UI + Framer Motion + JWT HTTP-only cookies",
+      deepDive: "Full-stack e-commerce platform serving 520+ products across 20 categories and 35 brands. Features sub-second search and multi-facet filtering, dynamic promo/coupon code engine with live percentage recalculations, zero-dependency browser-native tax invoice PDF generation, and a live admin sales analytics dashboard powered by MongoDB aggregation pipelines.",
+      technicalChallenge: "Optimizing multi-attribute search and pagination across a 520+ item catalog without latency spikes, and computing real-time gross revenue and category trends without blocking checkout transactions. Solved using MongoDB compound indexing and aggregation pipelines."
+    },
     aptlyAI: {
       title: "Aptly.AI (Clinical Talent Intelligence & ATS Platform)",
       architecture: "React 19 + Node.js + Express + MongoDB + Gemini 2.5 Flash API + JWT + Vanilla CSS",
@@ -71,6 +77,7 @@ export const AI_KNOWLEDGE_BASE = {
     profile: "https://github.com/ayush-3945",
     totalCommits: "500+ across production repos",
     featuredRepos: [
+      "ayush-3945/cartify-mern",
       "ayush-3945/ai-smart-issue-routing (CoalDarpan PWA)",
       "ayush-3945/AI-Interview-Agent",
       "ayush-3945/DevPulse",

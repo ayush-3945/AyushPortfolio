@@ -25,7 +25,87 @@ export default function ProjectsSection() {
       </div>
 
       <div className="space-y-8">
-        {/* Project 1: Aptly.AI */}
+        {/* Project 1: Cartify */}
+        <div className="glass-bento rounded-3xl p-6 sm:p-9 relative overflow-hidden border border-[#F5A623]/40 hover:border-[#F5A623]/70 shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(245,166,35,0.2)] group transition-all duration-300">
+          {/* Ambient Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-amber-500/20 via-orange-600/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+          <div className="relative z-10 space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-2xl">🛍️</span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white group-hover:text-[#FFC15E] transition-colors tracking-tight">
+                  Cartify
+                </h3>
+                <span className="px-3 py-1 rounded-full bg-[#F5A623]/12 text-[#FFC15E] border border-[#F5A623]/25 text-[10px] font-mono-code font-bold uppercase tracking-wider">
+                  FULL-STACK MERN E-COMMERCE
+                </span>
+              </div>
+              <span className="text-xs font-mono-code text-white/40 font-semibold">2026 • PRODUCTION PLATFORM</span>
+            </div>
+
+            <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-4xl">
+              A high-performance, feature-packed e-commerce web application featuring a <strong>520+ products catalog</strong> across 20 categories with sub-second multi-attribute filtering, JWT authentication with HTTP-only cookies, an interactive promotional coupon engine, instant zero-dependency tax invoice PDF generation, and a live admin sales analytics dashboard powered by MongoDB aggregation pipelines.
+            </p>
+
+            {/* Architecture Metrics Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-[#FFC15E] font-black text-xl">520+ Products</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">20 Categories & Brands</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-[#F5A623] font-black text-xl">Admin Analytics</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">MongoDB Aggregations</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-amber-400 font-black text-xl">Promo Engine</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Dynamic Discounts & Coupons</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] text-center group-hover:border-[#F5A623]/25 transition-all">
+                <div className="text-amber-300 font-black text-xl">Tax Invoices</div>
+                <div className="text-[10px] text-white/40 font-mono-code uppercase mt-0.5">Instant PDF Export</div>
+              </div>
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {['React 18', 'Redux Toolkit', 'Node.js', 'Express', 'MongoDB Atlas', 'Material-UI', 'Framer Motion', 'JWT Cookies', 'REST APIs'].map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white/70 text-xs font-mono-code hover:border-[#F5A623]/40 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Links */}
+            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/[0.06]">
+              <a
+                href="https://cartify-mern-ruddy.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-bold text-xs transition-all shadow-md flex items-center gap-2"
+              >
+                <span>Live Demo</span>
+                <ExternalLink size={14} />
+              </a>
+
+              <a
+                href="https://github.com/ayush-3945/cartify-mern"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-white/[0.05] border border-white/15 hover:border-[#F5A623]/40 text-white hover:text-[#FFC15E] font-semibold text-xs transition-all flex items-center gap-2 group/btn"
+              >
+                <span>GitHub Repository</span>
+                <span className="group-hover/btn:translate-x-0.5 transition-transform">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 2: Aptly.AI */}
         <div className="glass-bento rounded-3xl p-6 sm:p-9 relative overflow-hidden border border-[#F5A623]/40 hover:border-[#F5A623]/70 shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(245,166,35,0.2)] group transition-all duration-300">
           {/* Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-amber-500/20 via-orange-600/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>

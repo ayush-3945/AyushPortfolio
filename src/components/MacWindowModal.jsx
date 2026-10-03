@@ -305,6 +305,71 @@ export default function MacWindowModal({ activeWindow, onClose, onSwitchWindow }
             {/* ========================================================= */}
             {activeWindow === 'projects' && (
               <div className="space-y-8">
+                {/* Flagship: Cartify */}
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-[#121624]/90 to-[#0d101a]/90 border border-[#F5A623]/40 relative overflow-hidden shadow-xl">
+                  <div className="absolute top-0 right-0 px-3 py-1 bg-[#F5A623] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">
+                    MERN E-COMMERCE
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h3 className="text-2xl font-extrabold text-white tracking-tight">
+                      🛍️ Cartify
+                    </h3>
+                    <span className="text-white/40 text-xs font-mono-code">— Production MERN E-Commerce Platform</span>
+                  </div>
+
+                  <p className="text-white/80 text-sm leading-relaxed mb-4">
+                    A high-performance, feature-packed e-commerce web application featuring 520+ products catalog across 20 categories, real-time admin analytics, dynamic promo code engine, and downloadable tax invoices.
+                  </p>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-[#FFC15E] font-bold text-lg">520+ Products</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">20 Categories</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">Analytics</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Admin Dashboard</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">Discounts</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Promo Engine</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+                      <div className="text-amber-400 font-bold text-lg">PDF Export</div>
+                      <div className="text-[10px] text-white/50 font-mono-code uppercase">Tax Invoices</div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {['React 18', 'Redux Toolkit', 'Node.js', 'Express', 'MongoDB Atlas', 'Material-UI', 'Framer Motion', 'JWT'].map((t, i) => (
+                      <span key={i} className="text-[10px] font-mono-code px-2 py-1 rounded-md bg-[#FFC15E]/10 text-[#FFC15E] border border-[#FFC15E]/20">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-white/[0.08]">
+                    <a
+                      href="https://cartify-mern-ruddy.vercel.app"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all shadow-md flex items-center gap-1.5"
+                    >
+                      <span>LIVE DEMO</span>
+                      <span>↗</span>
+                    </a>
+                    <a
+                      href="https://github.com/ayush-3945/cartify-mern"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span>GITHUB REPO</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+
                 {/* Flagship: Aptly.AI */}
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-[#121624]/90 to-[#0d101a]/90 border border-[#F5A623]/40 relative overflow-hidden shadow-xl">
                   <div className="absolute top-0 right-0 px-3 py-1 bg-[#F5A623] text-black font-extrabold text-[10px] rounded-bl-xl font-mono-code">

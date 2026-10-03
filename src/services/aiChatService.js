@@ -78,6 +78,9 @@ export async function sendChatMessage(userMessage, conversationHistory = []) {
 function getLocalSmartAnswer(userQuery) {
   const q = userQuery.toLowerCase();
 
+  if (q.includes('cartify') || q.includes('ecommerce') || q.includes('e-commerce') || q.includes('shop')) {
+    return "**Cartify** is my production-ready full-stack MERN e-commerce platform! It features a 520+ products catalog across 20 categories with sub-second multi-attribute filtering, JWT auth with HTTP-only cookies, an interactive promotional coupon engine, instant tax invoice PDF downloads, and a real-time admin sales analytics dashboard powered by MongoDB aggregations. Check it out live at [cartify-mern-ruddy.vercel.app](https://cartify-mern-ruddy.vercel.app) or on GitHub at [github.com/ayush-3945/cartify-mern](https://github.com/ayush-3945/cartify-mern)!";
+  }
   if (q.includes('aptly') || q.includes('ats') || q.includes('talent')) {
     return "**Aptly.AI** is my AI-native clinical talent intelligence & ATS platform! It automates hiring with semantic resume-to-job matching, real-time JD quality scoring with bias detection, interactive Kanban pipeline tracking, and dynamic interview kit generation using Gemini 2.5 Flash API! Check out the repo at [github.com/ayush-3945/Aptly](https://github.com/ayush-3945/Aptly)!";
   }
@@ -112,5 +115,5 @@ function getLocalSmartAnswer(userQuery) {
     return "Yes! I'm actively available for **Full Stack, Frontend, and AI Engineering roles** and internships. I'm ready to contribute to high-impact teams immediately!";
   }
 
-  return "I'm Ayush Pandey, a Full Stack & AI Systems Engineer! Feel free to ask me about my projects (**Aptly.AI**, **CoalDarpan**, **DevPulse**, **AI Interview Agent**), my tech stack, education, or availability for roles!";
+  return "I'm Ayush Pandey, a Full Stack & AI Systems Engineer! Feel free to ask me about my projects (**Cartify**, **Aptly.AI**, **CoalDarpan**, **DevPulse**, **AI Interview Agent**), my tech stack, education, or availability for roles!";
 }

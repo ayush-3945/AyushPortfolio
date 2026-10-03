@@ -66,6 +66,18 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "cartify",
+      title: "Cartify",
+      subtitle: "Production-Ready Full-Stack MERN E-Commerce Platform",
+      badge: "MERN E-Commerce",
+      year: "2026",
+      featured: true,
+      description: "A high-performance, feature-packed e-commerce web application featuring 520+ products catalog across 20 categories, real-time admin analytics, dynamic promo code engine, and downloadable tax invoices.",
+      techStack: ["React 18", "Redux Toolkit", "Node.js", "Express", "MongoDB Atlas", "Material-UI", "Framer Motion", "JWT"],
+      liveUrl: "https://cartify-mern-ruddy.vercel.app",
+      githubUrl: "https://github.com/ayush-3945/cartify-mern"
+    },
+    {
       id: "aptly-ai",
       title: "Aptly.AI",
       subtitle: "Clinical Talent Intelligence & ATS Platform",

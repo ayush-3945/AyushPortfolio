@@ -287,11 +287,62 @@ export default function MacWindowManager({ openWindows, onBringToFront, onCloseW
                           FEATURED WORKS // 02
                         </span>
                       </div>
-                      <span className="text-[11px] font-mono-code text-amber-400">4 Production Projects</span>
+                      <span className="text-[11px] font-mono-code text-amber-400">5 Production Projects</span>
                     </div>
 
                     <div className="space-y-4">
-                      {/* Project 1: Aptly.AI */}
+                      {/* Project 1: Cartify */}
+                      <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#F5A623]/40 hover:border-[#F5A623]/70 transition-all flex flex-col justify-between group shadow-lg">
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">🛍️</span>
+                              <h3 className="text-lg font-bold text-white group-hover:text-[#FFC15E] transition-colors">
+                                Cartify
+                              </h3>
+                              <span className="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] font-mono-code font-bold">
+                                MERN E-COMMERCE
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-mono-code text-white/40">2026</span>
+                          </div>
+
+                          <p className="text-white/70 text-xs sm:text-[13px] leading-relaxed mb-3">
+                            A high-performance, feature-packed e-commerce web application featuring 520+ products catalog across 20 categories, real-time admin analytics, dynamic promo code engine, and downloadable tax invoices.
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {['React 18', 'Redux Toolkit', 'Node.js', 'Express', 'MongoDB Atlas', 'Material-UI', 'Framer Motion', 'JWT'].map((t, i) => (
+                              <span key={i} className="text-[10px] font-mono-code px-2 py-0.5 rounded-md bg-white/[0.05] text-white/60 border border-white/[0.06]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
+                          <a
+                            href="https://cartify-mern-ruddy.vercel.app"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-[#F5A623] hover:bg-[#FFC15E] text-black font-extrabold text-xs transition-all flex items-center gap-1.5"
+                          >
+                            <span>Live Demo</span>
+                            <span>↗</span>
+                          </a>
+                          <a
+                            href="https://github.com/ayush-3945/cartify-mern"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5"
+                          >
+                            <span>GitHub Repo</span>
+                            <span>↗</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Project 2: Aptly.AI */}
                       <div className="p-5 rounded-2xl bg-[#111622]/90 border border-[#F5A623]/40 hover:border-[#F5A623]/70 transition-all flex flex-col justify-between group shadow-lg">
                         <div>
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
