@@ -111,18 +111,6 @@ export const portfolioData = {
       techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS", "Google Gemini", "JWT", "PWA"],
       liveUrl: "https://coaldarpan.vercel.app",
       githubUrl: "https://github.com/ayush-3945/ai-smart-issue-routing"
-    },
-    {
-      id: "devpulse",
-      title: "DevPulse",
-      subtitle: "GitHub Analytics & Developer DNA Platform",
-      badge: "AI Analytics",
-      year: "2026",
-      featured: true,
-      description: "Interactive dashboard visualizing commit heatmaps, generating AI Developer Archetypes with Gemini 1.5 Flash, featuring a witty 'Roast Mode', and providing actionable repository diagnostics. Backed by MongoDB TTL caching.",
-      techStack: ["React 19", "Vite", "Tailwind CSS", "Express", "MongoDB", "Gemini 1.5 Flash", "GitHub API", "Chart.js"],
-      liveUrl: "https://dev-pulse-kohl-theta.vercel.app",
-      githubUrl: "https://github.com/ayush-3945/DevPulse"
     }
   ],
 

@@ -58,12 +58,6 @@ export const AI_KNOWLEDGE_BASE = {
       deepDive: "Built for statutory hazard mitigation in offline coal mining workflows. Google Gemini Vision analyzes incident images with 98.6% accuracy, while Socket.IO broadcasts alerts in <50ms across role-based dashboards (Admin, Field Team, Nearby Workers).",
       technicalChallenge: "Handling zero-connectivity underground mining environments. Solved by implementing PWA Service Worker caching with client-side indexed data queueing that auto-syncs via WebSockets when connectivity is restored."
     },
-    devPulse: {
-      title: "DevPulse (GitHub Analytics & Developer DNA Platform)",
-      architecture: "React 19 + Vite + Tailwind CSS + Express + Google Gemini 1.5 Flash + GitHub Octokit API + Chart.js + MongoDB",
-      deepDive: "Aggregates cross-repository stats and visualizes commit rhythms with Chart.js heatmaps. Uses Gemini 1.5 Flash API to analyze coding habits into unique 'Developer Archetypes' and features a playful 'Roast Mode'. Also includes automated Repository Diagnostics to surface actionable improvements like missing licenses or inactive repos.",
-      technicalChallenge: "Overcoming GitHub REST API rate limits and Vercel Serverless timeouts (504s) during multi-repo aggregation. Solved by implementing a MongoDB caching layer with a 24-hour TTL index and switching to Gemini 1.5 Flash with structured JSON generation, dropping AI response time to ~2.5s."
-    },
     aiInterviewAgent: {
       title: "AI Interview Agent",
       architecture: "React.js + Node.js + Web Speech API + Gemini AI Prompt Chains + Tailwind CSS",
@@ -78,17 +72,17 @@ export const AI_KNOWLEDGE_BASE = {
     totalCommits: "500+ across production repos",
     featuredRepos: [
       "ayush-3945/cartify-mern",
+      "ayush-3945/Aptly",
       "ayush-3945/ai-smart-issue-routing (CoalDarpan PWA)",
       "ayush-3945/AI-Interview-Agent",
-      "ayush-3945/DevPulse",
       "ayush-3945/AyushPortfolio"
     ]
   },
 
   starterPrompts: [
-    "What's his strongest skill?",
+    "Tell me about Cartify (520+ products)",
+    "Tell me about Aptly.AI",
     "Tell me about CoalDarpan",
-    "Tell me about DevPulse",
     "Is he available for hire?",
     "What's his educational background?",
     "How does his AI Interview Agent work?",
@@ -122,25 +116,25 @@ GitHub: https://github.com/ayush-3945 (500+ commits)
 LinkedIn: https://linkedin.com/in/ayush-kumar-pandey-a6880532b
 
 FEATURED PROJECTS & TECHNICAL DEEP DIVES:
-1. CoalDarpan (National Hackathon Project)
+1. Cartify (Full-Stack MERN E-Commerce Platform)
+   - What it is: High-performance e-commerce web application featuring 520+ products catalog across 20 categories, real-time admin analytics, dynamic promo coupon engine, and instant browser-native PDF tax invoices.
+   - Tech Architecture: React 18, Redux Toolkit, Node.js, Express, MongoDB Atlas, Material-UI, Framer Motion, JWT HTTP-only cookies.
+   - Live URL: https://cartify-mern-ruddy.vercel.app
+
+2. Aptly.AI (Clinical Talent Intelligence & ATS Platform)
+   - What it is: AI-native ATS platform with semantic resume-to-job matching, real-time JD quality scoring, interactive Kanban pipeline tracking, and dynamic interview kit generation.
+   - Tech Architecture: React 19, Node.js, Express, MongoDB, Gemini 2.5 Flash API, JWT.
+   - Live URL: https://aptly-zeta.vercel.app
+
+3. CoalDarpan (National Hackathon Project)
    - What it is: Smart Issue Routing PWA for digital governance in offline coal mining workflows.
    - Tech Architecture: React, Node.js, Express, MongoDB, Socket.io, Google Gemini Vision AI, JWT, RBAC, PWA.
-   - Key highlights: Sub-50ms WebSocket alert sync, automated AI image hazard classification (98.6% accuracy), offline PWA support.
-   - Technical Challenge Solved: Handling zero-connectivity underground mining environments using PWA Service Worker caching with client-side indexed queueing that auto-syncs via WebSockets on reconnection.
    - Live URL: https://coaldarpan.vercel.app
 
-2. DevPulse (GitHub Analytics Platform)
-   - Tagline: Unlock deep insights, health diagnostics, and an AI personality roast of your GitHub profile.
-   - What it is: Interactive dashboard visualizing commit heatmaps, generating AI Developer Archetypes, featuring a witty "Roast Mode", and providing actionable repository diagnostics.
-   - Tech Architecture: React 19, Vite, Tailwind CSS, Express, MongoDB, Google Gemini 1.5 Flash, GitHub Octokit API, Chart.js.
-   - Technical Challenge Solved: Overcoming GitHub REST API rate limits and Vercel Serverless timeouts using a MongoDB TTL caching layer and concurrent data fetching, reducing AI response times to ~2.5 seconds.
-   - Live URL: https://dev-pulse-kohl-theta.vercel.app
-
-3. AI Interview Agent
+4. AI Interview Agent
    - What it is: Real-time voice mock interview simulator.
-   - Tech Architecture: React.js, Node.js, Web Speech API (speech-to-text), Google Gemini AI (prompt chains), Tailwind CSS, Vite.
-   - Key highlights: Dynamically generates role-based question chains with instant automated rubric scoring.
-   - Technical Challenge Solved: Managing continuous speech recognition accuracy across varying microphone quality and accents using transcript buffering with real-time text normalization before passing to Gemini evaluation prompts.
+   - Tech Architecture: React.js, Node.js, Web Speech API, Google Gemini AI prompt chains, Tailwind CSS.
+   - GitHub: https://github.com/ayush-3945/AI-Interview-Agent
 
 HOBBIES & PERSONAL INTERESTS:
 - Music: The Weeknd (Synthwave/R&B - 'After Hours', 'Save Your Tears'), KR$NA & Seedhe Maut (Desi Hip Hop - 'Hola Amigo', 'Nanchaku', 'Naksha').
