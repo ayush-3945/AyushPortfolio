@@ -125,15 +125,6 @@ export const portfolioData = {
       skills: ["REACT 19", "NODE.JS", "EXPRESS", "MONGODB", "GEMINI AI", "SOCKET.IO", "PWA"]
     },
     {
-      company: "CodeChef ABESEC Chapter",
-      role: "Public Relations (PR) Head",
-      period: "'25 — PRESENT",
-      location: "GHAZIABAD, IN",
-      isLive: true,
-      description: "Leading technical community outreach and competitive programming initiatives for 800+ student developers. Spearheading workshop logistics, mentorship tracks, and campus hackathons.",
-      skills: ["COMMUNITY LEADERSHIP", "EVENT MANAGEMENT", "DEVELOPER OUTREACH", "MENTORSHIP"]
-    },
-    {
       company: "IBM PBEL",
       role: "Web & Mobile Development Intern",
       period: "'25",
